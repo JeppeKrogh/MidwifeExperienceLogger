@@ -28,6 +28,7 @@ export class GoogleLoginComponent {
 
   googleLogin() {
     if (this.platform.is('cordova')) {
+      console.log("is native");
       this.nativeGoogleLogin();
     } else {
       this.webGoogleLogin();
@@ -37,7 +38,7 @@ export class GoogleLoginComponent {
   async nativeGoogleLogin(): Promise<void> {
     try {
       const gplusUser = await this.gplus.login({
-        'WebClientId': '890337908846-pnvpesijv2ap7qdm06rf6hu6kdl3nt4l.apps.googleusercontent.com',
+        'WebClientId': '408254753163-ue5hc18hulu5dogthejl4d82271416ks.apps.googleusercontent.com',
         'offline': true,
         'scopes': 'profile email'
       })
