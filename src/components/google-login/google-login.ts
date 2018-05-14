@@ -3,7 +3,8 @@ import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase/app';
 import { Observable } from "rxjs/Observable";
 import { GooglePlus } from "@ionic-native/google-plus";
-import { Platform } from "ionic-angular";
+import { TabsPage } from "../../pages/tabs/tabs";
+import { Platform, NavController } from "ionic-angular";
 /**
  * Generated class for the GoogleLoginComponent component.
  *
@@ -21,7 +22,8 @@ export class GoogleLoginComponent {
 
   constructor(private afAuth: AngularFireAuth,
               private gplus: GooglePlus,
-              private platform: Platform) {
+              private platform: Platform,
+              private navCtrl:  NavController) {
     this.user = this.afAuth.authState;
   }
 
@@ -56,6 +58,7 @@ async webGoogleLogin(): Promise<void> {
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
+    this.navCtrl.setRoot(TabsPage); 
   } catch(err) {
     console.log(err);
   }

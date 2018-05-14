@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { GoogleLoginComponent } from './google-login/google-login';
+import { PopoversComponent } from './popovers/popovers';
 
 
 @NgModule({
-	declarations: [GoogleLoginComponent],
+	declarations: [GoogleLoginComponent,
+    PopoversComponent],
 	imports: [],
-	exports: [GoogleLoginComponent]
+	exports: [GoogleLoginComponent,
+    PopoversComponent]
 })
 export class ComponentsModule {}

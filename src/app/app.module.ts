@@ -13,6 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ErfaringPage } from '../pages/erfaring/erfaring';
 import { LoginPage } from '../pages/login/login';
 import { GoogleLoginComponent } from "../components/google-login/google-login";
+import { PopoversComponent } from "../components/popovers/popovers";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -42,6 +43,7 @@ const firebaseConfig = {
     AboutPage,
     ContactPage,
     GoogleLoginComponent,
+    PopoversComponent,
     HomePage,
     LoginPage,
     TabsPage,
@@ -66,6 +68,7 @@ const firebaseConfig = {
     HomePage,
     LoginPage,
     GoogleLoginComponent,
+    PopoversComponent,
     TabsPage,
     ErfaringPage
   ],
@@ -77,4 +80,7 @@ const firebaseConfig = {
     DatabaseProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+
+  
+}

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, IonicPage, NavParams, ToastController, PopoverController  } from 'ionic-angular';
+import { PopoversComponent } from '../../components/popovers/popovers';
 import { DatabaseProvider } from '../../providers/database/database';
+import { AngularFireAuth } from "angularfire2/auth";
 
 @Component({
   selector: 'page-home',
@@ -9,9 +11,11 @@ import { DatabaseProvider } from '../../providers/database/database';
 export class HomePage {
 
 
-   /**
+
+
+  /**
     * @name _COLL
-    * @type {string}
+    * @type {string} 
     * @private
     * @description      Defines the name of the database collection
     */
@@ -53,15 +57,18 @@ export class HomePage {
 
    constructor(public navCtrl  : NavController,
                private _DB     : DatabaseProvider,
-               private _ALERT  : AlertController)
+               private _ALERT  : AlertController,
+               private afAuth  : AngularFireAuth,
+               private toast   : ToastController,
+               public popoverCtrl: PopoverController
+              )
    {
       this._CONTENT = {
          city 			: "London",
-         population 	: "8,787,892",
+         population 	: "8,787,892", 
          established    : "C. 43 AD"
       };
    }
-
 
 
 
@@ -73,6 +80,36 @@ export class HomePage {
     * @method ionViewDidEnter
     * @return {none}
     */
+   ionViewWillLoad() {
+    console.log("fired");
+      this.afAuth.authState.subscribe(data => {
+    if (data && data.email && data.uid) {
+      console.log(data);
+      if (data.displayName) {
+        this.toast.create({
+        
+          message: 'Hej ' + data.displayName,
+          duration: 3000
+        }).present(); 
+      } else {
+        this.toast.create({
+        
+          message: 'Hej ' + data.email,
+          duration: 3000
+        }).present();
+      }
+      
+    } else {
+      this.toast.create({
+        message: 'Could not find authentication details',
+        duration: 3000
+      }).present();
+    }
+  });
+
+
+    
+  }
    ionViewDidEnter()
    {
       this.retrieveCollection();
@@ -229,6 +266,5 @@ export class HomePage {
       });
       alert.present();
    }
-
  
  }
