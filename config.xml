@@ -85,9 +85,5 @@
     <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
     <plugin name="com.google.playservices" spec="^22.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
-    <plugin name="cordova-plugin-googleplus" spec="^5.3.0">
-        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.637567833913-qd1b6g2bn81hd45fgi0fqrk1mceo0apm" />
-        <variable name="WEB_APPLICATION_CLIENT_ID" value="408254753163-ue5hc18hulu5dogthejl4d82271416ks.apps.googleusercontent.com" />
-    </plugin>
     <engine name="android" spec="7.0.0" />
 </widget>

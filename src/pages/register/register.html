@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>login</ion-title>
+        <ion-title>register</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -16,7 +16,5 @@
         <ion-label floating>Password</ion-label>
         <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
-    <button ion-button (click)="login(user)">Login</button>
-    <button ion-button color="light" (click)="register()">Register</button>
-    <google-login></google-login>
+    <button ion-button (click)="register(user)">Register</button>
 </ion-content>

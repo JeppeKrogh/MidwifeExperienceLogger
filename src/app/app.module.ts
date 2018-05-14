@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';  
+import { FormsModule } from '@angular/forms';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -22,14 +23,16 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { GooglePlus } from '@ionic-native/google-plus'; 
+import { RegisterPageModule } from '../pages/register/register.module';
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA6wpZg5s78EF76yDT4k5-FUBFcBdSYx1M",
-  authDomain: "midwifeexperiencelogger.firebaseapp.com",
-  databaseURL: "https://midwifeexperiencelogger.firebaseio.com",
-  projectId: "midwifeexperiencelogger",
-  storageBucket: "midwifeexperiencelogger.appspot.com",
-  messagingSenderId: "637567833913"
+    apiKey: "AIzaSyA6wpZg5s78EF76yDT4k5-FUBFcBdSYx1M",
+    authDomain: "midwifeexperiencelogger.firebaseapp.com",
+    databaseURL: "https://midwifeexperiencelogger.firebaseio.com",
+    projectId: "midwifeexperiencelogger",
+    storageBucket: "midwifeexperiencelogger.appspot.com",
+    messagingSenderId: "637567833913"
 }
 
 
@@ -46,12 +49,14 @@ const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CommonModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     DatePickerModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RegisterPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

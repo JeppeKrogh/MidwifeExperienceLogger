@@ -41,7 +41,7 @@ export class GoogleLoginComponent {
         'WebClientId': '408254753163-ue5hc18hulu5dogthejl4d82271416ks.apps.googleusercontent.com',
         'offline': true,
         'scopes': 'profile email'
-      })
+      }) 
       return await this.afAuth.auth.signInWithCredential(
         firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken)
       )

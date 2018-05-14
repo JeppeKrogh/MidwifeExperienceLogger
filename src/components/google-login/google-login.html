@@ -1,4 +1,4 @@
-<div *ngIf="(user | async) || {} as user">
+<div class="google-login-container" *ngIf="(user | async) || {} as user">
 
 
     <button ion-button *ngIf="!user.uid" (tap)="googleLogin()">
@@ -13,4 +13,3 @@
       Logout
     </button>
 </div>
-<div>hest</div>

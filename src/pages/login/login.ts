@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
+
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { GoogleLoginComponent } from "../../components/google-login/google-login";
+import { User } from '../../models/user';
 
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -19,11 +14,28 @@ import { GoogleLoginComponent } from "../../components/google-login/google-login
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user = {} as User;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private afAuth: AngularFireAuth
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+  async login(user: User) {
+    try {
+      this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      console.log("logged in successfully"); 
+    } catch(err) {
+      console.log(err);
+    }  
+  } 
+  register() {
+    this.navCtrl.push('RegisterPage'); 
   }
 
 }
