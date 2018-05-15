@@ -15,4 +15,10 @@ export class ContactPage {
 
   }
 
+  //search test
+
+  onSearch(event){
+    console.log(event.target.value);
+  }
+
 }
