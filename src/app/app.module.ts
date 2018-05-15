@@ -14,6 +14,8 @@ import { ErfaringPage } from '../pages/erfaring/erfaring';
 import { LoginPage } from '../pages/login/login';
 import { GoogleLoginComponent } from "../components/google-login/google-login";
 import { PopoversComponent } from "../components/popovers/popovers";
+import { IntroSkipSlidesComponent } from '../components/intro-skip-slides/intro-skip-slides';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -44,6 +46,7 @@ const firebaseConfig = {
     ContactPage,
     GoogleLoginComponent,
     PopoversComponent,
+    IntroSkipSlidesComponent,
     HomePage,
     LoginPage,
     TabsPage,
@@ -69,6 +72,7 @@ const firebaseConfig = {
     LoginPage,
     GoogleLoginComponent,
     PopoversComponent,
+    IntroSkipSlidesComponent,
     TabsPage,
     ErfaringPage
   ],

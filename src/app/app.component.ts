@@ -3,6 +3,7 @@ import { Platform, PopoverController, ViewController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PopoversComponent } from '../components/popovers/popovers';
+import { IntroSkipSlidesComponent } from '../components/intro-skip-slides/intro-skip-slides';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from "../pages/login/login";
 import { environment } from '../environments/environment';

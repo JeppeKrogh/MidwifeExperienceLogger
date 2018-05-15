@@ -8,6 +8,9 @@ import {  } from "../login/login";
 })
 export class ContactPage {
 
+  public isSearchBarOpened = false;
+
+
   constructor(public navCtrl: NavController) {
 
   }

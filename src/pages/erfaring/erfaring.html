@@ -14,10 +14,18 @@
 
 
 <ion-content padding>
+    <p>kalender version 1</p>
 
     <span ion-datepicker [(value)]="initDate" locale="en-US" clear class="ScheduleDate">
 		<span class="date">{{initDate | date}}  <ion-icon name="calendar" style="zoom:2.0;" item-left ></ion-icon> </span>
     </span>
-    <p>hello world!</p>
+    
+    
+    <ion-item>
+        <p>kalender version 2 (wheel picker)</p>
+
+        <ion-label><ion-icon name="calendar" style="zoom:2.0; color: brown;" item-left ></ion-icon></ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
 
 </ion-content>
