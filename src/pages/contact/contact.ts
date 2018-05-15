@@ -8,6 +8,7 @@ import {  } from "../login/login";
 })
 export class ContactPage {
 
+
   public isSearchBarOpened = false;
 
 
@@ -15,8 +16,7 @@ export class ContactPage {
 
   }
 
-  //search test
-
+  //search bar
   onSearch(event){
     console.log(event.target.value);
   }

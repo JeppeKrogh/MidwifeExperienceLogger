@@ -7,22 +7,21 @@
                 <ion-buttons end>
                     <button ion-button icon-only *ngIf="!isSearchBarOpened" (click)="!isSearchBarOpened=true">
                         <ion-icon name="search"></ion-icon>
-        
                     </button>
                 </ion-buttons> 
+
         </ion-navbar>
 </ion-header>
 
 <ion-content>
 
-            
 
+        <ion-searchbar
+        [showCancelButton]="true"
+        (ionInput)="onInput($event)"
+        (ionCancel)="isSearchBarOpened=false">
+        </ion-searchbar>
     
-    <ion-list>
-        <ion-list-header>Follow us on Twitter</ion-list-header>
-        <ion-item>
-            <ion-icon name="ionic" item-start></ion-icon>
-            @ionicframework
-        </ion-item>
-    </ion-list>
+
+
 </ion-content>

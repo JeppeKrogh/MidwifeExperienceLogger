@@ -16,6 +16,11 @@ import { DatePickerDirective } from 'ion-datepicker';
   providers: [DatePickerDirective],
 })
 export class ErfaringPage {
+
+  kategoriv1:string;
+  kategoriv2:string;
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
   }
