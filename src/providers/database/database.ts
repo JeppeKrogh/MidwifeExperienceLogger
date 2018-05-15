@@ -60,7 +60,7 @@ export class DatabaseProvider {
           querySnapshot
             .forEach((doc: any) => {
               obj.push({
-                
+                kategorier : doc.id
               });
             });
 

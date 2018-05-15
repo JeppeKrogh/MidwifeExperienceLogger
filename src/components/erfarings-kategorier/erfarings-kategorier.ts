@@ -17,6 +17,9 @@ export class ErfaringsKategorierComponent {
 
   
   text: string;
+  heroes = [];
+  
+  // myHero = this.heroes[0];
 
   constructor(private _DB: DatabaseProvider) {
     console.log('Hello ErfaringsKategorierComponent Component');
@@ -27,21 +30,32 @@ export class ErfaringsKategorierComponent {
       .then((data) =>
       {
 
+         // IF we don't have any documents then the collection doesn't exist
+         // so we create it!
          if(data.length === 0)
          {
-            console.log("no such collection");
+            console.log("nope");
          }
 
+         // Otherwise the collection does exist and we assign the returned
+         // documents to the public property of locations so this can be
+         // iterated through in the component template
          else
          {
-          // export const HEROES: Hero[] = 
-            console.log(data);
+           console.log(data);
+          var kategorier = new Array(); 
+          for (var key in data) {
+            kategorier.push(data[key].kategorier)
+          }
+          this.heroes = kategorier;
+
          }
       })
       .catch();
+         }
   }
 
  
 
 
-}
+

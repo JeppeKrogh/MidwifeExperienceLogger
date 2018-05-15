@@ -1,7 +1,8 @@
 <!-- Generated template for the ErfaringsKategorierComponent component -->
 <h2>My categories</h2>
-<ul class="kategorier">
-    <li>
-        <span class="kategori" *ngFor="let hero of heroes">test</span>
+<ul>
+    <li *ngFor="let hero of heroes">
+      {{ hero }}
     </li>
-</ul>
+    <li *ngFor="let hero of heroes$ | async">{{ heroes.$value }}</li> 
+  </ul>
