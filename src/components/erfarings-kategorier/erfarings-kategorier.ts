@@ -15,10 +15,11 @@ import { ErfaringPage } from "../../pages/erfaring/erfaring";
 export class ErfaringsKategorierComponent {
 
 
-  
+
   text: string;
   heroes = [];
-  
+  hero = [];
+
   // myHero = this.heroes[0];
 
   constructor(private _DB: DatabaseProvider) {
@@ -27,35 +28,36 @@ export class ErfaringsKategorierComponent {
     var _COLL = "erfaringer";
 
     this._DB.getDocuments(_COLL)
-      .then((data) =>
-      {
+      .then((data) => {
 
-         // IF we don't have any documents then the collection doesn't exist
-         // so we create it!
-         if(data.length === 0)
-         {
-            console.log("nope");
-         }
+        // IF we don't have any documents then the collection doesn't exist
+        // so we create it!
+        if (data.length === 0) {
+          console.log("nope");
+        }
 
-         // Otherwise the collection does exist and we assign the returned
-         // documents to the public property of locations so this can be
-         // iterated through in the component template
-         else
-         {
-           console.log(data);
-          var kategorier = new Array(); 
+        // Otherwise the collection does exist and we assign the returned
+        // documents to the public property of locations so this can be
+        // iterated through in the component template
+        else {
+          console.log(data);
+          var kategorier = new Array();
           for (var key in data) {
             kategorier.push(data[key].kategorier)
           }
           this.heroes = kategorier;
 
-         }
+        }
       })
       .catch();
-         }
   }
+  options() {
+    console.log(this.hero);
 
- 
+  }
+}
+
+
 
 
 

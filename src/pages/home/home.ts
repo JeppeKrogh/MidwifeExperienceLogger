@@ -1,10 +1,6 @@
 
 import { Component } from '@angular/core';
-import { Slides, NavController, AlertController, IonicPage, NavParams, ToastController, PopoverController  } from 'ionic-angular';
-import { PopoversComponent } from '../../components/popovers/popovers';
 import { DatabaseProvider } from '../../providers/database/database';
-=======
-import { Component } from "@angular/core";
 import {
   NavController,
   AlertController,
@@ -24,16 +20,16 @@ import "firebase/firestore";
 })
 
 
+
+
+
+export class HomePage {
+  
   constructor(
     public navCtrl: NavController,
     private afAuth: AngularFireAuth,
     private toast: ToastController,
     public popoverCtrl: PopoverController
-
-
-export class HomePage {
-  
-  
 
 
   ) {

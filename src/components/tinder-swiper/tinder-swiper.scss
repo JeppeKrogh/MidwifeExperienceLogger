@@ -1,0 +1,16 @@
+tinder-swiper {
+
+}
+
+.tinder-swiper {
+    background-color: #fff;
+    // border: 1px solid #e9e9e9;
+    max-height: 50vh;
+    height: 0;
+    overflow: hidden;
+    transition: height 2s ease;
+}
+.engaged {
+    height: auto;
+    transition: height 2s ease;
+}

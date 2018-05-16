@@ -26,6 +26,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { GooglePlus } from '@ionic-native/google-plus'; 
 import { RegisterPageModule } from '../pages/register/register.module';
+import { TinderSwiperComponent } from '../components/tinder-swiper/tinder-swiper';
+import { TinderRequirementsProvider } from '../providers/tinder-requirements/tinder-requirements';
 
 
 const firebaseConfig = {
@@ -46,6 +48,7 @@ const firebaseConfig = {
     GoogleLoginComponent,
     PopoversComponent,
     ErfaringsKategorierComponent,
+    TinderSwiperComponent,
     HomePage,
     LoginPage,
     TabsPage,
@@ -73,6 +76,7 @@ const firebaseConfig = {
     GoogleLoginComponent,
     PopoversComponent,
     ErfaringsKategorierComponent,
+    TinderSwiperComponent,
     TabsPage,
     ErfaringPage,
     IntroslidesPage
@@ -82,7 +86,8 @@ const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DatabaseProvider
+    DatabaseProvider,
+    TinderRequirementsProvider
   ]
 })
 export class AppModule {

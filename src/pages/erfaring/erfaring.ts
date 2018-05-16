@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatePickerDirective } from 'ion-datepicker';
 import { ErfaringsKategorierComponent } from "../../components/erfarings-kategorier/erfarings-kategorier";
+import { TinderSwiperComponent } from "../../components/tinder-swiper/tinder-swiper";
 /**
  * Generated class for the ErfaringPage page.
  *
