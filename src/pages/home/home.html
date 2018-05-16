@@ -1,39 +1,36 @@
-<ion-header>
-    <ion-navbar>
-        <ion-title>
-            Home
-        </ion-title>
-    </ion-navbar>
-</ion-header>
-<popovers></popovers>
-<ion-content class="tutorial-page">
+
+<ion-content class="bgColor">
+
+          <ion-list class="loginDesign">
+
+             <!--
+   <h2 style="text-align: center; margin: 40% 0;">midwife</h2>
+   -->
+
+                 <div style="text-align: center; margin: 30% 0 20% 0;">
+                    <ion-icon name="bookmarks" style="text-align: center; margin: 10% 0; zoom:6.0; color: white;"></ion-icon> 
+                 </div>
+
+                <ion-item class="logIn">
+                  <ion-label fixed>Username</ion-label>
+                  <ion-input type="text" value=""></ion-input>
+                </ion-item>
+              
+                <ion-item class="signUp">
+                 <ion-label fixed>Password</ion-label>
+                  <ion-input type="password"></ion-input>
+                </ion-item>
+
+
+                <button style="margin: 30px 0 0 0;" ion-button block outline>sign in</button>
+                <button ion-button block outline>sign up</button>
+
+                <button style="margin: 10px 0 0 0;" ion-button block>sign in with google</button>
+
+              </ion-list>
 
 
 
 
-    <button ion-button block color="primary" (click)="addDocument()">
-   Add a new record
-</button>
 
-
-    <ion-list>
-        <ion-item *ngFor="let location of locations">
-            <h2>{{ location.city }}</h2>
-            <p>
-                Population: {{ location.population }}<br> Established: {{ location.established }}
-            </p>
-
-
-            <button ion-button color="secondary" (click)="updateDocument(location)">
-         Update this record
-     </button>
-
-
-            <button ion-button color="danger" (click)="deleteDocument(location)">
-         Delete this record
-     </button>
-
-
-        </ion-item>
-    </ion-list>
 </ion-content>
