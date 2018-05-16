@@ -1,0 +1,8 @@
+<!-- Generated template for the ErfaringsKategorierComponent component -->
+<h2>My categories</h2>
+<ul>
+    <li *ngFor="let hero of heroes">
+      {{ hero }}
+    </li>
+    <li *ngFor="let hero of heroes$ | async">{{ heroes.$value }}</li> 
+  </ul>
