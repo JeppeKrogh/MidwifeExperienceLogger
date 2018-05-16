@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PopoversComponent } from '../components/popovers/popovers';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from "../pages/login/login";
+import {IntroslidesPage} from "../pages/introslides/introslides";
 import { environment } from '../environments/environment';
 import { GoogleLoginComponent } from "../components/google-login/google-login";
 import firebase from 'firebase';

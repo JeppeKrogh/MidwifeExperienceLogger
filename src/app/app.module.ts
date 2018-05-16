@@ -14,8 +14,8 @@ import { ErfaringPage } from '../pages/erfaring/erfaring';
 import { LoginPage } from '../pages/login/login';
 import { GoogleLoginComponent } from "../components/google-login/google-login";
 import { PopoversComponent } from "../components/popovers/popovers";
+import {IntroslidesPage} from "../pages/introslides/introslides";
 import { ErfaringsKategorierComponent } from "../components/erfarings-kategorier/erfarings-kategorier";
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatePickerModule } from 'ion-datepicker';
@@ -49,7 +49,8 @@ const firebaseConfig = {
     HomePage,
     LoginPage,
     TabsPage,
-    ErfaringPage
+    ErfaringPage,
+    IntroslidesPage
   ],
   imports: [
     BrowserModule,
@@ -73,7 +74,8 @@ const firebaseConfig = {
     PopoversComponent,
     ErfaringsKategorierComponent,
     TabsPage,
-    ErfaringPage
+    ErfaringPage,
+    IntroslidesPage
   ],
   providers: [
     GooglePlus,

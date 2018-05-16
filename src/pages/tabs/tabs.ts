@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {IntroslidesPage} from '../introslides/introslides'; 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
@@ -20,6 +20,7 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = ErfaringPage;
   tab3Root = ContactPage;
+  tab4Root = IntroslidesPage;
 
   constructor(private _DB: DatabaseProvider,
     private afAuth: AngularFireAuth, ) {

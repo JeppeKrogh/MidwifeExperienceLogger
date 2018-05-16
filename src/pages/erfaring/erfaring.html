@@ -14,6 +14,51 @@
 
 
 <ion-content padding>
+    <p>kalender version 1</p>
+            <ion-label ion-datepicker [(value)]="initDate" locale="en-US" clear class="ScheduleDate">
+                    <span class="date">{{initDate | date}}  <ion-icon name="calendar" style="zoom:2.0;" item-left ></ion-icon> </span>
+            </ion-label>
+
+
+
+    <ion-item>
+        <ion-label><ion-icon name="calendar" style="color: brown;" item-left > kalender</ion-icon></ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+
+      <ion-list>
+            <ion-item>
+                <ion-label><ion-icon name="bookmarks" style="zoom:1.0; color: black;" item-left > erfaring v1</ion-icon></ion-label>
+                <ion-select [(ngModel)]="kategoriv1" multiple="true" submitText="Okee" cancelText="nah">
+                     <ion-option value="k1">kategori1</ion-option>
+                     <ion-option value="k2">kategori2</ion-option>
+                     <ion-option value="k3">kategori3</ion-option>
+                     <ion-option value="k4">kategori4</ion-option>
+                     <ion-option value="k5">kategori5</ion-option>
+                     <ion-option value="k6">kategori6</ion-option>
+                     <ion-option value="k7">kategori7</ion-option>
+                     <ion-option value="k8">kategori8</ion-option>
+ 
+                </ion-select>
+            </ion-item>
+         </ion-list>
+
+         <ion-list>
+                <ion-item>
+                        <ion-label><ion-icon name="bookmarks" style="color: blue;" item-left > erfaring v2</ion-icon></ion-label>
+                        <ion-select [(ngModel)]="kategoriv2" submitText="like" cancelText="dislike">
+                            <ion-option value="k1">kategori1</ion-option>
+                            <ion-option value="k2">kategori2</ion-option>
+                            <ion-option value="k3">kategori3</ion-option>
+                            <ion-option value="k4">kategori4</ion-option>
+                            <ion-option value="k5">kategori5</ion-option>
+                            <ion-option value="k6">kategori6</ion-option>
+                            <ion-option value="k7">kategori7</ion-option>
+                            <ion-option value="k8">kategori8</ion-option>
+     
+                    </ion-select>
+                </ion-item>
+             </ion-list>
 
     <span ion-datepicker [(value)]="initDate" locale="en-US" clear class="ScheduleDate">
         <span class="date">{{initDate | date}}
@@ -21,6 +66,7 @@
         </span>
     </span>
     <p>hello world!</p>
+
 
     <erfarings-kategorier></erfarings-kategorier>
 </ion-content>

@@ -6,6 +6,12 @@ import { ErfaringsKategorierComponent } from './erfarings-kategorier/erfarings-k
 
 @NgModule({
 	declarations: [GoogleLoginComponent,
+        PopoversComponent],
+        imports: [],
+        exports: [GoogleLoginComponent,
+        PopoversComponent]
+    })
+
     PopoversComponent,
     ErfaringsKategorierComponent],
 	imports: [],
@@ -13,4 +19,5 @@ import { ErfaringsKategorierComponent } from './erfarings-kategorier/erfarings-k
     PopoversComponent,
     ErfaringsKategorierComponent]
 })
+
 export class ComponentsModule {}
