@@ -5,9 +5,9 @@ import { PopoversComponent } from './popovers/popovers';
 
 @NgModule({
 	declarations: [GoogleLoginComponent,
-        PopoversComponent],
-        imports: [],
-        exports: [GoogleLoginComponent,
-        PopoversComponent]
-    })
+    PopoversComponent],
+	imports: [],
+	exports: [GoogleLoginComponent,
+    PopoversComponent]
+})
 export class ComponentsModule {}
