@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginPage } from '../../pages/login/login';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DatabaseProvider } from '../../providers/database/database';
 import { User } from '../../models/user';
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase';
@@ -31,26 +30,27 @@ export class RegisterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
+
+
   async register(user: User) {
     try {
       this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
       this.afAuth.authState.subscribe(res => {
        if (res && res.uid) {
           let db = firebase.firestore();
-
         db.collection('users').doc(res.uid).set({
           user_email: res.email,
-          first_name: user.first_name,
-          last_name: user.last_name,
+          user_name: user.user_name,
           student_id: user.student_id
         })
          console.log(res);
-       }
+       } 
       })
       this.navCtrl.push(LoginPage);
     } catch(err) {
       console.log(err);
     }
   }
+
 
 }

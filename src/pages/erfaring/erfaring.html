@@ -20,6 +20,7 @@
             </ion-label>
 
 
+
     <ion-item>
         <ion-label><ion-icon name="calendar" style="color: brown;" item-left > kalender</ion-icon></ion-label>
         <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
@@ -59,4 +60,13 @@
                 </ion-item>
              </ion-list>
 
+    <span ion-datepicker [(value)]="initDate" locale="en-US" clear class="ScheduleDate">
+        <span class="date">{{initDate | date}}
+            <ion-icon name="calendar" style="zoom:2.0;" item-left></ion-icon>
+        </span>
+    </span>
+    <p>hello world!</p>
+
+
+    <erfarings-kategorier></erfarings-kategorier>
 </ion-content>

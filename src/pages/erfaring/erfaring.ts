@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatePickerDirective } from 'ion-datepicker';
+import { ErfaringsKategorierComponent } from "../../components/erfarings-kategorier/erfarings-kategorier";
 /**
  * Generated class for the ErfaringPage page.
  *

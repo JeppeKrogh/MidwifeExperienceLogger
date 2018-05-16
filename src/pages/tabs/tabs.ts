@@ -16,7 +16,7 @@ import 'firebase/firestore';
 export class TabsPage {
   static usernameTab;
   public classReference = TabsPage;
-  
+
   tab1Root = HomePage;
   tab2Root = ErfaringPage;
   tab3Root = ContactPage;
@@ -25,21 +25,31 @@ export class TabsPage {
   constructor(private _DB: DatabaseProvider,
     private afAuth: AngularFireAuth, ) {
   }
-  
+
   ionViewWillLoad() {
     TabsPage.usernameTab = "loading";
     let db = firebase.firestore();
     this.afAuth.authState.subscribe(data => {
       if (data && data.email && data.uid) {
-        var docRef = db.collection("users").doc(data.uid);
 
-        docRef.get().then(function (doc) {
+        var _COLL = "users";
+        var _DOC = data.uid;
 
-          if (doc.exists) {
-            TabsPage.usernameTab = doc.data().first_name + doc.data().last_name;
-          }
-        })
-  }
+        console.log(_COLL, _DOC);
+
+        this._DB.getDocument(_COLL, _DOC)
+          .then((data) => {
+
+            if (data.length === 0) {
+              console.log("doesn't exist")
+            }
+
+            else {
+              TabsPage.usernameTab = data[0].user_name;
+            }
+          })
+          .catch();
+      }
     })
-}
+  }
 }
