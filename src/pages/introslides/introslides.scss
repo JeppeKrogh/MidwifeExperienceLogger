@@ -9,6 +9,12 @@ page-introslides {
         opacity: 1;
     }
 
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+        left: 0;
+        bottom: 20%;
+        width: 100%;
+    }
+
     .button-outline-md {
         border-width: 2px;
         border-style: solid;
@@ -26,6 +32,16 @@ page-introslides {
         border-color:white;
         color: white;
         background-color: transparent;
+    }
+
+    #skip {
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        background: none;
+        text-align: center;
+        cursor: pointer;
+        z-index: 5;
     }
 
  
