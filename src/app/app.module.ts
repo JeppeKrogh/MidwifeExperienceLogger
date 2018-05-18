@@ -20,9 +20,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatePickerModule } from 'ion-datepicker';
 import { DatabaseProvider } from '../providers/database/database';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SwingModule } from 'angular2-swing';
 
 import { GooglePlus } from '@ionic-native/google-plus'; 
 import { RegisterPageModule } from '../pages/register/register.module';
@@ -64,7 +64,8 @@ const firebaseConfig = {
     DatePickerModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    RegisterPageModule
+    RegisterPageModule,
+    SwingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

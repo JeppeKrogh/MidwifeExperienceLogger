@@ -15,28 +15,7 @@
 
 <ion-content padding>
 
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                    <ion-label col-md-6 ion-datepicker [(value)]="initDate" locale="en-US" clear class="ScheduleDate">
-                            <span class="date">{{initDate | date}} 
-                                <ion-icon name="calendar" style="zoom:2.0;" item-left></ion-icon>
-                            </span>
-                        </ion-label>
-            </ion-col>
-            <ion-col>
-                    <erfarings-kategorier col-md-6></erfarings-kategorier>
-            </ion-col>
-            <hr>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <div class="tinder-swiper">
-                    <p>hello</p>
-                </div>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+<erfarings-kategorier></erfarings-kategorier>
 
     
 
@@ -46,7 +25,7 @@
         <ion-label><ion-icon name="calendar" style="color: brown;" item-left > kalender</ion-icon></ion-label>
         <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
       </ion-item> -->
-
+<tinder-swiper></tinder-swiper>
 
     
 

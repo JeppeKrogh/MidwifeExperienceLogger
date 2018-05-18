@@ -30,6 +30,7 @@
         "@ionic-native/status-bar": "4.7.0",
         "@ionic/pro": "1.0.20",
         "@ionic/storage": "2.1.3",
+        "angular2-swing": "^0.14.0",
         "angularfire2": "^5.0.0-rc.5-next",
         "com.google.playservices": "^22.0.0",
         "cordova-android": "7.0.0",

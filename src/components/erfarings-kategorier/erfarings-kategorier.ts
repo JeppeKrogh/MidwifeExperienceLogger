@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { DatabaseProvider } from '../../providers/database/database';
 import { ErfaringPage } from "../../pages/erfaring/erfaring";
+import { TinderRequirementsProvider } from "../../providers/tinder-requirements/tinder-requirements";
+import { DatePickerDirective } from 'ion-datepicker';
 
 /**
  * Generated class for the ErfaringsKategorierComponent component.
@@ -10,20 +12,21 @@ import { ErfaringPage } from "../../pages/erfaring/erfaring";
  */
 @Component({
   selector: 'erfarings-kategorier',
-  templateUrl: 'erfarings-kategorier.html'
+  templateUrl: 'erfarings-kategorier.html',
+  providers: [DatePickerDirective],
 })
 export class ErfaringsKategorierComponent {
 
 
 
   text: string;
-  heroes = [];
-  hero = [];
+  categories = [];
+  category = [];
+  date: any;
+  requirementsarray = [];
 
-  // myHero = this.heroes[0];
 
-  constructor(private _DB: DatabaseProvider) {
-    console.log('Hello ErfaringsKategorierComponent Component');
+  constructor(private _DB: DatabaseProvider, private requirementsService: TinderRequirementsProvider) {
 
     var _COLL = "erfaringer";
 
@@ -45,14 +48,31 @@ export class ErfaringsKategorierComponent {
           for (var key in data) {
             kategorier.push(data[key].kategorier)
           }
-          this.heroes = kategorier;
+          this.categories = kategorier;
 
         }
       })
       .catch();
   }
+
+  @ViewChild(DatePickerDirective) public datepicker: DatePickerDirective;
+  public localDate: Date = new Date();
+  public initDate: Date = new Date();
+
+  public event(data: Date): void {
+    this.localDate = data;
+  }
+  setDate(date: Date) {
+    this.initDate = date;
+  }
+
   options() {
-    console.log(this.hero);
+    this.date = this.initDate;
+    this.category = this.category;
+    this.requirementsarray.push(this.category, this.date);
+    console.log(this.requirementsarray);
+    this.requirementsService.announceRequirements(this.requirementsarray);
+
 
   }
 }
