@@ -1,1 +1,64 @@
-page-login {}
+page-login {
+
+        .bg {
+            padding: 2%;
+            border-radius: 2%;
+        
+        }
+    
+        .bgColor {
+            background-color: #3cc8c8;
+                }
+    
+        .loginDesign {
+            margin: 0px 31px;
+        }
+    
+        .userField {
+            margin: 0 0 0 0;
+            color: rgb(255, 221, 133);
+    
+        }
+    
+        .button-outline-ios-light {
+            border-color: rgb(255, 221, 133);
+            color: rgb(255, 221, 133);
+            background-color: transparent;
+        }
+    
+        .passcode  {
+           margin: 0px 0 10% 0;
+           color: rgb(255, 221, 133);
+        }
+    
+        .list-ios .item-block .item-inner {
+            border-bottom: 1px solid rgb(255, 221, 133);
+        }
+
+        .loginBut{
+            margin: 0 0 10px  0;
+            height: 50px;
+        }
+
+        .regisBut {
+            height: 50px;
+        }
+    
+    
+        .item-ios {
+            padding-left: 0px;
+            padding-left: 0px;
+            border-radius: 0;
+            position: relative;
+            font-size: 1.7rem;
+            background-color: rgba(255, 255, 255, 0);
+            -webkit-transition: background-color 200ms linear;
+            transition: background-color 200ms linear;
+        }
+    
+    
+    
+    
+
+
+}

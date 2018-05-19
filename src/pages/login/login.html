@@ -1,22 +1,50 @@
-<ion-header>
+<!-- <ion-header>
 
     <ion-navbar>
         <ion-title>login</ion-title>
     </ion-navbar>
 
-</ion-header>
+</ion-header> -->
 
 
-<ion-content padding>
-    <ion-item>
-        <ion-label floating>Email Address</ion-label>
-        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-    </ion-item>
-    <button ion-button (click)="login(user)">Login</button>
-    <button ion-button color="light" (click)="register()">Register</button>
-    <google-login></google-login>
+<ion-content padding class="bgColor">
+
+        <ion-list class="loginDesign">
+
+                <div style="text-align: center; margin: 20% 0 10% 0;">
+                        <ion-icon name="analytics" style="text-align: center; zoom:6.0; color:  rgb(255, 221, 133);"></ion-icon> 
+                </div>
+
+            <div class="bg">
+
+                    <ion-item class="userField">
+                            <ion-label floating>Email Address</ion-label>
+                            <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+                    </ion-item>
+
+                    <ion-item class="passcode">
+                            <ion-label floating >Password</ion-label>
+                            <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+                        </ion-item>
+
+                        <button class="loginBut" ion-button (click)="login(user)" block  color="light" outline>log in</button>
+
+  
+                        <button class="regisBut" ion-button (click)="register()" block  color="light" outline>register</button>
+
+                        <ion-label>
+                       
+              
+                        </ion-label>
+                        <google-login></google-login>
+
+                
+            </div>
+
+
+        </ion-list>
+
+
 </ion-content>
+
+

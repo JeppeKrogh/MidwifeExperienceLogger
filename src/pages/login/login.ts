@@ -8,6 +8,7 @@ import { GoogleLoginComponent } from "../../components/google-login/google-login
 import { User } from '../../models/user';
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -24,7 +25,6 @@ export class LoginPage {
   ) {
     
   }
-
 
 
   ionViewDidLoad() {
