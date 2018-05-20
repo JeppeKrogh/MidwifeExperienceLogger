@@ -3,7 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';  
 import { FormsModule } from '@angular/forms';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, ToastController  } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -53,10 +53,11 @@ const firebaseConfig = {
     LoginPage,
     TabsPage,
     ErfaringPage,
-    IntroslidesPage
+    IntroslidesPage,
   ],
   imports: [
     BrowserModule,
+    IonicModule,
     FormsModule,
     CommonModule,
     HttpClientModule,
@@ -65,7 +66,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     RegisterPageModule,
-    SwingModule
+    SwingModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -80,7 +81,7 @@ const firebaseConfig = {
     TinderSwiperComponent,
     TabsPage,
     ErfaringPage,
-    IntroslidesPage
+    IntroslidesPage,
   ],
   providers: [
     GooglePlus,

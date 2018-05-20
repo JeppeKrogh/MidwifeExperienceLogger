@@ -10,31 +10,34 @@ tinder-swiper {
     overflow: hidden;
     transition: height 2s ease;
 }
+
 .engaged {
     max-height: 55vh;
     height: 55vh;
-    transition: height 2s ease; 
+    transition: height 2s ease;
 }
 
 .tinder-swiper .stack {
     display: flex;
     height: 100%;
     padding: 0px;
-    margin:0;
+    margin: 0;
     justify-content: center;
     overflow: hidden;
 }
+
 .tinder-swiper .stack li {
-    position:absolute;
+    position: absolute;
     display: flex;
     margin: 0 auto;
     height: 98%;
     width: 100%;
     border: 5px solid #e9e9e9;
     border-radius: 25px;
-    background-color:#f6f6f6;
+    background-color: #f6f6f6;
     cursor: -webkit-grab;
 }
+
 .tinder-swiper .stack li .erfaring-overskrift {
     display: flex;
     width: 100%;
@@ -42,28 +45,36 @@ tinder-swiper {
     padding: 15px;
     height: 15%;
 }
+
 .tinder-controls {
     position: absolute;
-    bottom: 30px;
+    bottom: -60px;
     width: 100%;
     /* margin-right: 15px; */
     padding-right: 30px;
+    opacity: 0;
+    user-select: none;
+    transition: bottom 2s;
 }
+
+.tinder-controls.controlsEngaged {
+    display: block;
+    bottom: 30px;
+    opacity: 1;
+    user-select: auto;
+    transition: bottom 2s, opacity .3s;
+    ;
+}
+
 .tinder-controls .col {
     display: flex;
     justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-  
+.toast-message {
+    font-size: 2.5rem !important;
+    text-align: center !important;
+}
 
 //     .tinder-swiper #control {
 //       position: absolute;
@@ -89,10 +100,8 @@ tinder-swiper {
 //           color: #FFFFFF;
 //           bottom: -2px;
 //           box-shadow: none; }
-  
 //   #source {
 //     width: 500px;
 //     margin: 20px auto; }
 //     #source a {
 //       color: #C7433E; }
-  

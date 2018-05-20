@@ -3,6 +3,7 @@ import { ViewController, PopoverController, Platform, NavController } from 'ioni
 import { AngularFireAuth } from "angularfire2/auth";
 import { GooglePlus } from "@ionic-native/google-plus";
 import { LoginPage } from "../../pages/login/login";
+import { TabsPage } from '../../pages/tabs/tabs';
 
 /**
  * Generated class for the PopoversComponent component.
