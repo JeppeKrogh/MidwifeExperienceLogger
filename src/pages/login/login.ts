@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { RegisterPage } from '../../pages/register/register';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { GoogleLoginComponent } from "../../components/google-login/google-login";
 import { User } from '../../models/user';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import { IntroslidesPage } from '../introslides/introslides';
 
 
 @IonicPage()
@@ -22,22 +21,9 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private afAuth: AngularFireAuth ,
-    private platform: Platform,
-    statusbar: StatusBar,
-    splashScreen: SplashScreen
+    private afAuth: AngularFireAuth 
   ) {
     
-    this.platform.ready().then(() => {
-      statusbar.styleDefault();
-      this.afAuth.authState.subscribe(res => {
-      if (res && res.uid) {
-        this.navCtrl.setRoot(TabsPage); 
-      } else {
-        console.log('user not logged in');
-      }
-    });
-  });
   }
 
 
@@ -45,7 +31,13 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
 
-    
+    this.afAuth.authState.subscribe(res => {
+      if (res && res.uid) {
+        this.navCtrl.push(IntroslidesPage); 
+      } else {
+        console.log('user not logged in');
+      }
+    });
     
   }
   async login(user: User) {
@@ -55,7 +47,7 @@ export class LoginPage {
       
       if (result) {
         console.log("result is:" + result);
-        this.navCtrl.setRoot(TabsPage); 
+        this.navCtrl.push(IntroslidesPage); 
         console.log("result is here");
       } 
       console.log("logged in successfully"); 

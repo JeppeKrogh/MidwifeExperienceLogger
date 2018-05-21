@@ -18,61 +18,41 @@ import { DatePickerDirective } from 'ion-datepicker';
 export class ErfaringsKategorierComponent {
 
 
+
   text: string;
   categories = [];
   category = [];
   date: any;
   requirementsarray = [];
-  kategorier = [];
 
 
   constructor(private _DB: DatabaseProvider, private requirementsService: TinderRequirementsProvider) {
 
+    var _COLL = "erfaringer";
 
-    this.kategorier = [{
-      value: "Kategori 1",
-      data: "1"
-    },
-    {
-      value: "Kategori 2",
-      data: "2"
-    },
-    {
-      value: "Kategori 3",
-      data: "3"
-    },
-    {
-      value: "Kategori 4",
-      data: "4"
-    }
-    ]
-    this.categories = this.kategorier;
+    this._DB.getDocuments(_COLL)
+      .then((data) => {
 
-    // var _COLL = "erfaringer";
+        // IF we don't have any documents then the collection doesn't exist
+        // so we create it!
+        if (data.length === 0) {
+          console.log("nope");
+        }
 
-    // this._DB.getDocuments(_COLL)
-    //   .then((data) => {
+        // Otherwise the collection does exist and we assign the returned
+        // documents to the public property of locations so this can be
+        // iterated through in the component template
+        else {
+          console.log(data);
+          var kategorier = new Array();
+          for (var key in data) {
+            kategorier.push(data[key].kategorier)
+          }
+          this.categories = kategorier;
 
-    //     // IF we don't have any documents then the collection doesn't exist
-    //     // so we create it!
-    //     if (data.length === 0) {
-    //       console.log("nope");
-    //     }
-
-    //     // Otherwise the collection does exist and we assign the returned
-    //     // documents to the public property of locations so this can be
-    //     // iterated through in the component template
-    //     else {
-    //       console.log(data);
-    //       var kategorier = new Array();
-    //       for (var key in data) {
-    //         kategorier.push(data[key].kategorier)
-    //       }
-    //       this.categories = kategorier;
-
-    //     }
-    //   })
-    //   .catch();
+        }
+      })
+      .catch();
   }
 
   @ViewChild(DatePickerDirective) public datepicker: DatePickerDirective;
@@ -88,7 +68,6 @@ export class ErfaringsKategorierComponent {
 
   options() {
     this.date = this.initDate;
-    
     this.category = this.category;
     this.requirementsarray.push(this.category, this.date);
     console.log(this.requirementsarray);

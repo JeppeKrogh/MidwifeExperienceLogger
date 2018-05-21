@@ -24,6 +24,8 @@ export class TinderRequirementsProvider {
  
   // Service message commands
   announceRequirements(requirementsarray: any) {
+    console.log("hello from service");
+    // console.log(requirementsarray);
     this.requirementsSource.next(requirementsarray);
 
   }
