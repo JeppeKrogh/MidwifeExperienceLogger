@@ -1,7 +1,12 @@
 import { Component, Input, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { TinderRequirementsProvider } from "../../providers/tinder-requirements/tinder-requirements";
 import { DatabaseProvider } from "../../providers/database/database";
+import { ToastController, AlertController  } from 'ionic-angular';
+import { Erfaring } from '../../models/erfaring';
 import { Subscription } from 'rxjs';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 import {
   StackConfig,
   Stack,
@@ -12,36 +17,27 @@ import {
   SwingStackComponent,
   SwingCardComponent} from 'angular2-swing';
 
-/**
- * Generated class for the TinderSwiperComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'tinder-swiper',
   templateUrl: 'tinder-swiper.html'
 })
 export class TinderSwiperComponent {
 
+  erfaring = {} as Erfaring;
 
-
+  [x: string]: any;
   @ViewChild('myswing1') swingStack: SwingStackComponent;
   @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
 
   cards = [];
   stackConfig: StackConfig;
-
-
-
-
-
-  @Input() astronaut: string;
   category = '<no data yet>';
   date: any;
+  categoryNumber: any;
   subscription: Subscription;
   gotData: boolean = false;
   erfaringer = [];
+  note: string;
   
 
   constructor(private requirementsService: TinderRequirementsProvider, private _DB: DatabaseProvider) {
