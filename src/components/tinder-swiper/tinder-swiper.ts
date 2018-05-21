@@ -2,7 +2,7 @@ import { Component, Input, ViewChild, ViewChildren, QueryList } from '@angular/c
 import { TinderRequirementsProvider } from "../../providers/tinder-requirements/tinder-requirements";
 import { DatabaseProvider } from "../../providers/database/database";
 import { ToastController, AlertController  } from 'ionic-angular';
-import { Erfaring } from '../../models/erfaring';
+// import { Erfaring } from '../../models/erfaring';
 import { Subscription } from 'rxjs';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
@@ -15,7 +15,8 @@ import {
   DragEvent,
   Direction,
   SwingStackComponent,
-  SwingCardComponent} from 'angular2-swing';
+  SwingCardComponent
+} from 'angular2-swing';
 
 @Component({
   selector: 'tinder-swiper',
@@ -23,7 +24,7 @@ import {
 })
 export class TinderSwiperComponent {
 
-  erfaring = {} as Erfaring;
+  // erfaring = {} as Erfaring;
 
   [x: string]: any;
   @ViewChild('myswing1') swingStack: SwingStackComponent;
@@ -38,10 +39,14 @@ export class TinderSwiperComponent {
   gotData: boolean = false;
   erfaringer = [];
   note: string;
-  
 
-  constructor(private requirementsService: TinderRequirementsProvider, private _DB: DatabaseProvider) {
-    console.log("wow");
+  constructor(
+    private requirementsService: TinderRequirementsProvider,
+    private _DB: DatabaseProvider,
+    private afAuth: AngularFireAuth,
+    private toastCtrl: ToastController,
+    private alertCtrl: AlertController) {
+
     this.subscription = requirementsService.requirementsSent$.subscribe(
       requirementsarray => {
         this.category = requirementsarray[0];
@@ -59,10 +64,10 @@ export class TinderSwiperComponent {
               else {
                 var kategorier = new Array();
                 for (let entry of this.category) {
-                for (var key in data) {
+                  for (var key in data) {
                     if (data[key].kategoriNummer == entry) {
-                  this.cards.push(data[key])
-                }
+                      this.cards.push(data[key])
+                    }
                   }
                 }
               }
@@ -92,7 +97,7 @@ export class TinderSwiperComponent {
 
   ngAfterViewInit() {
     console.log();
-      
+
     this.swingStack.throwoutleft.subscribe(
       (event: ThrowEvent) =>  {
         this.threwOutLeft(event)
@@ -103,7 +108,7 @@ export class TinderSwiperComponent {
         this.threwOutRight(event)
       });
 
-
+    
   }
 
   threwOutRight(event: ThrowEvent) {
@@ -114,14 +119,14 @@ export class TinderSwiperComponent {
         note: this.note,
         id: event.target.attributes['id'].value,
         time: this.date,
-
+        
       })
       this.note = "";
     });
 
     let toast = this.toastCtrl.create({
       message: 'Erfaring Tilføjet 🤩',
-      duration: 33000,
+      duration: 3000,
       position: 'top'
     });
     toast.onDidDismiss(() => {
@@ -147,13 +152,13 @@ export class TinderSwiperComponent {
           role: 'cancel',
           handler: data => {
             this.note = "";
-  }
+          }
         },
         {
           text: 'Tilføj Note',
           handler: data => {
             if (data > "") {
-
+              
               this.note = data.note;
             } else {
               return false;

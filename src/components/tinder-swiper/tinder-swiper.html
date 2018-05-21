@@ -25,10 +25,10 @@
 <ion-row [ngClass]="{controlsEngaged: gotData}" class="tinder-controls">
     <ion-col>
         <div>
-            <button ion-button small>Tilføj</button>
-            <button ion-button small (click)="presentPrompt()">Tilføje Note</button>
-            <button ion-button small>Sæt antal</button>
-            <button ion-button small>Afvis</button>
+            <ion-icon style="zoom: 3; color: green;" name="checkmark-circle-outline" item-center></ion-icon>
+            <button col-xs-3 ion-button small (click)="presentPrompt()">Tilføje Note</button>
+            <button col-xs-3 ion-button small>Sæt antal</button>
+            <ion-icon style="zoom: 3; color: red;" name="close-circle" item-center></ion-icon>
         </div>
     </ion-col>
 </ion-row>
@@ -51,14 +51,5 @@
     </ion-col>
 
 
-<ion-row class="tinder-controls">
-        <ion-col>
-                <div>
-                    <ion-icon style="zoom: 3; color: green;" name="checkmark-circle-outline" item-center ></ion-icon> 
-                    <button col-xs-3 ion-button small>Tilføje Note</button>
-                    <button col-xs-3 ion-button small>Sæt antal</button>
-                    <ion-icon style="zoom: 3; color: red;" name="close-circle" item-center ></ion-icon> 
-                </div>
-        </ion-col>
-</ion-row>
+
 </ion-row> -->
