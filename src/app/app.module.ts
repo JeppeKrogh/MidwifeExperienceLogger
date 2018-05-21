@@ -14,7 +14,7 @@ import { ErfaringPage } from '../pages/erfaring/erfaring';
 import { LoginPage } from '../pages/login/login';
 import { GoogleLoginComponent } from "../components/google-login/google-login";
 import { PopoversComponent } from "../components/popovers/popovers";
-import {IntroslidesPage} from "../pages/introslides/introslides";
+import { IntroslidesPage } from "../pages/introslides/introslides";
 import { ErfaringsKategorierComponent } from "../components/erfarings-kategorier/erfarings-kategorier";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +23,6 @@ import { DatabaseProvider } from '../providers/database/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SwingModule } from 'angular2-swing';
-
 import { GooglePlus } from '@ionic-native/google-plus'; 
 import { RegisterPageModule } from '../pages/register/register.module';
 import { TinderSwiperComponent } from '../components/tinder-swiper/tinder-swiper';

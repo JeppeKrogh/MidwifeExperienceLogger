@@ -13,7 +13,6 @@ ion-grid {
     background-color: rgb(24, 213, 206);
 }
 
-
 .list-ios {
     margin-bottom: 0;
 }
@@ -22,11 +21,10 @@ ion-grid {
     border-bottom: 1px solid #1d1d1d;
 }
 
-.erfarings-kategorier .select {
-    position: absolute;
-    // display: none;
-}
-
+// .erfarings-kategorier .select {
+//     position: absolute;
+//     display: none;
+// }
 .erfarings-kategorier .col .list {
     height: 100%;
     width: 100%;
@@ -73,7 +71,8 @@ ion-app.ios [padding] .scroll-content {
     padding: 0;
 }
 
-ion-label ion-icon, ion-label span {
+ion-label ion-icon,
+ion-label span {
     vertical-align: middle;
 }
 
@@ -84,7 +83,7 @@ ion-label ion-icon, ion-label span {
 }
 
 .select-ios {
-    padding: 0 ;
+    padding: 0;
 }
 
 .button-small-ios {
@@ -92,4 +91,5 @@ ion-label ion-icon, ion-label span {
     font-size: 1.3rem;
     padding: 0 0.9em;
 }
+
 //.date {color: white;}

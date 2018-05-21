@@ -9,16 +9,39 @@
                 </ion-label>
             </ion-item>
         </ion-col>
-
-        <ion-list style="text-align: center;">
-            <ion-icon name="bookmarks" style="zoom:3.0;"></ion-icon>
-            <ion-select multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ngModelChange)="options(category)">
-                <ion-option value="{{category.data}}" *ngFor="let category of categories">{{ category.value }}</ion-option>
-            </ion-select>
-        </ion-list>
-
+        <ion-col>
+            <ion-list style="text-align: center;">
+                <ion-icon name="bookmarks" style="zoom:3.0;"></ion-icon>
+                <ion-select multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ngModelChange)="options(category)">
+                    <ion-option value="{{category.data}}" *ngFor="let category of categories">{{ category.value }}</ion-option>
+                </ion-select>
+            </ion-list>
         </ion-col>
     </ion-row>
 </ion-grid>
+
+<!-- <ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label col-md-6 ion-datepicker [(value)]="initDate" locale="en-US" clear class="ScheduleDate">
+                    <span class="date">{{initDate | date}}
+                        <ion-icon name="calendar" style="zoom:2.0;" item-left></ion-icon>
+                    </span>
+                </ion-label>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+
+            <ion-list style="text-align: center; background-color: #e9e9e9;">
+                <ion-label>Kategorier</ion-label>
+                <ion-select multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ngModelChange)="options(category)">
+                    <ion-option value="{{category.data}}" *ngFor="let category of categories">{{ category.value }}</ion-option>
+                </ion-select>
+            </ion-list>
+
+        </ion-col>
+    </ion-row>
+</ion-grid> -->
 
 <!-- <tinder-swiper (click)="confirm()"></tinder-swiper> -->

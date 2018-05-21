@@ -1,8 +1,40 @@
-<!-- Generated template for the TinderSwiperComponent component -->
 <ion-row class="tinder-swiper" [ngClass]="{engaged: gotData}">
     <ion-col>
+        <div>
+            <!-- <div class="tinder-swiper engaged"> -->
+            <ul class="stack" swing-stack [stackConfig]="stackConfig" #myswing1>
+                <li data-id="{{c.kategorier}}" swing-card #mycards1 [ngClass]="c.name" *ngFor="let c of cards">
+
+                    <div class="erfaring-overskrift">
+                        <h1>{{c.navn}}</h1>
+                        <h2>{{note}}</h2>
+                    </div>
+
+
+
+
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </ion-col>
+</ion-row>
+<ion-row [ngClass]="{controlsEngaged: gotData}" class="tinder-controls">
+    <ion-col>
+        <div>
+            <button ion-button small>Tilføj</button>
+            <button ion-button small (click)="presentPrompt()">Tilføje Note</button>
+            <button ion-button small>Sæt antal</button>
+            <button ion-button small>Afvis</button>
+        </div>
+    </ion-col>
+</ion-row>
+<!-- <ion-row class="tinder-swiper" [ngClass]="{engaged: gotData}">
+    <ion-col>
         <div >
-        <!-- <div class="tinder-swiper engaged"> -->
             <ul class="stack" swing-stack [stackConfig]="stackConfig" #myswing1 (throwout)="onThrowOut($event)">
                 <li swing-card #mycards1 [ngClass]="c.name" *ngFor="let c of cards">
                     
@@ -18,16 +50,7 @@
         </div>
     </ion-col>
 
- <!--   <ion-row class="tinder-controls">
-        <ion-col>
-                <div>
-                    <button ion-button small>Tilføj</button>
-                    <button ion-button small>Tilføje Note</button>
-                    <button ion-button small>Sæt antal</button>
-                    <button ion-button small>Afvis</button>
-                </div>
-        </ion-col>
-</ion-row> -->
+
 <ion-row class="tinder-controls">
         <ion-col>
                 <div>
@@ -38,4 +61,4 @@
                 </div>
         </ion-col>
 </ion-row>
-</ion-row>
+</ion-row> -->
