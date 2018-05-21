@@ -1,0 +1,114 @@
+{
+    "items": [
+        {
+            "name": "kategori 1",
+            "children": [
+                {
+                    "name": "Observere og vejlede den fødende i ve-arbejdet",
+                    "information": "bemærk : skal se om mor og far er ok",
+                    "check": "check"
+                },
+                {
+                    "name": "Forældre– og fødselsforberedende undervisning",
+                    "check": "check"
+                }
+            ]
+        },
+        {
+            "name": "Kompliceret svangreomsorg",
+            "children": [
+                {
+                    
+                    "name": "Jordemoderkonsultation",
+                    "check": "check"
+                },
+                {
+                    
+                    "name": "Hjemmebesøg i graviditeten",
+                    "check": "check"
+                },
+                {
+                    
+                    "name": "Hyperemesis",
+                    "check": "check"
+                },
+                
+                {
+                    "name": "Udvendig undersøgelse:",
+                    "children": [
+                        {
+                            "name": "Inspektion",
+                            "check": "check"
+                        },
+                        {
+                            "name": "De fire håndgreb",
+                            "check": "check"
+                        }
+                    ]
+                },
+                {
+                    "name": "kategori 2.2",
+                    "children": [
+                        
+                        {
+                            "name": "Pizza Bombay",
+                            "information": "Pastrami ham hock ball tip, tongue ribeye chuck ham beef bresaola leberkas.",
+                            "check": "check"
+                        },
+                        {
+                            "name": "Pizza Crazy Dog",
+                            "information": "Andouille spare ribs meatloaf swine ground round pork loin, brisket chuck bacon tongue.",
+                            "check": "check"
+                        },
+                        {
+                            "name": "Pizza Italia",
+                            "information": "Ribeye ham t-bone, tail ground round biltong picanha sausage rump corned beef.",
+                            "check": "$19.99"
+                        },
+                        {
+                            "name": "Pizza Tuna",
+                            "information": "Pork chop pastrami landjaeger chuck brisket",
+                            "check": "check"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Gynækologi",
+            "children": [
+                {
+                    
+                    "name": "Jordemoderkonsultation",
+                    "check": "check"
+                },
+                {
+                    "name": "Ressource- og belastnings- identifikation",
+                    "check": "check"
+                },
+                {
+                    "name": "Jordemoderkonsultation:",
+                    "children": [
+                        {
+                            "name": "Optage anamnese",
+                            "check": "check"
+                        }
+                    ]
+                },
+                {
+                    "name": "Udvendig undersøgelse:",
+                    "children": [
+                        {
+                            "name": "De fire håndgreb",
+                            "check": "check"
+                        },
+                        {
+                            "name": "De fire håndgreb",
+                            "check": "check"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

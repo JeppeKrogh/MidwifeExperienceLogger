@@ -3,7 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';  
 import { FormsModule } from '@angular/forms';
-import { IonicApp, IonicModule, IonicErrorHandler, ToastController  } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -29,6 +29,7 @@ import { RegisterPageModule } from '../pages/register/register.module';
 import { TinderSwiperComponent } from '../components/tinder-swiper/tinder-swiper';
 import { TinderRequirementsProvider } from '../providers/tinder-requirements/tinder-requirements';
 
+import {HttpModule} from '@angular/http';
 
 const firebaseConfig = {
     apiKey: "AIzaSyA6wpZg5s78EF76yDT4k5-FUBFcBdSYx1M",
@@ -53,20 +54,20 @@ const firebaseConfig = {
     LoginPage,
     TabsPage,
     ErfaringPage,
-    IntroslidesPage,
+    IntroslidesPage
   ],
   imports: [
     BrowserModule,
-    IonicModule,
     FormsModule,
     CommonModule,
     HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     DatePickerModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     RegisterPageModule,
-    SwingModule,
+    SwingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,7 +82,7 @@ const firebaseConfig = {
     TinderSwiperComponent,
     TabsPage,
     ErfaringPage,
-    IntroslidesPage,
+    IntroslidesPage
   ],
   providers: [
     GooglePlus,
