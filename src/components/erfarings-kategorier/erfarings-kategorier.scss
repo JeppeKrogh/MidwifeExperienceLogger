@@ -1,10 +1,66 @@
-erfarings-kategorier {
+erfarings-kategorier {}
 
-}
 .select-text {
     display: none;
-} 
+}
+
+.item-md.item-block .item-inner {
+    border-bottom: none;
+    text-align: center;
+}
 
 .list-ios {
     margin-bottom: 0;
 }
+
+.erfarings-kategorier {
+    border-bottom: 1px solid #1d1d1d;
+}
+
+.erfarings-kategorier .select {
+    position: absolute;
+    // display: none;
+}
+
+.erfarings-kategorier .col .list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.erfarings-kategorier .col .list ion-icon.icon {
+    display: flex;
+    margin: 0 auto;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+}
+
+.erfarings-kategorier .col .list ion-icon.icon:before {
+    display: flex !important;
+    margin: 0 auto !important;
+    align-self: center !important;
+}
+
+.erfarings-kategorier .col {
+    display: flex;
+    justify-content: center;
+}
+
+.erfarings-kategorier .col .list ion-select.select {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100% !important;
+}
+
+.erfarings-kategorier .col .list ion-select.select .select-icon {
+    display: none;
+}
+
+// .erfarings-kategorier ion-icon {
+//     display: flex;
+//     align-self: center;
+// }
