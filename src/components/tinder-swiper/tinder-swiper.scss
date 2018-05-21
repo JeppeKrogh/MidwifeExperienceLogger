@@ -40,10 +40,18 @@ tinder-swiper {
 
 .tinder-swiper .stack li .erfaring-overskrift {
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
     padding: 15px;
-    height: 15%;
+    height: 35%;
+    margin: auto;
+}
+
+.tinder-swiper .stack li .erfaring-overskrift h1,
+.tinder-swiper .stack li .erfaring-overskrift h2 {
+    align-self: center;
+    margin: auto;
 }
 
 .tinder-controls {

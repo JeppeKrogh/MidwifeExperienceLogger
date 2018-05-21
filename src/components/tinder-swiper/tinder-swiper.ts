@@ -38,6 +38,7 @@ export class TinderSwiperComponent {
   subscription: Subscription;
   gotData: boolean = false;
   erfaringer = [];
+  note: string;
 
   constructor(
     private requirementsService: TinderRequirementsProvider,
@@ -95,11 +96,19 @@ export class TinderSwiperComponent {
   }
 
   ngAfterViewInit() {
+    console.log();
+
     this.swingStack.throwoutleft.subscribe(
-      (event: ThrowEvent) => this.threwOutLeft(event));
+      (event: ThrowEvent) =>  {
+        this.threwOutLeft(event)
+      });
 
     this.swingStack.throwoutright.subscribe(
-      (event: ThrowEvent) => this.threwOutRight(event));
+      (event: ThrowEvent) => {
+        this.threwOutRight(event)
+      });
+
+    
   }
 
   threwOutRight(event: ThrowEvent) {
@@ -107,8 +116,12 @@ export class TinderSwiperComponent {
       let db = firebase.firestore();
       let path = "users/" + res.uid + "/erfaringer";
       db.collection(path).doc().set({
-        id: event.target.attributes['id'].value
+        note: this.note,
+        id: event.target.attributes['id'].value,
+        time: this.date,
+        
       })
+      this.note = "";
     });
 
     let toast = this.toastCtrl.create({
@@ -120,37 +133,34 @@ export class TinderSwiperComponent {
       console.log('Dismissed toast');
     });
     toast.present();
-
   }
   threwOutLeft(event: ThrowEvent) {
-
+    this.note = "";
   }
   presentPrompt() {
     let alert = this.alertCtrl.create({
-      title: 'Tilknyt note til erfaring',
+      title: 'Tilknyt Note',
       inputs: [
         {
           name: 'note',
-          placeholder: 'Skriv din note her! (max 200 tegn)'
+          placeholder: ''
         },
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Slet note',
           role: 'cancel',
           handler: data => {
-            console.log('Cancel clicked');
+            this.note = "";
           }
         },
         {
           text: 'Tilføj Note',
           handler: data => {
             if (data > "") {
-              console.log("you typed something!")
-              console.log(data);
+              
+              this.note = data.note;
             } else {
-              console.log("you typed nothing!")
-              console.log(data);
               return false;
             }
           }
