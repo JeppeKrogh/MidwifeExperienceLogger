@@ -52,7 +52,7 @@ export class DatabaseProvider {
 
           // Declare an array which we'll use to store retrieved documents
           let obj: any = [];
-
+         
 
           // Iterate through each document, retrieve the values for each field
           // and then assign these to a key in an object that is pushed into the
@@ -60,7 +60,9 @@ export class DatabaseProvider {
           querySnapshot
             .forEach((doc: any) => {
               obj.push({
-                kategorier : doc.id
+                kategoriNummer   : doc.data().kategori,
+                kategorier : doc.id,
+                navn       : doc.data().navn 
               });
             });
 
