@@ -1,5 +1,7 @@
 
 import { Component } from '@angular/core';
+import { ItemSliding } from 'ionic-angular';
+
 import { DatabaseProvider } from '../../providers/database/database';
 import {
   NavController,
@@ -32,9 +34,10 @@ export class HomePage {
     public popoverCtrl: PopoverController
 
 
-  ) {
+  ) {}
 
-
+  share(slidingItem: ItemSliding) {
+    slidingItem.close();
   }
 
   ionViewWillLoad() {

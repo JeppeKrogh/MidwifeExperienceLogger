@@ -5,6 +5,8 @@ import { Observable } from "rxjs/Observable";
 import { GooglePlus } from "@ionic-native/google-plus";
 import { TabsPage } from "../../pages/tabs/tabs";
 import { Platform, NavController } from "ionic-angular";
+import { IntroslidesPage } from '../../pages/introslides/introslides';
+import { LoginPage } from '../../pages/login/login';
 /**
  * Generated class for the GoogleLoginComponent component.
  *
@@ -58,7 +60,7 @@ async webGoogleLogin(): Promise<void> {
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
-    this.navCtrl.setRoot(TabsPage); 
+    this.navCtrl.push(IntroslidesPage); 
   } catch(err) {
     console.log(err);
   }

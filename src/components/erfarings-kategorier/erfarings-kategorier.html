@@ -1,6 +1,6 @@
 <ion-grid class="erfarings-kategorier">
     <ion-row>
-        <ion-col>
+        <ion-col col-sm-6 col-xs-6>
             <ion-item>
                 <ion-label col-md-6 ion-datepicker [(value)]="initDate" locale="en-US" clear class="ScheduleDate">
                     <span class="date">
@@ -9,14 +9,13 @@
                 </ion-label>
             </ion-item>
         </ion-col>
-        <ion-col>
 
-            <ion-list style="text-align: center;">
-                <ion-icon name="bookmarks" style="zoom:3.0;"></ion-icon>
-                <ion-select multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ngModelChange)="options(category)">
-                    <ion-option value="{{category.data}}" *ngFor="let category of categories">{{ category.value }}</ion-option>
-                </ion-select>
-            </ion-list>
+        <ion-list style="text-align: center;">
+            <ion-icon name="bookmarks" style="zoom:3.0;"></ion-icon>
+            <ion-select multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ngModelChange)="options(category)">
+                <ion-option value="{{category.data}}" *ngFor="let category of categories">{{ category.value }}</ion-option>
+            </ion-select>
+        </ion-list>
 
         </ion-col>
     </ion-row>

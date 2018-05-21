@@ -1,12 +1,7 @@
 import { Component, Input, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { TinderRequirementsProvider } from "../../providers/tinder-requirements/tinder-requirements";
 import { DatabaseProvider } from "../../providers/database/database";
-import { ToastController, AlertController  } from 'ionic-angular';
-import { Erfaring } from '../../models/erfaring';
 import { Subscription } from 'rxjs';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
-import 'firebase/firestore';
 import {
   StackConfig,
   Stack,
@@ -15,65 +10,109 @@ import {
   DragEvent,
   Direction,
   SwingStackComponent,
-  SwingCardComponent
-} from 'angular2-swing';
+  SwingCardComponent} from 'angular2-swing';
 
+/**
+ * Generated class for the TinderSwiperComponent component.
+ *
+ * See https://angular.io/api/core/Component for more info on Angular
+ * Components.
+ */
 @Component({
   selector: 'tinder-swiper',
   templateUrl: 'tinder-swiper.html'
 })
 export class TinderSwiperComponent {
 
-  erfaring = {} as Erfaring;
 
-  [x: string]: any;
+
   @ViewChild('myswing1') swingStack: SwingStackComponent;
   @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
 
   cards = [];
   stackConfig: StackConfig;
+
+
+
+
+
+  @Input() astronaut: string;
   category = '<no data yet>';
   date: any;
-  categoryNumber: any;
   subscription: Subscription;
   gotData: boolean = false;
   erfaringer = [];
-  note: string;
+  
 
-  constructor(
-    private requirementsService: TinderRequirementsProvider,
-    private _DB: DatabaseProvider,
-    private afAuth: AngularFireAuth,
-    private toastCtrl: ToastController,
-    private alertCtrl: AlertController) {
-
+  constructor(private requirementsService: TinderRequirementsProvider, private _DB: DatabaseProvider) {
+    console.log("wow");
     this.subscription = requirementsService.requirementsSent$.subscribe(
+
       requirementsarray => {
+
         this.category = requirementsarray[0];
         this.date = requirementsarray[1];
 
+
+        console.log("hello from tinder");
+        console.log(this.category);
+        console.log(this.date);
+
         if (this.category && this.date) {
-          console.log("We have both!");
+          console.log("wuu we have both!");
           this.gotData = true;
-          let db = firebase.firestore();
-          this._DB.getDocuments("erfaringer")
+          
+          
+          
+
+
+          for (let entry of this.category) {
+          var _COLL = "erfaringer/" + entry + "/Erfaringer";
+
+          this._DB.getDocuments(_COLL)
             .then((data) => {
+      
+              // IF we don't have any documents then the collection doesn't exist
+              // so we create it!
               if (data.length === 0) {
                 console.log("nope");
               }
+      
+              // Otherwise the collection does exist and we assign the returned
+              // documents to the public property of locations so this can be
+              // iterated through in the component template
               else {
-                var kategorier = new Array();
-                for (let entry of this.category) {
-                  for (var key in data) {
-                    if (data[key].kategoriNummer == entry) {
-                      this.cards.push(data[key])
-                    }
-                  }
+                // console.log(data);
+                // var erfaringer = new Array();
+                for (var key in data) {
+                  this.cards.push(data[key])
                 }
+                console.log(this.cards);
+
+
+
+
+
+
+
+
+
+
               }
             })
             .catch();
+          }
+
+
+
+
+
+
+
+
+
         } else {
+          // this.gotData = false;
           console.log("aww, we don't have both yet");
           this.gotData = true;
         }
@@ -93,83 +132,45 @@ export class TinderSwiperComponent {
         return 800;
       }
     }
+
+      
+
+
+
   }
+
+
 
   ngAfterViewInit() {
-    console.log();
+    // ViewChild & ViewChildren are only available
+    // in this function
 
+    console.log(this.swingStack); // this is the stack
+    console.log(this.swingCards); // this is a list of cards
+
+    // we can get the underlying stack
+    // which has methods - createCard, destroyCard, getCard etc
+    console.log(this.swingStack.stack);
+
+    // and the cards
+    // every card has methods - destroy, throwIn, throwOut etc
+    this.swingCards.forEach((c) => console.log(c.getCard()));
+
+    // this is how you can manually hook up to the
+    // events instead of providing the event method in the template
     this.swingStack.throwoutleft.subscribe(
-      (event: ThrowEvent) =>  {
-        this.threwOutLeft(event)
-      });
+      (event: ThrowEvent) => console.log('Manual hook: ', event));
 
-    this.swingStack.throwoutright.subscribe(
-      (event: ThrowEvent) => {
-        this.threwOutRight(event)
-      });
+    this.swingStack.dragstart.subscribe((event: DragEvent) => console.log(event));
 
-    
+    this.swingStack.dragmove.subscribe((event: DragEvent) => console.log(event));
   }
 
-  threwOutRight(event: ThrowEvent) {
-    this.afAuth.authState.subscribe(res => {
-      let db = firebase.firestore();
-      let path = "users/" + res.uid + "/erfaringer";
-      db.collection(path).doc().set({
-        note: this.note,
-        id: event.target.attributes['id'].value,
-        time: this.date,
-        
-      })
-      this.note = "";
-    });
-
-    let toast = this.toastCtrl.create({
-      message: 'Erfaring Tilføjet 🤩',
-      duration: 33000,
-      position: 'top'
-    });
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-    toast.present();
+  // This method is called by hooking up the event
+  // on the HTML element - see the template above
+  onThrowOut(event: ThrowEvent) {
+    console.log('Hook from the template', event.throwDirection);
   }
-  threwOutLeft(event: ThrowEvent) {
-    this.note = "";
-  }
-  presentPrompt() {
-    let alert = this.alertCtrl.create({
-      title: 'Tilknyt Note',
-      inputs: [
-        {
-          name: 'note',
-          placeholder: ''
-        },
-      ],
-      buttons: [
-        {
-          text: 'Slet note',
-          role: 'cancel',
-          handler: data => {
-            this.note = "";
-          }
-        },
-        {
-          text: 'Tilføj Note',
-          handler: data => {
-            if (data > "") {
-              
-              this.note = data.note;
-            } else {
-              return false;
-            }
-          }
-        }
-      ]
-    });
-    alert.present();
-  }
-
 
 
 }
