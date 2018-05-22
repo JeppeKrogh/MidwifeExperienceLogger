@@ -1,7 +1,7 @@
 <ion-header>
         <ion-navbar>
                 <ion-title *ngIf="!isSearchBarOpened">
-                    erfaring
+                    semesteroversigt
                 </ion-title>
                 <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
                 <ion-buttons end>
@@ -15,16 +15,33 @@
 
 <ion-content>
 
-
+    <!--
         <ion-searchbar light
         [showCancelButton]="true"
         (ionInput)="onInput($event)"
         (ionCancel)="isSearchBarOpened=false">
         </ion-searchbar>
     
+    -->
 
-    <ion-list class="accordion-list">
-        <!-- first level -->
+    <div style="text-align: center;">
+        <h1>Name</h1>
+        <h3>pratikoversigt</h3>
+    </div>
+    
+  <!--  <div style="text-align:center; margin: 20px 0;">
+
+       <ion-icon (click)="openModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
+        <ion-icon (click)="openModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
+        <ion-icon (click)="openModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
+
+
+
+    </div> -->
+    <button ion-button (click)="openModal()"> openmodal</button>
+
+       
+   <!-- <ion-list class="accordion-list">
         <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
             <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
                 <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
@@ -34,9 +51,7 @@
 
             <ion-list *ngIf="item.children && item.open" no lines>
         
-                <!--second level-->
                 <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
-                    <!--toogle button-->
      
                     <button ion-item (click)="toggleItem(i, j)" detail-none class="child" *ngIf="child.children">
                         <ion-icon item-left name="add" *ngIf="!child.open"></ion-icon>
@@ -44,50 +59,20 @@
                         {{ child.name}}
                     </button>
                     
-                    <!--direct and button-->
-
-                    <ion-item-sliding>
                             <ion-item *ngIf="!child.children" detail-none class="child.item" text-wrap>
                                     <h4>{{ child.name }}</h4>
                                     <p text-lowercase> {{ child.information }}</p>
                                     <button ion-button outline item-end (click)="checkItem(item)">{{ child.check }}</button>
-
                                 </ion-item>
-                            <ion-item-options side="left">
-                              <button ion-button (click)="favorite(item)">Favorite</button>
-                            </ion-item-options>
-                        
-                            <ion-item-options side="right">
-                              <button ion-button color="danger" (click)="openModel()"><ion-icon name="book"></ion-icon>
-                            Note</button>
-                              <button ion-button (click)="unread(item)"><ion-icon name="information"></ion-icon>
-                            information  
-                            </button>
-
-                            </ion-item-options>
-                     </ion-item-sliding>
-
 
                     <ion-list *ngIf="child.children && child.open">
-                        <!--third level-->
-                                    <ion-item-sliding>
                                             <ion-item *ngFor="let item of child.children" detail-none class="child-item" text-wrap>
                                                     <h4>{{ item.name }}</h4>
                                                     <p text-lowercase> {{ item.information }}</p>
                                                     <button ion-button outline item-end (click)="checkItem(item)">{{ item.check }}</button>
                                                     <ion-icon item-end name="information"></ion-icon>
 
-                                             </ion-item>
-                                            <ion-item-options side="left">
-                                              <button ion-button (click)="favorite(item)">Favorite</button>
-                                            </ion-item-options>
-                                        
-                                            <ion-item-options side="right">
-                                              <button ion-button color="danger" (click)="openModel()">Note</button>
-                                              <button ion-button (click)="unread(item)">streg</button>
-                                            </ion-item-options>
-                                     </ion-item-sliding>
-
+                                                </ion-item>
                     </ion-list>
  
                 </ion-list-header>
@@ -96,6 +81,8 @@
 
         </ion-list-header> 
 
-    </ion-list>
+    </ion-list> -->
+
+
 
 </ion-content>

@@ -1,7 +1,7 @@
 {
     "items": [
         {
-            "name": "kategori 1",
+            "name": "semester 1",
             "children": [
                 {
                     "name": "Observere og vejlede den fødende i ve-arbejdet",
@@ -15,7 +15,35 @@
             ]
         },
         {
-            "name": "Kompliceret svangreomsorg",
+            "name": "semester 2",
+            "children": [
+                {
+                    "name": "Observere og vejlede den fødende i ve-arbejdet",
+                    "information": "bemærk : skal se om mor og far er ok",
+                    "check": "check"
+                },
+                {
+                    "name": "Forældre– og fødselsforberedende undervisning",
+                    "check": "check"
+                }
+            ]
+        },
+        {
+            "name": "semester 3",
+            "children": [
+                {
+                    "name": "Observere og vejlede den fødende i ve-arbejdet",
+                    "information": "bemærk : skal se om mor og far er ok",
+                    "check": "check"
+                },
+                {
+                    "name": "Forældre– og fødselsforberedende undervisning",
+                    "check": "check"
+                }
+            ]
+        },
+        {
+            "name": "semester 4",
             "children": [
                 {
                     
@@ -75,7 +103,7 @@
             ]
         },
         {
-            "name": "Gynækologi",
+            "name": "semester 5",
             "children": [
                 {
                     

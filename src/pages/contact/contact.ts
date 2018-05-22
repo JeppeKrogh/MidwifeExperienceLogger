@@ -13,34 +13,38 @@ export class ContactPage {
   public isSearchBarOpened = false;
 
   information: any[];
-  constructor(public navCtrl: NavController, private http:Http, private model:ModalController) {
+  constructor(public navCtrl: NavController, private http:Http, private modal:ModalController) {
 
 
     //dummy json data. her skal man connect med rigtig database til den endelige version
-      let localDate = this.http.get('assets/information.json').map(res => res.json().items);
-      localDate.subscribe(data => {
-        this.information = data;
-      });
+   //   let localDate = this.http.get('assets/information.json').map(res => res.json().items);
+   //   localDate.subscribe(data => {
+   //     this.information = data;
+   //   });
   }
 
+  
 
-  openModel(){
-
-  }
-
-  toggleSection(i) {
-    this.information[i].open = !this.information[i].open;
+  openModal() {
+    let myModal = this.modal.create('ModalContentPage');
+    myModal.present();
 
   }
 
-  toggleItem(i, j) {
-      this.information[i].children[j].open = !this.information[i].children[j].open;
+  
+  //toggleSection(i) {
+//    this.information[i].open = !this.information[i].open;
+
+//  }
+
+//  toggleItem(i, j) {
+//      this.information[i].children[j].open = !this.information[i].children[j].open;
 
 
-    }
+ //   }
   //search bar
-  onSearch(event){
-    console.log(event.target.value);
-  }
+ // onSearch(event){
+ //   console.log(event.target.value);
+ // }
 
 }
