@@ -24,10 +24,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SwingModule } from 'angular2-swing';
 
+import { ChartsModule} from 'ng2-charts';
+
 import { GooglePlus } from '@ionic-native/google-plus'; 
 import { RegisterPageModule } from '../pages/register/register.module';
 import { TinderSwiperComponent } from '../components/tinder-swiper/tinder-swiper';
 import { TinderRequirementsProvider } from '../providers/tinder-requirements/tinder-requirements';
+
 
 import {HttpModule} from '@angular/http';
 
@@ -67,6 +70,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     RegisterPageModule,
+    ChartsModule,
     SwingModule
   ],
   bootstrap: [IonicApp],

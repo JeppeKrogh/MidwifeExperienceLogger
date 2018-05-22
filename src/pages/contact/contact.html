@@ -29,16 +29,17 @@
         <h3>pratikoversigt</h3>
     </div>
     
-  <!--  <div style="text-align:center; margin: 20px 0;">
+    <div style="text-align:center; margin: 20px 0;">
+       <ion-icon (click)="showModal()" style="zoom: 4; margin: 0 0px;" name="alarm"></ion-icon>
+        <ion-icon (click)="showModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
+        <ion-icon (click)="showModal()" style="zoom: 4; margin: 0 0px;" name="alarm"></ion-icon>
+    </div> 
 
-       <ion-icon (click)="openModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
-        <ion-icon (click)="openModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
-        <ion-icon (click)="openModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
 
+    <!-- <button ion-button (click)="showModal()"> openmodal</button>
+    <button ion-button (click)="showModal()"> openmodal</button>
+    <button ion-button (click)="showModal()"> openmodal</button> -->
 
-
-    </div> -->
-    <button ion-button (click)="openModal()"> openmodal</button>
 
        
    <!-- <ion-list class="accordion-list">
@@ -83,6 +84,78 @@
 
     </ion-list> -->
 
+    <ion-card>
+        <ion-card-header>
+          Status
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #barCanvas></canvas>
+        </ion-card-content>
+      </ion-card>
+  
+      <ion-card>
+            <ion-item>
+              <p>Erfarings i dag: 19</p>
+              <ion-icon item-end name="arrow-forward"></ion-icon>
+            </ion-item>
+            
+          <div class="progress-outer">
+              <div class="progress-inner" [style.width]="progress + '%'">
+                    19
+              </div>
+            </div>
+    </ion-card>
+
+    <ion-card-header>Dagens top 5 registeret</ion-card-header>
+
+    <ion-card>
+        <ion-item>
+          <p>Gynækologi</p>
+          <p item-end>show more</p>
+        </ion-item>
+        
+      <div class="progress-outer">
+            <div class="progress-inner" [style.width]="progress + '%'">
+                    50%
+          </div>
+        </div>
+    </ion-card>
+    <ion-card>
+            <ion-item>
+              <p>Gynækologi</p>
+              <p item-end>show more</p>
+            </ion-item>
+            
+          <div class="progress-outer">
+                <div class="progress-inner" [style.width]="progress + '%'">
+                        {{progress}}%
+              </div>
+            </div>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                  <p>Gynækologi</p>
+                  <p item-end>show more</p>
+            </ion-item>
+                
+            <div class="progress-outer">
+                    <div class="progress-inner" [style.width]="progress + '%'">
+                            {{progress}}%
+                  </div>
+            </div>
+        </ion-card>
+        <ion-card>
+                <ion-item>
+                      <p>Gynækologi</p>
+                      <p item-end>show more</p>
+                </ion-item>
+                    
+                <div class="progress-outer">
+                        <div class="progress-inner" [style.width]="progress + '%'">
+                                {{progress}}%
+                      </div>
+                </div>
+         </ion-card>
 
 
 </ion-content>
