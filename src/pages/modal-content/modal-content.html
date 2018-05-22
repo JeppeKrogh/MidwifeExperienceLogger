@@ -20,7 +20,7 @@
 <ion-content padding>
 
   <div style="text-align: center; margin: 20px 0;">
-    <h3>pratikoversigt</h3>
+    <h3>pratik1,2,3</h3>
 </div>
   <div style="text-align:center; margin: 20px 0;">
      <ion-icon style="zoom: 4; margin: 0 7px;" name="book"></ion-icon>
@@ -41,7 +41,7 @@
       <ion-card>
           <ion-item>
             <p>Gynækologi</p>
-            <p item-end>show more</p>
+            <p item-end (click)="nextPage();">show more</p>
           </ion-item>
           
         <div class="progress-outer">
@@ -62,6 +62,55 @@
                 </div>
               </div>
           </ion-card>
+          <ion-card>
+              <ion-item>
+                <p>Gynækologi</p>
+                <p item-end>show more</p>
+              </ion-item>
+              
+            <div class="progress-outer">
+                  <div class="progress-inner" [style.width]="progress + '%'">
+                          50%
+                </div>
+              </div>
+          </ion-card>
+          <ion-card>
+                  <ion-item>
+                    <p>Gynækologi</p>
+                    <p item-end>show more</p>
+                  </ion-item>
+                  
+                <div class="progress-outer">
+                      <div class="progress-inner" [style.width]="progress + '%'">
+                              {{progress}}%
+                    </div>
+                  </div>
+              </ion-card>
+              <ion-card>
+                  <ion-item>
+                        <p>Gynækologi</p>
+                        <p item-end>show more</p>
+                  </ion-item>
+                      
+                  <div class="progress-outer">
+                          <div class="progress-inner" [style.width]="progress + '%'">
+                                  {{progress}}%
+                        </div>
+                  </div>
+              </ion-card>
+              <ion-card>
+                      <ion-item>
+                            <p>Gynækologi</p>
+                            <p item-end>show more</p>
+                      </ion-item>
+                          
+                      <div class="progress-outer">
+                              <div class="progress-inner" [style.width]="progress + '%'">
+                                      {{progress}}%
+                            </div>
+                      </div>
+               </ion-card>
+      
 
 
 

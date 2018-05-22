@@ -2,7 +2,7 @@ page-modal-content {
 
     .progress-outer {
         width: 96%;
-        margin: 10px 2%;
+        margin: 28px 2%;
         padding: 3px;
         text-align: center;
         background-color: #f4f4f4;
@@ -19,6 +19,29 @@ page-modal-content {
         border-radius: 20px;
         background-color: map-get($colors, primary);
     }
+
+    .item-ios {
+        padding-left: 16px;
+        padding-left: 16px;
+        border-radius: 0;
+        position: relative;
+        font-size: 1.7rem;
+        color: #000;
+        background-color: #90eece;
+        -webkit-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+
+    .card-ios {
+        margin: 12px;
+        border-radius: 11px;
+        width: calc(100% - 24px);
+        font-size: 1.4rem;
+        background: #ffffff;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
 
 
 }

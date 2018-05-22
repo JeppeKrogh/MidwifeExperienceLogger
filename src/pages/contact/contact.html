@@ -1,7 +1,7 @@
 <ion-header>
         <ion-navbar>
                 <ion-title *ngIf="!isSearchBarOpened">
-                    semesteroversigt
+                    profil
                 </ion-title>
                 <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
                 <ion-buttons end>
@@ -106,7 +106,7 @@
             </div>
     </ion-card>
 
-    <ion-card-header>Dagens top 5 registeret</ion-card-header>
+   <!-- <ion-card-header>Dagens top 5 registeret</ion-card-header>
 
     <ion-card>
         <ion-item>
@@ -155,7 +155,7 @@
                                 {{progress}}%
                       </div>
                 </div>
-         </ion-card>
+         </ion-card>-->
 
 
 </ion-content>

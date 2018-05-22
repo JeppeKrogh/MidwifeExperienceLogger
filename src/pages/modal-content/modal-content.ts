@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Chart} from 'chart.js';
 
+import {EfaringsdetailjerPage} from '../efaringsdetailjer/efaringsdetailjer';
+
 /**
  * Generated class for the ModalContentPage page.
  *
@@ -23,7 +25,11 @@ export class ModalContentPage {
   doughnutChart: any;
   lineChart: any;
 
-  constructor(private navParams: NavParams, private view: ViewController) {
+  constructor(private navParams: NavParams, private view: ViewController, public navCtrl:NavController) {
+  }
+
+  nextPage () {
+    this.navCtrl.push(EfaringsdetailjerPage);
   }
 
   closeModal () {
