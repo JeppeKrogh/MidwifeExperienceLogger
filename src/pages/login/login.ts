@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { RegisterPage } from '../../pages/register/register';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Tab } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { GoogleLoginComponent } from "../../components/google-login/google-login";
@@ -33,7 +33,8 @@ export class LoginPage {
 
     this.afAuth.authState.subscribe(res => {
       if (res && res.uid) {
-        this.navCtrl.push(IntroslidesPage); 
+        // this.navCtrl.push(IntroslidesPage); 
+        this.navCtrl.setRoot(TabsPage);
       } else {
         console.log('user not logged in');
       }
@@ -47,7 +48,8 @@ export class LoginPage {
       
       if (result) {
         console.log("result is:" + result);
-        this.navCtrl.push(IntroslidesPage); 
+        this.navCtrl.setRoot(TabsPage);
+        // this.navCtrl.push(IntroslidesPage); 
         console.log("result is here");
       } 
       console.log("logged in successfully"); 

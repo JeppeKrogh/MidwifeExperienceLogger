@@ -41,7 +41,8 @@ export class RegisterPage {
         db.collection('users').doc(res.uid).set({
           user_email: res.email,
           user_name: user.user_name,
-          student_id: user.student_id
+          student_id: user.student_id,
+          student_date: user.student_date
         })
          console.log(res);
        } 

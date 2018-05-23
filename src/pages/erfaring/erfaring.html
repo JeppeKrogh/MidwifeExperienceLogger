@@ -8,7 +8,16 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>erfaring</ion-title>
+        <ion-title *ngIf="!isSearchBarOpened">
+            erfaring
+        </ion-title>
+        <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
+        <ion-buttons end>
+            <button ion-button icon-only *ngIf="!isSearchBarOpened" (click)="!isSearchBarOpened=true">
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </ion-buttons>
+
     </ion-navbar>
 
 </ion-header>
@@ -16,18 +25,23 @@
 
 <ion-content padding>
 
-<erfarings-kategorier></erfarings-kategorier>
+    <erfarings-kategorier></erfarings-kategorier>
+        <ion-segment color="primary" [(ngModel)]="erfaringsVisning"  >
+        <ion-segment-button (click)="segmentShownFunc()" value="tinder">
+          Swiper
+        </ion-segment-button>
+        <ion-segment-button (click)="segmentShownFunc()" value="liste">
+          Liste
+        </ion-segment-button>
+      </ion-segment>
+      <!-- <button ion-button (click)="callMe()"></button> -->
+      <div >
+        <div class="tinder-swiper-parent" [ngClass]=" {segmentShown: !segmentShown}" >
+                <tinder-swiper></tinder-swiper>
+        </div>
+        <div class="listevisning-parent" [ngClass]=" {segmentShown: segmentShown}">
+                <erfarings-liste></erfarings-liste>
+            </div>
 
-    
-
-
-    <!-- 
-    <ion-item>
-        <ion-label><ion-icon name="calendar" style="color: brown;" item-left > kalender</ion-icon></ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-      </ion-item> -->
-<tinder-swiper></tinder-swiper>
-
-    
-
+      </div>
 </ion-content>
