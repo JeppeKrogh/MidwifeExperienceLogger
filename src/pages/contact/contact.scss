@@ -55,10 +55,6 @@ page-contact {
      
     }
 
-    .toolbar-background-md {
-        border-color: #ffffff;
-        background-color: #3cc8c8;    }
-
     
     .progress-outer {
         width: 96%;
@@ -81,7 +77,7 @@ page-contact {
     }
 
     .pratikMenuDiv {
-        padding: 18px 0px 15px 0px;
+        padding: 10px 0px 0px 0px;
         background-color: #3cc8c8; 
         text-align: center;
         color: white;
@@ -105,8 +101,13 @@ page-contact {
     }
 
     .toolbar-background-ios {
-        background: white;
+        background: #3cc8c8;
     }
+
+    
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background-color: #3cc8c8;    }
 
     .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
         border-style: none;
@@ -136,7 +137,7 @@ page-contact {
     }
 
     .item-md.item-block .item-inner {
-        padding-right: 0px;
+        padding-right: 8px;
         border-bottom:none;
     }
 
