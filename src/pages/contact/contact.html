@@ -1,17 +1,28 @@
+    
 <ion-header>
         <ion-navbar>
-                <ion-title *ngIf="!isSearchBarOpened">
-                    profil
+                <!--
+    <ion-title *ngIf="!isSearchBarOpened">
+                    
                 </ion-title>
                 <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
                 <ion-buttons end>
                     <button ion-button icon-only *ngIf="!isSearchBarOpened" (click)="!isSearchBarOpened=true">
                         <ion-icon name="search"></ion-icon>
                     </button>
-                </ion-buttons> 
+                </ion-buttons>     -->
+                <ion-searchbar></ion-searchbar>
+
+                <ion-buttons end>
+                        <button ion-button icon-only (click)="openModal()">
+                          <ion-icon style="color:#3cc8c8; zoom: 1.4;" name="more"></ion-icon>
+                        </button>
+                      </ion-buttons>
 
         </ion-navbar>
-</ion-header>
+
+</ion-header>   
+
 
 <ion-content>
 
@@ -23,18 +34,53 @@
         </ion-searchbar>
     
     -->
+       
+ <div class="pratikMenuDiv">
 
-    <div style="text-align: center;">
-        <h1>Name</h1>
-        <h3>pratikoversigt</h3>
+    <!--
+        <div style="text-align: center; margin: 20px 0 0 0;">
+                <ion-img width="120" height="120" src="../assets/imgs/tada2.png"></ion-img>
+            <h4>Anna Larsen</h4>
+        </div>     -->
+        <h2>pratikoversigt</h2>
+
+      <!--      <ion-item class="pratikMenu">
+                    <ion-label>
+                            <ion-icon style="zoom: 4;" name="bookmarks"></ion-icon>
+                            <p>pratik 1</p>
+                    </ion-label>
+
+                <ion-label>
+                        <ion-img  (click)="showModal()" width="80" height="102" src="../assets/imgs/Asset 1.png"></ion-img>
+                        <p>pratik 2</p>
+                    </ion-label>
+
+                    <ion-label>
+                            <ion-img  (click)="showModal()" width="80" height="102" src="../assets/imgs/Asset 1.png"></ion-img>
+                            <p>pratik 3</p>
+                    </ion-label>
+            </ion-item>-->
+
+             
     </div>
-    
-    <div style="text-align:center; margin: 20px 0;">
-       <ion-icon (click)="showModal()" style="zoom: 4; margin: 0 0px;" name="alarm"></ion-icon>
-        <ion-icon (click)="showModal()" style="zoom: 4; margin: 0 7px;" name="alarm"></ion-icon>
-        <ion-icon (click)="showModal()" style="zoom: 4; margin: 0 0px;" name="alarm"></ion-icon>
-    </div> 
 
+    
+    <ion-item class="pratikMenu">
+            <ion-label class="pMenu1">
+                    <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
+                    <p>pratik 1</p>
+            </ion-label>
+
+            <ion-label class="pMenu2">
+                    <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
+                <p>pratik 2</p>
+            </ion-label>
+
+            <ion-label class="pMenu3">
+                    <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
+                    <p>pratik 3</p>
+            </ion-label>
+    </ion-item>
 
     <!-- <button ion-button (click)="showModal()"> openmodal</button>
     <button ion-button (click)="showModal()"> openmodal</button>
@@ -83,13 +129,14 @@
         </ion-list-header> 
 
     </ion-list> -->
-
+    
+    
     <ion-card>
         <ion-card-header>
           Status
         </ion-card-header>
         <ion-card-content>
-          <canvas #barCanvas></canvas>
+          <canvas height="300px" width="auto" #barCanvas></canvas>
         </ion-card-content>
       </ion-card>
   

@@ -55,6 +55,9 @@ page-contact {
      
     }
 
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background-color: #3cc8c8;    }
 
     
     .progress-outer {
@@ -65,7 +68,7 @@ page-contact {
         background-color: #f4f4f4;
         border: 1px solid #dcdcdc;
         color: #fff;
-        border-radius: 20px;
+        border-radius: 5px;
     }
  
     .progress-inner {
@@ -73,30 +76,76 @@ page-contact {
         white-space: nowrap;
         overflow: hidden;
         padding: 5px;
-        border-radius: 20px;
-        background-color: map-get($colors, primary);
+        border-radius: 0px;
+        background-color: red;
     }
 
-    .item-ios {
-        padding-left: 16px;
-        padding-left: 16px;
-        border-radius: 0;
-        position: relative;
-        font-size: 1.7rem;
-        color: #000;
-        background-color: #90eece;
-        -webkit-transition: background-color 200ms linear;
-        transition: background-color 200ms linear;
+    .pratikMenuDiv {
+        padding: 18px 0px 15px 0px;
+        background-color: #3cc8c8; 
+        text-align: center;
+        color: white;
+    }
+
+    .pratikMenuDiv h2 {
+        padding: 0 0px 20px 0px;
+        color: white;
+    }
+
+    .pratikMenu {
+        text-align: center;
+        background: none;
+        color: white;
+        padding: 0;
+        margin: -14px 0 0 0;
+    }
+
+    .pratikMenu p {
+        color: white;
+    }
+
+    .toolbar-background-ios {
+        background: white;
+    }
+
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+        border-style: none;
+        border-color: rgba(0, 0, 0, 0.3);
     }
 
     .card-ios {
         margin: 12px;
-        border-radius: 11px;
+        border-radius: 2px;
         width: calc(100% - 24px);
         font-size: 1.4rem;
-        background: #ffffff;
-        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        background: #fff;
+        -webkit-box-shadow: 0 1px 2px rgba(255, 255, 255, 0);
+         box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
     }
 
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        left: 0;
+        bottom: -5px;
+        background-position: left 0 top -2px;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background-image:none;
+        background-repeat: repeat-x;
+        content: "";
+    }
+
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+        border-bottom:none;
+    }
+
+    ion-img {
+        background-color: transparent;
+    }
+
+    .pMenu1, .pMenu2, .pMenu3 { padding: 20px 4px;}
+    .pMenu1 {background: red;} 
+    .pMenu2 {background: purple;}
+    .pMenu3 {background: peru;}
 }

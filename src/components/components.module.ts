@@ -3,7 +3,6 @@ import { GoogleLoginComponent } from './google-login/google-login';
 import { PopoversComponent } from './popovers/popovers';
 import { ErfaringsKategorierComponent } from './erfarings-kategorier/erfarings-kategorier';
 import { TinderSwiperComponent } from './tinder-swiper/tinder-swiper';
-import { ProgressBarComponent } from './progress-bar/progress-bar';
 
 
 @NgModule({
@@ -12,7 +11,6 @@ import { ProgressBarComponent } from './progress-bar/progress-bar';
         PopoversComponent,
         ErfaringsKategorierComponent,
     TinderSwiperComponent,
-    ProgressBarComponent
     ],
     imports: [
 
@@ -22,7 +20,6 @@ import { ProgressBarComponent } from './progress-bar/progress-bar';
         PopoversComponent,
         ErfaringsKategorierComponent,
     TinderSwiperComponent,
-    ProgressBarComponent,
 
     ]
   })

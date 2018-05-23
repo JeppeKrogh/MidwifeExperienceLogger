@@ -31,8 +31,6 @@ import { RegisterPageModule } from '../pages/register/register.module';
 import { TinderSwiperComponent } from '../components/tinder-swiper/tinder-swiper';
 import { TinderRequirementsProvider } from '../providers/tinder-requirements/tinder-requirements';
 import {EfaringsdetailjerPage} from '../pages/efaringsdetailjer/efaringsdetailjer';
-
-
 import {HttpModule} from '@angular/http';
 
 const firebaseConfig = {
