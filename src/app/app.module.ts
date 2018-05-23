@@ -23,11 +23,12 @@ import { DatabaseProvider } from '../providers/database/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SwingModule } from 'angular2-swing';
+import { ChartsModule} from 'ng2-charts';
 import { GooglePlus } from '@ionic-native/google-plus'; 
 import { RegisterPageModule } from '../pages/register/register.module';
 import { TinderSwiperComponent } from '../components/tinder-swiper/tinder-swiper';
 import { TinderRequirementsProvider } from '../providers/tinder-requirements/tinder-requirements';
-
+import {EfaringsdetailjerPage} from '../pages/efaringsdetailjer/efaringsdetailjer';
 import {HttpModule} from '@angular/http';
 import { ErfaringsListeComponent } from '../components/erfarings-liste/erfarings-liste';
 
@@ -45,6 +46,7 @@ const firebaseConfig = {
   declarations: [
     MyApp,
     AboutPage,
+    EfaringsdetailjerPage,
     ContactPage,
     GoogleLoginComponent,
     PopoversComponent,
@@ -69,12 +71,14 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     RegisterPageModule,
+    ChartsModule,
     SwingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
+    EfaringsdetailjerPage,
     ContactPage,
     HomePage,
     LoginPage,
