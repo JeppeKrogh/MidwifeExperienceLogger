@@ -35,14 +35,23 @@ export class RegisterPage {
   async register(user: User) {
     try {
       this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+      var date = new Date();
+      var studentDate = user.student_date;
+      var studentStartNew = new Date(Date.parse(studentDate.replace(/-/g, " ")))
+      var diff = Math.abs(date.getTime() - studentStartNew.getTime());
+      var diffDays = Math.ceil(diff / (1000 * 3600 * 24)); 
+
+      var currentSemester = Math.floor(diffDays/182.5);
       this.afAuth.authState.subscribe(res => {
        if (res && res.uid) {
           let db = firebase.firestore();
+          
+
         db.collection('users').doc(res.uid).set({
           user_email: res.email,
           user_name: user.user_name,
           student_id: user.student_id,
-          student_date: user.student_date
+          student_semester: currentSemester
         })
          console.log(res);
        } 
