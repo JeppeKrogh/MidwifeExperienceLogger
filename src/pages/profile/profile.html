@@ -1,18 +1,212 @@
-<!--
-  Generated template for the ProfilePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>profile</ion-title>
+<!--
+  <ion-title *ngIf="!isSearchBarOpened">
+
+              </ion-title>
+              <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
+              <ion-buttons end>
+                  <button ion-button icon-only *ngIf="!isSearchBarOpened" (click)="!isSearchBarOpened=true">
+                      <ion-icon name="search"></ion-icon>
+                  </button>
+              </ion-buttons>     -->
+      <ion-searchbar></ion-searchbar>
+
+      <ion-buttons end>
+          <button ion-button icon-only (click)="openModal()">
+              <ion-icon style="color:#3cc8c8; zoom: 1.4;" name="more"></ion-icon>
+          </button>
+      </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <!--
+      <ion-searchbar light
+      [showCancelButton]="true"
+      (ionInput)="onInput($event)"
+      (ionCancel)="isSearchBarOpened=false">
+      </ion-searchbar>
+  
+  -->
+
+  <div class="pratikMenuDiv">
+
+      <!--
+      <div style="text-align: center; margin: 20px 0 0 0;">
+              <ion-img width="120" height="120" src="../assets/imgs/tada2.png"></ion-img>
+          <h4>Anna Larsen</h4>
+      </div>     -->
+      <h2>pratikoversigt</h2>
+
+           <!-- <ion-item class="pratikMenu">
+                  <ion-label>
+                          <ion-icon style="zoom: 4;" name="bookmarks"></ion-icon>
+                          <p>pratik 1</p>
+                  </ion-label>
+
+              <ion-label>
+                      <ion-img  (click)="showModal()" width="80" height="102" src="../assets/imgs/Asset 1.png"></ion-img>
+                      <p>pratik 2</p>
+                  </ion-label>
+
+                  <ion-label>
+                          <ion-img  (click)="showModal()" width="80" height="102" src="../assets/imgs/Asset 1.png"></ion-img>
+                          <p>pratik 3</p>
+                  </ion-label>
+          </ion-item> -->
+
+
+  </div>
+
+<ion-item class="pratikMenu">
+      <ion-label class="pMenu1">
+          <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
+          <p>pratik 1</p>
+      </ion-label>
+
+      <ion-label class="pMenu2">
+          <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
+          <p>pratik 2</p>
+      </ion-label>
+
+      <ion-label class="pMenu3">
+          <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
+          <p>pratik 3</p>
+      </ion-label>
+  </ion-item> 
+<!-- 
+  <button ion-button (click)="showModal()"> openmodal</button>
+  <button ion-button (click)="showModal()"> openmodal</button>
+  <button ion-button (click)="showModal()"> openmodal</button> -->
+
+
+
+  <!-- <ion-list class="accordion-list">
+      <ion-list-header *ngFor="let item of information; let i = index" no-lines no-padding>
+          <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.open, 'section': !item.open}">
+              <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
+              <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
+              {{ item.name}}
+          </button>
+
+          <ion-list *ngIf="item.children && item.open" no lines>
+      
+              <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+   
+                  <button ion-item (click)="toggleItem(i, j)" detail-none class="child" *ngIf="child.children">
+                      <ion-icon item-left name="add" *ngIf="!child.open"></ion-icon>
+                      <ion-icon item-left name="close" *ngIf="child.open"></ion-icon>
+                      {{ child.name}}
+                  </button>
+
+
+
+  <ion-item *ngIf="!child.children" detail-none class="child.item" text-wrap>
+      <h4>{{ child.name }}</h4>
+      <p text-lowercase> {{ child.information }}</p>
+      <button ion-button outline item-end (click)="checkItem(item)">{{ child.check }}</button>
+  </ion-item>
+
+
+  <ion-list *ngIf="child.children && child.open">
+
+      <ion-item *ngFor="let item of child.children" detail-none class="child-item" text-wrap>
+          <h4>{{ item.name }}</h4>
+          <p text-lowercase> {{ item.information }}</p>
+          <button ion-button outline item-end (click)="checkItem(item)">{{ item.check }}</button>
+          <ion-icon item-end name="information"></ion-icon>
+
+
+      </ion-item>
+  </ion-list>
+
+
+  </ion-list-header>
+
+  </ion-list>
+
+  </ion-list-header>
+
+  </ion-list> -->
+
+
+  <ion-card>
+      <ion-card-header>
+          Status
+      </ion-card-header>
+      <ion-card-content>
+          <canvas height="300px" width="auto" #barCanvas></canvas>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-item>
+          <p>Erfarings i dag: 19</p>
+          <ion-icon item-end name="arrow-forward"></ion-icon>
+      </ion-item>
+
+      <div class="progress-outer">
+          <div class="progress-inner" [style.width]="progress + '%'">
+              19
+          </div>
+      </div>
+  </ion-card>
+
+  <ion-card-header>Dagens top 5 registeret</ion-card-header>
+
+  <ion-card>
+      <ion-item>
+        <p>Gynækologi</p>
+        <p item-end>show more</p>
+      </ion-item>
+      
+    <div class="progress-outer">
+          <div class="progress-inner" [style.width]="progress + '%'">
+                  50%
+        </div>
+      </div>
+  </ion-card>
+  <ion-card>
+          <ion-item>
+            <p>Gynækologi</p>
+            <p item-end>show more</p>
+          </ion-item>
+          
+        <div class="progress-outer">
+              <div class="progress-inner" [style.width]="progress + '%'">
+                      {{progress}}%
+            </div>
+          </div>
+      </ion-card>
+      <ion-card>
+          <ion-item>
+                <p>Gynækologi</p>
+                <p item-end>show more</p>
+          </ion-item>
+              
+          <div class="progress-outer">
+                  <div class="progress-inner" [style.width]="progress + '%'">
+                          {{progress}}%
+                </div>
+          </div>
+      </ion-card>
+      <ion-card>
+              <ion-item>
+                    <p>Gynækologi</p>
+                    <p item-end>show more</p>
+              </ion-item>
+                  
+              <div class="progress-outer">
+                      <div class="progress-inner" [style.width]="progress + '%'">
+                              {{progress}}%
+                    </div>
+              </div>
+       </ion-card>
+
 
 </ion-content>

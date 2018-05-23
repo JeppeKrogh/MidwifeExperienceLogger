@@ -1,3 +1,151 @@
 page-profile {
 
 }
+.accordion-list {
+    background-color:rgb(255, 255, 255);
+    height: 100%;
+}
+
+.section {
+    background-color: rgb(235, 235, 235);
+    color:black;
+    margin-bottom: 4px;
+}
+
+.section-active {
+    background-color: goldenrod;
+    color: white;
+}
+
+.child {
+    background-color: rgb(131, 152, 136);
+    color: black;
+    margin-bottom: 2px 0 2px 0;
+
+}
+
+
+.child-item {
+    background-color: rgb(214, 214, 214);
+    padding: 10px;
+}
+
+.label {
+    margin:4px 0 4px 0;
+}
+
+.list {
+    margin: 2px 0 2px 0;
+}
+
+
+
+.ios, .md {
+
+    page-home {
+ 
+        .scroll-content {
+            background-color: map-get($colors, light);
+        }
+ 
+        ion-card-header {
+            font-weight: bold;
+        }
+ 
+    }
+ 
+}
+
+.toolbar-background-md {
+    border-color: #ffffff;
+    background-color: #3cc8c8;    }
+
+
+.progress-outer {
+    width: 96%;
+    margin: 28px 2%;
+    padding: 3px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.progress-inner {
+    min-width: 15%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 0px;
+    background-color: red;
+}
+
+.pratikMenuDiv {
+    padding: 18px 0px 15px 0px;
+    background-color: #3cc8c8; 
+    text-align: center;
+    color: white;
+}
+
+.pratikMenuDiv h2 {
+    padding: 0 0px 20px 0px;
+    color: white;
+}
+
+.pratikMenu {
+    text-align: center;
+    background: none;
+    color: white;
+    padding: 0;
+    margin: -14px 0 0 0;
+}
+
+.pratikMenu p {
+    color: white;
+}
+
+.toolbar-background-ios {
+    background: white;
+}
+
+.header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-ios {
+    margin: 12px;
+    border-radius: 2px;
+    width: calc(100% - 24px);
+    font-size: 1.4rem;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(255, 255, 255, 0);
+     box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    left: 0;
+    bottom: -5px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-image:none;
+    background-repeat: repeat-x;
+    content: "";
+}
+
+.item-md.item-block .item-inner {
+    padding-right: 0px;
+    border-bottom:none;
+}
+
+ion-img {
+    background-color: transparent;
+}
+
+.pMenu1, .pMenu2, .pMenu3 { padding: 20px 4px;}
+.pMenu1 {background: red;} 
+.pMenu2 {background: purple;}
+.pMenu3 {background: peru;}
