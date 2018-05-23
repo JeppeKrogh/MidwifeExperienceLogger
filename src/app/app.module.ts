@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { ProfilePage } from "../pages/profile/profile";
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -14,7 +14,7 @@ import { ErfaringPage } from '../pages/erfaring/erfaring';
 import { LoginPage } from '../pages/login/login';
 import { GoogleLoginComponent } from "../components/google-login/google-login";
 import { PopoversComponent } from "../components/popovers/popovers";
-import {IntroslidesPage} from "../pages/introslides/introslides";
+import { IntroslidesPage } from "../pages/introslides/introslides";
 import { ErfaringsKategorierComponent } from "../components/erfarings-kategorier/erfarings-kategorier";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,15 +23,14 @@ import { DatabaseProvider } from '../providers/database/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { SwingModule } from 'angular2-swing';
-
 import { ChartsModule} from 'ng2-charts';
-
 import { GooglePlus } from '@ionic-native/google-plus'; 
 import { RegisterPageModule } from '../pages/register/register.module';
 import { TinderSwiperComponent } from '../components/tinder-swiper/tinder-swiper';
 import { TinderRequirementsProvider } from '../providers/tinder-requirements/tinder-requirements';
 import {EfaringsdetailjerPage} from '../pages/efaringsdetailjer/efaringsdetailjer';
 import {HttpModule} from '@angular/http';
+import { ErfaringsListeComponent } from '../components/erfarings-liste/erfarings-liste';
 
 const firebaseConfig = {
     apiKey: "AIzaSyA6wpZg5s78EF76yDT4k5-FUBFcBdSYx1M",
@@ -57,7 +56,9 @@ const firebaseConfig = {
     LoginPage,
     TabsPage,
     ErfaringPage,
-    IntroslidesPage
+    IntroslidesPage,
+    ErfaringsListeComponent,
+    ProfilePage,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +88,9 @@ const firebaseConfig = {
     TinderSwiperComponent,
     TabsPage,
     ErfaringPage,
-    IntroslidesPage
+    IntroslidesPage,
+    ErfaringsListeComponent,
+    ProfilePage
   ],
   providers: [
     GooglePlus,
@@ -95,7 +98,8 @@ const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DatabaseProvider,
-    TinderRequirementsProvider
+    TinderRequirementsProvider,
+    ErfaringsKategorierComponent
   ]
 })
 export class AppModule {

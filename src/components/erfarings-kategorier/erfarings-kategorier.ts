@@ -3,6 +3,8 @@ import { DatabaseProvider } from '../../providers/database/database';
 import { ErfaringPage } from "../../pages/erfaring/erfaring";
 import { TinderRequirementsProvider } from "../../providers/tinder-requirements/tinder-requirements";
 import { DatePickerDirective } from 'ion-datepicker';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 /**
  * Generated class for the ErfaringsKategorierComponent component.
@@ -18,41 +20,65 @@ import { DatePickerDirective } from 'ion-datepicker';
 export class ErfaringsKategorierComponent {
 
 
-
   text: string;
-  categories = [];
-  category = [];
+  categories: any[];
+  category: any[];
   date: any;
   requirementsarray = [];
 
 
   constructor(private _DB: DatabaseProvider, private requirementsService: TinderRequirementsProvider) {
+    
+    console.log(this.category);
 
-    var _COLL = "erfaringer";
 
-    this._DB.getDocuments(_COLL)
+    let db = firebase.firestore();
+    this._DB.getDocuments("erf")
       .then((data) => {
-
-        // IF we don't have any documents then the collection doesn't exist
-        // so we create it!
         if (data.length === 0) {
           console.log("nope");
         }
-
-        // Otherwise the collection does exist and we assign the returned
-        // documents to the public property of locations so this can be
-        // iterated through in the component template
         else {
-          console.log(data);
+          // this.information = data;
           var kategorier = new Array();
           for (var key in data) {
-            kategorier.push(data[key].kategorier)
+            kategorier.push(data[key])
           }
+          console.log(data);
+          console.log(kategorier);
+          // console.log("kategorier" + kategorier[0]);
           this.categories = kategorier;
+          
+
 
         }
       })
       .catch();
+    this.requirementsarray = [];
+
+
+
+    // var _COLL = "erfaringer";
+    // this._DB.getDocuments(_COLL)
+    //   .then((data) => {
+    //     // IF we don't have any documents then the collection doesn't exist
+    //     // so we create it!
+    //     if (data.length === 0) {
+    //       console.log("nope");
+    //     }
+    //     // Otherwise the collection does exist and we assign the returned
+    //     // documents to the public property of locations so this can be
+    //     // iterated through in the component template
+    //     else {
+    //       console.log(data);
+    //       var kategorier = new Array();
+    //       for (var key in data) {
+    //         kategorier.push(data[key].kategorier)
+    //       }
+    //       this.categories = kategorier;
+    //     }
+    //   })
+    //   .catch();
   }
 
   @ViewChild(DatePickerDirective) public datepicker: DatePickerDirective;
@@ -65,19 +91,16 @@ export class ErfaringsKategorierComponent {
   setDate(date: Date) {
     this.initDate = date;
   }
-
-  options() {
+ 
+  public options() {
     this.date = this.initDate;
+    console.log(this.category);
+    this.requirementsarray = [];
     this.category = this.category;
     this.requirementsarray.push(this.category, this.date);
-    console.log(this.requirementsarray);
+    console.log("erfaringsarrayet: " + this.requirementsarray);
     this.requirementsService.announceRequirements(this.requirementsarray);
-
-
   }
+  
 }
-
-
-
-
 

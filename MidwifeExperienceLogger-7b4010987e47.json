@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "midwifeexperiencelogger-203818",
+  "private_key_id": "7b4010987e4779cbdbe31d3b139a5bd337945fc7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDq61n5k7j2huWV\ntcgk54NJ2hppfF0DLE51rp55HJNWBDRAfbFkMqfyyy0Ex7eMONKluU4ohhKCQSda\nPSBDEd5zbOOg3r9leA9CymiOqkmf+tWyoSRbo23tCbilRYluFykynOAD8uoNT336\nu4pfrCBizEXGuGM8bUu7EAi21hjDoiRorv00HXIZvQGLOxMa+YKZpvPNj8snLUc0\nism6bu17iCXxAxPUCtpUNGZsmMP0+Gh5GmwJKSI1iDri637tK+rS/KnhkgDYnDIn\nKdL+JS+zhouUpb4LGh6hCj90cWiKKs9NWUlYwZlPFcJfnOU4ZpZkAs3YlthG7r/W\nWxnvx+pPAgMBAAECgf9XszwIXh2vD9HKf+4Tj8gqgNQ21ltQr15R/nDh6n/yCnsu\nKpnqYGybydBN0/hEPGAeWcZmNfBp1MRufhpEFEMcQfgmhCZdlplAepkgYHJAkGQS\ncF9G+058L5Kasu1SUMDr/6TGZulC6kWwDApTZBOOhY+HDiqQP/QqT2RfJrLzed1/\n2Gna7OaNQm7ycZqWnkqlV67c1tjci+JW1l3PGQFkgGRuwAH+JH/5sQomIy+aDBhh\nbRt3+R0Lu63tR90AGaZXXkyDSn1vyxwfR5OT4MRowSskpy02DhgHvW0Oz79q02MB\n8Os3Wu5jKKPjgorOOpI/lyAHZYPfC/ZqwB/XmEkCgYEA/Myg4UWFKbB7w1XFjbHQ\nribkFK5F57rHrFUOCUiXYJcXSRnoAusYn3Lm0X0Uujo5B4dflC1BYMBJ7IWpxBCW\n5tUPAArLwzO4+pbDJl3omE6KW2kp2JtrXqwqppFKTtnBYW+00fJ1+U3DRoWbVg17\nN+xve5F82rwbDIqm2uPsbhsCgYEA7eTFQRY/xvENn53fMMG5aiBSQOqc8BZkX3v5\n56h3nfJjqb14BVqTiopPEn4oEVDkKRPrqjitLhU5TVyZJ+6qO9NnjE9DXPyF6hwt\nUSt0rx2PfuOjmgiCTznQmW3OFBoFUHb5/zSUs3H3VjlE5reWLJdJO5KeduTHIo5K\nVGsgZ90CgYEApAa14FT2WR18wDp36z9T0pvDY7PMAdaMVkH90II8TlzarADWLIaU\nPGkWYRjSiR7cAAmTN5bBk+BQVtpHU8Mb1nyptfJLUcXOoTGPP+aw05oqZbNvhm8Z\nlJ0LM3aUC2N4+Rq87XhvmaoeKTTpnEU1DQ0pLLkylM52koWoS+CVeL8CgYB0+VVo\n0KjhiKv7PWR+k/M41NW9J9+tSkVmkg5qs3LFzmblEs4OS+BacfG5lSDcitr1u97Y\nX3AARd1cRdjlQrygGC5FVsA32895Mwuxat3AMZfae9J5Lg/tJu+EUfLP/Y95Zlc8\n/rzTk4lb82MG02TbXjRbP5f9vDaSrkasRdS0XQKBgQC9u0ejwwv8RCexlTb7/kg7\nGouAbSxdtqsI9VB02lHQy1O+B9FZXmNdZfv1z/wKvDOhure6gM8y4gN9nqd7EWuP\nJctuhotSqGZ1EBsKhyPZXF12Cvt0dWxxtDdbCU+l/ucWwRJciIcmjGvE+zOWmJ9P\nwFR95uF1SmiMGTDcZ40hwQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "backup@midwifeexperiencelogger-203818.iam.gserviceaccount.com",
+  "client_id": "112003282595065897566",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/backup%40midwifeexperiencelogger-203818.iam.gserviceaccount.com"
+}

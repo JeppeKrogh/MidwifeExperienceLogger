@@ -3,6 +3,7 @@ import { GoogleLoginComponent } from './google-login/google-login';
 import { PopoversComponent } from './popovers/popovers';
 import { ErfaringsKategorierComponent } from './erfarings-kategorier/erfarings-kategorier';
 import { TinderSwiperComponent } from './tinder-swiper/tinder-swiper';
+import { ErfaringsListeComponent } from './erfarings-liste/erfarings-liste';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { TinderSwiperComponent } from './tinder-swiper/tinder-swiper';
         PopoversComponent,
         ErfaringsKategorierComponent,
     TinderSwiperComponent,
+    ErfaringsListeComponent
     ],
     imports: [
 
@@ -20,6 +22,7 @@ import { TinderSwiperComponent } from './tinder-swiper/tinder-swiper';
         PopoversComponent,
         ErfaringsKategorierComponent,
     TinderSwiperComponent,
+    ErfaringsListeComponent,
 
     ]
   })
