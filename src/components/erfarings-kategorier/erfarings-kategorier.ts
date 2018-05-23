@@ -3,6 +3,8 @@ import { DatabaseProvider } from '../../providers/database/database';
 import { ErfaringPage } from "../../pages/erfaring/erfaring";
 import { TinderRequirementsProvider } from "../../providers/tinder-requirements/tinder-requirements";
 import { DatePickerDirective } from 'ion-datepicker';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 /**
  * Generated class for the ErfaringsKategorierComponent component.
@@ -19,34 +21,42 @@ export class ErfaringsKategorierComponent {
 
 
   text: string;
-  categories = [];
-  category = [];
+  categories: any[];
+  category: any[];
   date: any;
   requirementsarray = [];
-  kategorier = [];
 
 
   constructor(private _DB: DatabaseProvider, private requirementsService: TinderRequirementsProvider) {
+    
+    console.log(this.category);
 
 
-    this.kategorier = [{
-      value: "Kategori 1",
-      data: "1"
-    },
-    {
-      value: "Kategori 2",
-      data: "2"
-    },
-    {
-      value: "Kategori 3",
-      data: "3"
-    },
-    {
-      value: "Kategori 4",
-      data: "4"
+    let db = firebase.firestore();
+    this._DB.getDocuments("erf")
+      .then((data) => {
+        if (data.length === 0) {
+          console.log("nope");
         }
-    ]
-    this.categories = this.kategorier;
+        else {
+          // this.information = data;
+          var kategorier = new Array();
+          for (var key in data) {
+            kategorier.push(data[key])
+          }
+          console.log(data);
+          console.log(kategorier);
+          // console.log("kategorier" + kategorier[0]);
+          this.categories = kategorier;
+          
+
+
+        }
+      })
+      .catch();
+    this.requirementsarray = [];
+
+
 
     // var _COLL = "erfaringer";
     // this._DB.getDocuments(_COLL)
@@ -81,15 +91,16 @@ export class ErfaringsKategorierComponent {
   setDate(date: Date) {
     this.initDate = date;
   }
-
-  options() {
+ 
+  public options() {
     this.date = this.initDate;
-    
+    console.log(this.category);
+    this.requirementsarray = [];
     this.category = this.category;
     this.requirementsarray.push(this.category, this.date);
-    console.log(this.requirementsarray);
+    console.log("erfaringsarrayet: " + this.requirementsarray);
     this.requirementsService.announceRequirements(this.requirementsarray);
-
-
   }
+  
 }
+

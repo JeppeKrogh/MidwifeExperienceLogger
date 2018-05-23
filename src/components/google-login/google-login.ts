@@ -60,7 +60,7 @@ async webGoogleLogin(): Promise<void> {
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
-    this.navCtrl.push(IntroslidesPage); 
+    // this.navCtrl.push(IntroslidesPage); 
   } catch(err) {
     console.log(err);
   }

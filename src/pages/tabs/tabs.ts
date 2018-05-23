@@ -9,6 +9,7 @@ import { DatabaseProvider } from '../../providers/database/database';
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase';
 import 'firebase/firestore';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -19,7 +20,7 @@ export class TabsPage {
 
   tab1Root = HomePage;
   tab2Root = ErfaringPage;
-  tab3Root = ContactPage;
+  tab3Root = ProfilePage;
   //tab4Root = IntroslidesPage;
 
   constructor(private _DB: DatabaseProvider,

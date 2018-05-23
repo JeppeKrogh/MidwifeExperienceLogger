@@ -1,4 +1,6 @@
-erfarings-kategorier {}
+erfarings-kategorier {
+    display: block;
+}
 
 .select-text {
     display: none;
@@ -61,6 +63,9 @@ ion-grid {
 
 .erfarings-kategorier .col .list ion-select.select .select-icon {
     display: none;
+}
+.erfarings-kategorier .row .col .item {
+    background-color: transparent;
 }
 
 // .erfarings-kategorier ion-icon {

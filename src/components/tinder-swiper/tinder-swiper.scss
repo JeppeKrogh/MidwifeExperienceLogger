@@ -81,22 +81,34 @@
 //     }
 // }
 tinder-swiper {
-    height: auto;
+    height: 0%;
     display: block;
+    background-color:#fff;
 }
-
+tinder-swiper button.addedNote {
+    background-color: #32db64;
+    
+}
+.rolloutLeft {
+    transform: translate(-1500px, 0) rotate(140deg);
+    transition: transform .6s;
+}
+.rolloutRight {
+    transform: translate(1500px, 0) rotate(-140deg);
+    transition: transform .6s;
+}
 .tinder-swiper {
     background-color: #fff;
-    max-height: 0;
+    // max-height: 0;
     height: 0;
     overflow: hidden;
-    transition: height 2s ease;
+    transition: height .6s ease;
 }
 
 .engaged {
-    max-height: 55vh;
-    height: 55vh;
-    transition: height 2s ease;
+    // max-height: 55vh;
+    height: 50vh;
+    transition: height .6s ease;
 }
 
 .tinder-swiper .stack {
@@ -107,8 +119,12 @@ tinder-swiper {
     justify-content: center;
     overflow: hidden;
 }
-
-.tinder-swiper .stack li {
+$s-min: 20;
+$s-max: 70;
+$l-min: 30;
+$l-max: 90;
+@for $i from 1 through 100 {
+.tinder-swiper .stack li:nth-child(#{$i})  {
     position: absolute;
     display: flex;
     margin: 0 auto;
@@ -116,9 +132,13 @@ tinder-swiper {
     width: 100%;
     border: 5px solid #e9e9e9;
     border-radius: 25px;
-    background-color: #f6f6f6;
+    background-color: hsl(random(360), $s-min+random($s-max+-$s-min), $l-min+random($l-max+-$l-min));
     cursor: -webkit-grab;
 }
+}
+
+
+
 
 .tinder-swiper .stack li .erfaring-overskrift {
     display: flex;
@@ -144,7 +164,7 @@ tinder-swiper {
     padding-right: 30px;
     opacity: 0;
     user-select: none;
-    transition: bottom 2s;
+    transition: bottom .6s, opacity .6s;
 }
 
 .tinder-controls.controlsEngaged {
@@ -152,8 +172,7 @@ tinder-swiper {
     bottom: 30px;
     opacity: 1;
     user-select: auto;
-    transition: bottom 2s, opacity .3s;
-    ;
+    transition: bottom .6, opacity .6s;
 }
 
 .tinder-controls .col {

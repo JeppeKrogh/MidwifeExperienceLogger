@@ -38,15 +38,15 @@
                 <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
                     <!--toogle button-->
      
-                    <button ion-item (click)="toggleItem(i, j)" detail-none class="child" *ngIf="child.children">
+                    <!-- <button ion-item (click)="toggleItem(i, j)" detail-none class="child" *ngIf="child.children">
                         <ion-icon item-left name="add" *ngIf="!child.open"></ion-icon>
                         <ion-icon item-left name="close" *ngIf="child.open"></ion-icon>
                         {{ child.name}}
-                    </button>
+                    </button> -->
                     
                     <!--direct and button-->
 
-                    <ion-item-sliding>
+                    <!-- <ion-item-sliding>
                             <ion-item *ngIf="!child.children" detail-none class="child.item" text-wrap>
                                     <h4>{{ child.name }}</h4>
                                     <p text-lowercase> {{ child.information }}</p>
@@ -65,11 +65,10 @@
                             </button>
 
                             </ion-item-options>
-                     </ion-item-sliding>
+                     </ion-item-sliding> -->
 
 
-                    <ion-list *ngIf="child.children && child.open">
-                        <!--third level-->
+                    <!-- <ion-list *ngIf="child.children && child.open">
                                     <ion-item-sliding>
                                             <ion-item *ngFor="let item of child.children" detail-none class="child-item" text-wrap>
                                                     <h4>{{ item.name }}</h4>
@@ -88,7 +87,7 @@
                                             </ion-item-options>
                                      </ion-item-sliding>
 
-                    </ion-list>
+                    </ion-list> -->
  
                 </ion-list-header>
 
