@@ -1,105 +1,151 @@
-page-erfaring {}
+page-erfaring {
 
-.accordion-list {
-    background-color:rgb(255, 255, 255);
-    height: 100%;
-}
-
-.section {
-    background-color: rgb(235, 235, 235);
-    color:black;
-    margin-bottom: 4px;
+    .toolbar-background-md {
+    border-color: #ffffff;
+    background-color: #ffffff;
 }
 
-.section-active {
-    background-color: goldenrod;
-    color: white;
+    .kategori-liste .searchbar-md {
+        padding: 0px 0px 0px 0;
+    }
+
+    // .kategori-liste {
+    //     position: absolute;
+    //     width: 96%;
+    //     top: 16%;
+    //     z-index: -1;
+    //     display: block;
+    //     height: 100%;
+    // }
+    
+    .kategori-liste .col {
+        // position: absolute;
+        // padding:0;
+    }
+    
+    .kategori-liste .col .item {
+        // padding: 0;
+    }
+    
+    .tinder-swiper-parent {
+        display: none;
+    }
+    
+    .tinder-swiper-parent.segmentShown {
+        display: block;
+    }
+    
+    .listevisning-parent {
+        display: none;
+    }
+    .listevisning-parent.segmentShown {
+        display: block;
+    }
+    
+    .item-ios {
+        padding-left: 0; 
+        padding-left: 0; 
+        border-radius: 0;
+        position: relative;
+        font-size: 1.7rem;
+        color: #000;
+        background-color: #fff;
+        -webkit-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+
+    
+    
+    .item-md {
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: normal;
+        text-transform: none;
+        color: #000;
+        background-color: #fff;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .accordion-list {
+        background-color:rgb(255, 255, 255);
+        height: 100%;
+    }
+    
+    .section {
+        background-color: #ebebeb;
+        color: black;
+        padding: 10px 0;
+        /* margin-bottom: 4px; */
+    }
+    
+    .section-active {
+        background-color: #3cc8c8;
+        color: white;
+        padding: 10px 0;
+
+    }
+    
+    .child {
+        background-color: rgb(131, 152, 136);
+        color: black;
+        margin-bottom: 0px 0 0px 0;    
+    }
+    
+    
+    .child-item {
+        background-color: rgb(214, 214, 214);
+        padding: 0px;
+    }
+    
+    .label {
+        margin: 0px 0 0 0;
+    }
+    
+    .list {
+        margin: 0 0 0 0;
+    }
+    
+    .list-md .item[no-lines] .item-inner {
+        border-width: 0;
+        text-align: left;
+    }
+
+    .item-ios ion-icon[item-left], .item-ios ion-icon[item-right], .item-ios ion-icon[item-start], .item-ios ion-icon[item-end] {
+        margin-left: 12px;
+        margin-top: 9px;
+        margin-bottom: 8px;
+    }
+
+    
+    .item-md ion-icon[item-left], .item-md ion-icon[item-right], .item-md ion-icon[item-start], .item-md ion-icon[item-end] {
+        margin-left: 12px;
+        margin-top: 9px;
+        margin-bottom: 8px;
+    } 
+
+    .list-header-md {
+        padding-left: 0px;
+        margin-bottom: 3px;
+        min-height: 4.5rem;
+        border-top: 1px solid #dedede;
+        font-size: 1.4rem;
+        color: #757575;
+    }
+
+    ion-app.md [padding] .scroll-content {
+        padding: 1px; 
+    }
+
+    .subKategorier {
+        padding: 12px 5px 12px 15px;
+
+    }
+
+
 }
 
-.child {
-    background-color: rgb(131, 152, 136);
-    color: black;
-    margin-bottom: 2px 0 2px 0;
-
-}
-
-
-.child-item {
-    background-color: rgb(214, 214, 214);
-    padding: 10px;
-}
-
-.label {
-    margin:4px 0 4px 0;
-}
-
-.list {
-    margin: 2px 0 2px 0;
-}
-.kategori-liste {
-    //height: 100%;
-    display: block;
-    position: absolute;
-    width:100%;
-    background-color: #fff;
-    top: 21%;
-    z-index: -1;
-}
-.kategori-liste .searchbar-md {
-    padding: 0px 0px 0px 0;
-}
-// .kategori-liste {
-//     position: absolute;
-//     width: 96%;
-//     top: 16%;
-//     z-index: -1;
-//     display: block;
-//     height: 100%;
-// }
-.kategori-liste .col {
-    // position: absolute;
-    // padding:0;
-}
-.kategori-liste .col .item {
-    // padding: 0;
-}
-.tinder-swiper-parent {
-    display: none;
-}
-.tinder-swiper-parent.segmentShown {
-    display: block;
-}
-
-.listevisning-parent {
-    display: none;
-}
-.listevisning-parent.segmentShown {
-    display: block;
-}
-
-.item-ios {
-    padding-left: 0px; 
-    padding-left: 0px; 
-    border-radius: 0;
-    position: relative;
-    font-size: 1.7rem;
-    color: #000;
-    background-color: #fff;
-    -webkit-transition: background-color 200ms linear;
-    transition: background-color 200ms linear;
-}
-
-.item-md {
-    padding-left: 0px;
-    padding-right: 0;
-    position: relative;
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-transform: none;
-    color: #000;
-    background-color: #fff;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-}

@@ -14,6 +14,10 @@ page-login {
         margin: 0px 31px;
     }
 
+    .loginDesign list list-md{
+        margin: 0px 26px;
+    }
+
 
      .passcode {
         color: white;
@@ -46,6 +50,17 @@ page-login {
 
     }
 
+    .list-md .item-block .item-inner {
+        // border-bottom: 1px solid rgb(255, 221, 133);
+          border-bottom: 1px solid white;
+  
+      }
+
+      item-md, input-has-focus, item-input-has-focus {
+        border-bottom: 1px solid white;
+
+      }  
+
     .loginBut{
         margin: 0 0 10px  0;
         height: 50px;
@@ -69,6 +84,7 @@ page-login {
 
 
     .item-md {
+        
         padding-left: 0; 
         padding-right: 0;
         position: relative;
