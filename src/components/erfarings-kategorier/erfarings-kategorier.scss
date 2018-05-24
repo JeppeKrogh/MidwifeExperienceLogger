@@ -76,8 +76,7 @@ ion-app.ios [padding] .scroll-content {
     padding: 0;
 }
 
-ion-label ion-icon,
-ion-label span {
+ion-label ion-icon {
     vertical-align: middle;
 }
 
@@ -97,4 +96,8 @@ ion-label span {
     padding: 0 0.9em;
 }
 
+
+.ScheduleDate {
+    text-align: center;
+}
 //.date {color: white;}

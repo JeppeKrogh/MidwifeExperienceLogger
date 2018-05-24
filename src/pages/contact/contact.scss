@@ -60,7 +60,9 @@ page-contact {
         background-color: #3cc8c8;    }
 
      .toolbar-background-ios {
-            background-color: #3cc8c8;    
+            background-color: #3cc8c8;
+            border-color: none;
+    
         }
 
     
@@ -108,9 +110,7 @@ page-contact {
         color: white;
     }
 
-    .toolbar-background-ios {
-        background: white;
-    }
+
 
     .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
         border-style: none;
