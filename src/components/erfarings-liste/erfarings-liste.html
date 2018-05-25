@@ -32,12 +32,12 @@
                                     <ion-item class="subKategorier" detail-none  text-wrap>
                                             <h4>{{ subCategory.navn }}</h4>
                                             <p text-lowercase> {{ note }}</p>
-                                            <button ion-button outline item-end (click)="addItem(subCategory.kategorier)">Tilføj</button>
+                                            <button  color="secondary" ion-button outline item-end (click)="addItem(subCategory.kategorier)">Tilføj</button>
                                             <ion-icon item-end name="swap"></ion-icon>
 
                                     </ion-item>                                
                                     <ion-item-options side="right">
-                                      <button (click)="presentPrompt()" ion-button color="green"><ion-icon name="book"></ion-icon>
+                                      <button  color="secondary" (click)="presentPrompt()" ion-button ><ion-icon name="book"></ion-icon>
                                     Note</button>
                                     </ion-item-options>
                              </ion-item-sliding>
