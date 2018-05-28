@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
-import { ModalController, AlertController, Alert, ToastController } from 'ionic-angular';
-import { Http } from '@angular/http';
+import { Component } from "@angular/core";
+import {
+  ModalController,
+  AlertController,
+  Alert,
+  ToastController
+} from "ionic-angular";
+import { Http } from "@angular/http";
 import { DatabaseProvider } from "../../providers/database/database";
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
-import 'firebase/firestore';
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from "firebase";
+import "firebase/firestore";
 
 /**
  * Generated class for the ErfaringsListeComponent component.
@@ -13,11 +18,10 @@ import 'firebase/firestore';
  * Components.
  */
 @Component({
-  selector: 'erfarings-liste',
-  templateUrl: 'erfarings-liste.html'
+  selector: "erfarings-liste",
+  templateUrl: "erfarings-liste.html"
 })
 export class ErfaringsListeComponent {
-
   public isSearchBarOpened = false;
 
   information: any[];
@@ -28,9 +32,18 @@ export class ErfaringsListeComponent {
   subCategories: any[];
   note: string;
   testarray = [];
+  nyErfaringsArray = [];
+  newKey: number = 0;
+  test: any;
 
-  constructor(private http: Http, private model: ModalController, private _DB: DatabaseProvider, private alertCtrl: AlertController, private afAuth: AngularFireAuth, private toastCtrl: ToastController) {
-
+  constructor(
+    private http: Http,
+    private model: ModalController,
+    private _DB: DatabaseProvider,
+    private alertCtrl: AlertController,
+    private afAuth: AngularFireAuth,
+    private toastCtrl: ToastController
+  ) {
     this.note = "";
     //dummy json data. her skal man connect med rigtig database til den endelige version
     // let localDate = this.http.get('assets/information.json').map(res => res.json().items);
@@ -38,84 +51,76 @@ export class ErfaringsListeComponent {
     //   this.information = data;
     // });
 
-
-    let db = firebase.firestore();
-    this._DB.getDocuments("erf")
-      .then((data) => {
+    this.afAuth.authState.subscribe(res => {
+      let db = firebase.firestore();
+      this._DB.getDocuments("erf").then(data => {
         if (data.length === 0) {
-          console.log("no data");
-        }
-        else {
+          console.log("nope");
+        } else {
           // this.information = data;
+          var kategorier = new Array();
+          var testArray = new Array();
 
-          this.categories = data;
-          // this.categ = data;
-          var newi = 1;
+          var i = 0;
           for (var key in data) {
-          
-            let path = "erf/kat" + newi + "/kat" + newi; 
-              this._DB.getDocuments(path)
-                .then((data2) => {
-                  if (data2.length === 0) {
-                    this.subCategories = [];   
-                  }
-                  else {
-                    this.testarray.push(data2)      
-                  }
-                })
-                .catch();
-                newi++;
-              }
+            i++;
+
+            let db2 = firebase.firestore();
+            let path = "erf/kat" + i + "/kat" + i;
+            db2
+              .collection(path)
+              .get()
+              .then(querySnapshot => {
+                if (!querySnapshot) {
+                  console.log("sorry, no data");
+                } else {
+                  this.nyErfaringsArray = [];
+                  querySnapshot.docs.forEach(docSnap => {
+                    this.nyErfaringsArray.push({
+                      navn: docSnap.data().navn,
+                      id: docSnap.id
+                    });
+                  });
+                }
+                kategorier.push({
+                  parent: data[this.newKey].navn,
+                  child: this.nyErfaringsArray
+                });
+                this.newKey++;
+              });
+          }
+          this.categories = kategorier;
         }
-      })
-      .catch();
-
+      });
+    });
   }
 
-  openModel() {
 
-  }
+  openModel() {}
 
   toggleSection(i) {
-
-    var newi = i+1;
-    
-
-    let db = firebase.firestore();
-    let path = "erf/kat" + newi + "/kat" + newi; 
-
-          this._DB.getDocuments(path)
-            .then((data) => {
-              if (data.length === 0) {
-                this.subCategories = [];   
-              }
-              else {
-                this.subCategories = data;    
-                this.categories[i].open = !this.categories[i].open;        
-              }
-            })
-            .catch();
+    this.categories[i].open = !this.categories[i].open;
   }
 
   presentPrompt() {
     let alert = this.alertCtrl.create({
-      title: 'Tilknyt Note',
+      title: "Tilknyt Note",
       inputs: [
         {
-          name: 'note',
-          placeholder: ''
-        },
+          name: "note",
+          placeholder: ""
+        }
       ],
       buttons: [
         {
-          text: 'Slet note',
-          role: 'cancel',
+          text: "Slet note",
+          role: "cancel",
           handler: data => {
             this.note = "";
           }
         },
         {
-          text: 'Tilføj Note',
+          text: "Tilføj Note",
           handler: data => {
             if (data > "") {
               this.note = data.note;
@@ -130,47 +135,65 @@ export class ErfaringsListeComponent {
   }
   addItem($event) {
     this.afAuth.authState.subscribe(res => {
-      let db = firebase.firestore();
-      let path = "users/" + res.uid + "/erfaringer";
-      db.collection(path).doc().set({
-        note: this.note,
-        id: $event
-      })
+      let path1 = "users/" + res.uid;
+      this._DB
+        .getDocument("users", res.uid)
+        .then(data => {
+          if (data.length === 0) {
+            console.log("no data");
+          } else {
+            for (var key in data) {
+              console.log(data[key].student_semester);
+            }
+            if (data[key].student_semester <= 3) {
+              this.test = 1;
+            } else if (
+              data[key].student_semester > 3 &&
+              data[key].student_semester <= 5
+            ) {
+              this.test = 2;
+            } else if (
+              data[key].student_semester > 5 &&
+              data[key].student_semester <= 7
+            ) {
+              this.test = 3;
+            }
+
+            let db = firebase.firestore();
+            let path = "users/" + res.uid + "/erfaringer";
+            db
+              .collection(path)
+              .doc()
+              .set({
+                // navn: event.target.attributes['data-name'].value,
+                note: this.note,
+                // id: event.target.attributes['data-id'].value,
+                // time: this.date,
+                internship: this.test
+                // parent: +event.target.attributes['data-parent'].value,
+              });
+          }
+        })
+        .catch();
+
+
       this.note = "";
+      // this.addedNote = false;
     });
-
-    let toast = this.toastCtrl.create({
-      message: 'Erfaring Tilføjet 🤩',
-      duration: 1000,
-      position: 'top'
-    });
-    toast.onDidDismiss(() => {
-    });
-    toast.present();
-  }
-  toggleItem(i, j) {
-    // this.information[i].children[j].open = !this.information[i].children[j].open;
-
-
   }
   //search bar
   onInput(event) {
     let toast = this.toastCtrl.create({
-      message: 'Søgefunktionen er endnu ikke implementeret',
+      message: "Søgefunktionen er endnu ikke implementeret",
       duration: 1000,
-      position: 'top'
+      position: "top"
     });
-    toast.onDidDismiss(() => {
-    });
+    toast.onDidDismiss(() => {});
     toast.present();
     // let serVal = event.target.value;
     // if (serVal && serVal.trim() != "") {
     //   this.categories
     // }
   }
-  onSearch(event) {
-   
-
-  }
-
+  onSearch(event) {}
 }

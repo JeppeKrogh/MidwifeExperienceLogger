@@ -1,0 +1,32 @@
+<!--
+  Generated template for the ExperienceModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="experience-modal">
+    
+  <ion-list-header>{{experienceHeader}}</ion-list-header>
+  <ion-spinner [ngClass]="{contentLoaded: contentLoaded}"></ion-spinner>
+  <h2>{{emptyData}}</h2>
+    <ion-item text-wrap *ngFor="let experienceNote of experienceNotes">
+        <h2>{{experienceNote.time }}</h2>
+      {{experienceNote.note }}
+      
+      <!-- <ion-content>{{experienceNote.note }}</ion-content>
+    <ion-label>{{experienceNote.time }}</ion-label> -->
+    </ion-item>
+  
+
+</ion-content>

@@ -16,16 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class EfaringsdetailjerPage {
 
   items = [
-    'erfaring 1',
-    'erfaring 2',
-    'erfaring 3',
-    'erfaring 4',
-    'erfaring 5',
-    'erfaring 6',
-    'erfaring 7',
-    'erfaring 8',
-    'erfaring 9',
-    'erfaring 10'
+    // 'erfaring 1',
+    // 'erfaring 2',
+    // 'erfaring 3',
+    // 'erfaring 4',
+    // 'erfaring 5',
+    // 'erfaring 6',
+    // 'erfaring 7',
+    // 'erfaring 8',
+    // 'erfaring 9',
+    // 'erfaring 10'
   ];
 
   itemSelected(item: string) {

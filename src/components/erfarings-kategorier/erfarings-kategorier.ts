@@ -28,11 +28,7 @@ export class ErfaringsKategorierComponent {
 
 
   constructor(private _DB: DatabaseProvider, private requirementsService: TinderRequirementsProvider) {
-    
-    console.log(this.category);
-
-
-    let db = firebase.firestore();
+        let db = firebase.firestore();
     this._DB.getDocuments("erf")
       .then((data) => {
         if (data.length === 0) {
@@ -44,9 +40,6 @@ export class ErfaringsKategorierComponent {
           for (var key in data) {
             kategorier.push(data[key])
           }
-          console.log(data);
-          console.log(kategorier);
-          // console.log("kategorier" + kategorier[0]);
           this.categories = kategorier;
           
 
@@ -55,30 +48,6 @@ export class ErfaringsKategorierComponent {
       })
       .catch();
     this.requirementsarray = [];
-
-
-
-    // var _COLL = "erfaringer";
-    // this._DB.getDocuments(_COLL)
-    //   .then((data) => {
-    //     // IF we don't have any documents then the collection doesn't exist
-    //     // so we create it!
-    //     if (data.length === 0) {
-    //       console.log("nope");
-    //     }
-    //     // Otherwise the collection does exist and we assign the returned
-    //     // documents to the public property of locations so this can be
-    //     // iterated through in the component template
-    //     else {
-    //       console.log(data);
-    //       var kategorier = new Array();
-    //       for (var key in data) {
-    //         kategorier.push(data[key].kategorier)
-    //       }
-    //       this.categories = kategorier;
-    //     }
-    //   })
-    //   .catch();
   }
 
   @ViewChild(DatePickerDirective) public datepicker: DatePickerDirective;
@@ -94,11 +63,9 @@ export class ErfaringsKategorierComponent {
  
   public options() {
     this.date = this.initDate;
-    console.log(this.category);
     this.requirementsarray = [];
     this.category = this.category;
     this.requirementsarray.push(this.category, this.date);
-    console.log("erfaringsarrayet: " + this.requirementsarray);
     this.requirementsService.announceRequirements(this.requirementsarray);
   }
   

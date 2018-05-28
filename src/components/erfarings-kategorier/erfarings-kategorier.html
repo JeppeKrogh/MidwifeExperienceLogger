@@ -12,13 +12,18 @@
             </ion-item>
         </ion-col>
         <ion-col>
-            <ion-list style="text-align: center;">
+            <ion-list id="heeeeeeeest" style="text-align: center;">
                 <ion-icon name="bookmarks" style="zoom:3.0;"></ion-icon>
                 
-                <ion-select multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ionChange)="options(category)">
-                    <ion-option value="{{category.kategoriNummer}}" *ngFor="let category of categories">{{ category.navn }}</ion-option>
-                    <p>{{category}}</p>
-                    
+                <ion-select  multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ionChange)="options(category)">
+                        
+                    <ion-option value="{{category.kategoriNummer}}" *ngFor="let category of categories; let i = index">
+                        
+                        {{ category.navn }}
+                        
+                    </ion-option>
+                    <ion-icon name="home" item-left></ion-icon>
+                    <p >{{category}}</p>                
                 </ion-select>
             </ion-list>
         </ion-col>

@@ -10,14 +10,14 @@
                     <button ion-item (click)="toggleSection(i)" [ngClass]="{'section-active': category.open, 'section': !category.open}">
                         <ion-icon item-left name="arrow-forward" *ngIf="!category.open"></ion-icon>
                         <ion-icon item-left name="arrow-down" *ngIf="category.open"></ion-icon>
-                        {{ category.navn }}
+                        {{ category.parent }}
                     </button>
 
                     
-                    <ion-list *ngIf="subCategories && category.open" no lines>
+                    <ion-list *ngIf="category.open" no lines>
         
                         <!--second level-->
-                        <ion-list-header data-id="{{subCategory.kategorier}}"  style="border: 1px solid #e9e9e9;" *ngFor="let subCategory of subCategories" no-lines no-padding>
+                        <ion-list-header data-id="{{subCategory.kategorier}}"  style="border: 1px solid #e9e9e9;" *ngFor="let subCategory of category['child']" no-lines no-padding>
                             <!--toogle button-->
 <!--              
                             <button ion-item  detail-none class="child"  value="{{subCategory}">
@@ -32,7 +32,7 @@
                                     <ion-item detail-none  text-wrap>
                                             <h4>{{ subCategory.navn }}</h4>
                                             <p text-lowercase> {{ note }}</p>
-                                            <button ion-button outline item-end (click)="addItem(subCategory.kategorier)">Tilføj</button>
+                                            <button ion-button outline item-end (click)="addItem(subCategory.id)">Tilføj</button>
         
                                         </ion-item>                                
                                     <ion-item-options side="right">

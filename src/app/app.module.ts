@@ -31,6 +31,7 @@ import { TinderRequirementsProvider } from '../providers/tinder-requirements/tin
 import {EfaringsdetailjerPage} from '../pages/efaringsdetailjer/efaringsdetailjer';
 import {HttpModule} from '@angular/http';
 import { ErfaringsListeComponent } from '../components/erfarings-liste/erfarings-liste';
+import { ExperienceModalPage } from "../pages/experience-modal/experience-modal";
 
 const firebaseConfig = {
     apiKey: "AIzaSyA6wpZg5s78EF76yDT4k5-FUBFcBdSYx1M",
@@ -59,6 +60,7 @@ const firebaseConfig = {
     IntroslidesPage,
     ErfaringsListeComponent,
     ProfilePage,
+    ExperienceModalPage,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +92,8 @@ const firebaseConfig = {
     ErfaringPage,
     IntroslidesPage,
     ErfaringsListeComponent,
-    ProfilePage
+    ProfilePage,
+    ExperienceModalPage
   ],
   providers: [
     GooglePlus,
