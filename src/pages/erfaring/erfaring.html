@@ -8,7 +8,12 @@
 <ion-header>
 
     <ion-navbar>
+
         <ion-title *ngIf="!isSearchBarOpened">
+                    Erfaring
+        </ion-title>
+        
+        <!--<ion-title *ngIf="!isSearchBarOpened">
             erfaring
         </ion-title>
         <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
@@ -16,28 +21,37 @@
             <button ion-button icon-only *ngIf="!isSearchBarOpened" (click)="!isSearchBarOpened=true">
                 <ion-icon name="search"></ion-icon>
             </button>
-        </ion-buttons>
+        </ion-buttons> -->
 
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
     <erfarings-kategorier></erfarings-kategorier>
-        <ion-segment color="primary" [(ngModel)]="erfaringsVisning"  >
-        <ion-segment-button (click)="segmentShownFunc()" value="tinder">
-          Swiper
-        </ion-segment-button>
-        <ion-segment-button (click)="segmentShownFunc()" value="liste">
-          Liste
-        </ion-segment-button>
+        <ion-segment class="efaringSegment"  color="secondary" [(ngModel)]="erfaringsVisning"  >
+            <ion-segment-button class="swipListSegment" (click)="segmentShownFunc()" value="tinder">
+            Swiper
+            </ion-segment-button>
+            <ion-segment-button class="swipListSegment" (click)="segmentShownFunc()" value="liste">
+            Liste
+            </ion-segment-button>
       </ion-segment>
       <!-- <button ion-button (click)="callMe()"></button> -->
       <div >
         <div class="tinder-swiper-parent" [ngClass]=" {segmentShown: !segmentShown}" >
-                <tinder-swiper></tinder-swiper>
+            <div class="introSwip">
+                <ion-img src="../assets/imgs/finger-swipe.png"></ion-img>
+                <h1>Swipe funktion</h1>
+                <p>Swipfunktion kan du gå rigtig hurtig  med dit daglig erfaringsskema og samtidig have det sjov
+                <br><br><b>Sådan gør du</b>: Først du vælger dato ved kalender ikon, derefter du vælger erfaring ved kalender ikon</p>
+                    
+            </div>    
+            <tinder-swiper></tinder-swiper>
+ 
+
         </div>
         <div class="listevisning-parent" [ngClass]=" {segmentShown: segmentShown}">
                 <erfarings-liste></erfarings-liste>

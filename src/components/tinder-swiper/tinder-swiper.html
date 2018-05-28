@@ -9,7 +9,9 @@
                 <li [attr.data-id]="c.name.kategorier" [attr.data-parent]="c.number" [attr.data-name]="c.name.navn" swing-card #mycards1 [ngClass]="c.name" *ngFor="let c of cards">
 
                     <div class="erfaring-overskrift">
+
                         <h1>{{c.name.navn}}</h1>
+
                     </div>
 
 
@@ -27,10 +29,10 @@
 <ion-row [ngClass]="{controlsEngaged: gotData}" class="tinder-controls">
     <ion-col>
         <div>
-            <ion-icon style="zoom: 3; color: green;" name="checkmark-circle-outline" (click)="swipeRightClick()"  item-center></ion-icon>
-            <button col-xs-3 ion-button small [ngClass]="{addedNote: addedNote}" (click)="presentPrompt()">Tilføje Note</button>
-            <button col-xs-3 ion-button small>Sæt antal</button>
-            <ion-icon style="zoom: 3; color: red;" name="close-circle" (click)="swipeLeftClick()" item-center></ion-icon>
+            <ion-icon  class="swipButton1"  name="close-circle" (click)="swipeLeftClick()" item-center></ion-icon> 
+            <button class="swipButton"  color="primary" col-xs-3 ion-button small [ngClass]="{addedNote: addedNote}" (click)="presentPrompt()">Tilføje Note</button>
+            <button class="swipButton"  color="primary" col-xs-3 ion-button small>Sæt antal</button>
+            <ion-icon  class="swipButton2" name="checkmark-circle-outline" (click)="swipeRightClick()"  item-center></ion-icon>
         </div>
     </ion-col>
 </ion-row>

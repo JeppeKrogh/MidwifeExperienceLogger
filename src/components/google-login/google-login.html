@@ -3,7 +3,7 @@
         <ion-label class="google-login-container" *ngIf="(user | async) || {} as user">
 
             <h3 cenetr style="margin-top: 5%; color: white;">or</h3> 
-            <button block ion-button *ngIf="!user.uid" (tap)="googleLogin()">
+            <button class="googleButton" block ion-button *ngIf="!user.uid" (tap)="googleLogin()">
             login with google
             </button>
         
@@ -11,7 +11,7 @@
                 you already loggin in with: {{user.uid}}
             </div>
         
-            <button  ion-button (tap)="signOut()">
+            <button class="signoutButton"  ion-button (tap)="signOut()">
               Logout
             </button>
         </ion-label>

@@ -12,15 +12,15 @@ erfarings-kategorier {
 }
 
 ion-grid {
-    background-color: rgb(24, 213, 206);
+    background-color: #07d5bd;
 }
 
 .list-ios {
     margin-bottom: 0;
 }
 
+
 .erfarings-kategorier {
-    border-bottom: 1px solid #1d1d1d;
 }
 
 // .erfarings-kategorier .select {
@@ -76,8 +76,7 @@ ion-app.ios [padding] .scroll-content {
     padding: 0;
 }
 
-ion-label ion-icon,
-ion-label span {
+ion-label ion-icon {
     vertical-align: middle;
 }
 
@@ -97,4 +96,36 @@ ion-label span {
     padding: 0 0.9em;
 }
 
+
+.ScheduleDate {
+    text-align: center;
+    
+}
+
+
+.ikonForDato {
+    zoom:2.5;
+    color: white;
+}
+
+.ikonForErfaring {
+    zoom:3;
+    color: white;
+}
+
 //.date {color: white;}
+   
+
+
+@media (max-width : 320px) {
+    .ikonForDato {
+        zoom:1.5;
+        color: white;
+    }
+    
+    .ikonForErfaring {
+        zoom:2;
+        color: white;
+    }
+
+    }

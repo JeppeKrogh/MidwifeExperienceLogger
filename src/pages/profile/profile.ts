@@ -7,6 +7,7 @@ import 'firebase/firestore';
 import { Chart } from 'chart.js';
 import { ModalContentPage } from '../modal-content/modal-content';
 
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -20,6 +21,9 @@ import { ModalContentPage } from '../modal-content/modal-content';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+
+  public isSearchBarOpened = false;
+
   @ViewChild('barCanvas') barCanvas;
 
   barChart: any;
