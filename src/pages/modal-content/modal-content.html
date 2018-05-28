@@ -7,11 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ModalContent</ion-title>
     <ion-buttons end>
       <button ion-button (click)="closeModal()">close</button>
     </ion-buttons>
-      
+
   </ion-navbar>
 
 </ion-header>
@@ -20,99 +19,46 @@
 <ion-content padding>
 
   <div style="text-align: center; margin: 20px 0;">
-    <h3>pratik1,2,3</h3>
-</div>
+    <h3 name="internshipCount">Praktikforløb {{internshipCount}}</h3>
+  </div>
   <div style="text-align:center; margin: 20px 0;">
-     <ion-icon style="zoom: 4; margin: 0 7px;" name="book"></ion-icon>
- </div> 
+    <ion-icon style="zoom: 4; margin: 0 7px;" name="book"></ion-icon>
+  </div>
 
-    <ion-card>
-        <ion-card-header>
-          Status
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #barCanvas> </canvas>
-        </ion-card-content>
-      </ion-card>
-  
+  <ion-card>
+    <ion-card-header>
+      Status
+    </ion-card-header>
+    <ion-card-content style="display:none;">
+      <canvas #barCanvas> </canvas>
+    </ion-card-content>
+  </ion-card>
 
-      <ion-card-header>kategorier</ion-card-header>
 
-      <ion-card>
-          <ion-item>
-            <p>Gynækologi</p>
-            <p item-end (click)="nextPage();">show more</p>
-          </ion-item>
-          
-        <div class="progress-outer">
-              <div class="progress-inner" [style.width]="progress + '%'">
-                      50%
-            </div>
+  <ion-card-header>kategorier</ion-card-header>
+
+  <ion-card  *ngFor="let category of categories; let i = index">
+    <ion-item (click)="toggleSection(i)" [ngClass]="{'section-active': category.open, 'section': !category.open}">
+      <ion-icon item-left name="arrow-forward" *ngIf="!category.open"></ion-icon>
+      <ion-icon item-left name="arrow-down" *ngIf="category.open"></ion-icon>
+      <h2>
+        <b>{{ category.parent }}</b>
+      </h2>
+    </ion-item>
+
+    <ion-list  *ngIf="category.open">
+      <ion-card (click)="showModal(subCategory.childId, subCategory.childName)" class="child-card" *ngFor="let subCategory of category['children']">
+        <ion-item>
+          <p>{{ subCategory.childName }}</p>
+        </ion-item>
+
+        <div class="progress-outer" style="color: #1d1d1d">
+            
+          <div class="progress-inner" [style.width]="subCategory.count + '%'">
+              Tilføjet {{subCategory.count}} gange
           </div>
+        </div>
       </ion-card>
-      <ion-card>
-              <ion-item>
-                <p>babyhjælp</p>
-                <p item-end>show more</p>
-              </ion-item>
-              
-            <div class="progress-outer">
-                  <div class="progress-inner" [style.width]="progress + '%'">
-                          {{progress}}%
-                </div>
-              </div>
-          </ion-card>
-          <ion-card>
-              <ion-item>
-                <p>Gynækologi</p>
-                <p item-end>show more</p>
-              </ion-item>
-              
-            <div class="progress-outer">
-                  <div class="progress-inner" [style.width]="progress + '%'">
-                          50%
-                </div>
-              </div>
-          </ion-card>
-          <ion-card>
-                  <ion-item>
-                    <p>Gynækologi</p>
-                    <p item-end>show more</p>
-                  </ion-item>
-                  
-                <div class="progress-outer">
-                      <div class="progress-inner" [style.width]="progress + '%'">
-                              {{progress}}%
-                    </div>
-                  </div>
-              </ion-card>
-              <ion-card>
-                  <ion-item>
-                        <p>Gynækologi</p>
-                        <p item-end>show more</p>
-                  </ion-item>
-                      
-                  <div class="progress-outer">
-                          <div class="progress-inner" [style.width]="progress + '%'">
-                                  {{progress}}%
-                        </div>
-                  </div>
-              </ion-card>
-              <ion-card>
-                      <ion-item>
-                            <p>Gynækologi</p>
-                            <p item-end>show more</p>
-                      </ion-item>
-                          
-                      <div class="progress-outer">
-                              <div class="progress-inner" [style.width]="progress + '%'">
-                                      {{progress}}%
-                            </div>
-                      </div>
-               </ion-card>
-      
-
-
-
-    
-    </ion-content>
+    </ion-list>
+  </ion-card>
+</ion-content>

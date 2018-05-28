@@ -63,24 +63,22 @@
 
   </div>
 
-    <ion-item class="pratikMenu">
-        <ion-label class="pMenu1">
-            <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
-            <p>pratik 1</p>
-        </ion-label>
+<ion-item class="pratikMenu">
+      <ion-label class="pMenu1">
+          <ion-icon (click)="showModal(1)" style="zoom: 3;" name="bookmarks"></ion-icon>
+          <p>pratik 1</p>
+      </ion-label>
 
-        <ion-label class="pMenu2">
-            <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
-            <p>pratik 2</p>
-        </ion-label>
+      <ion-label class="pMenu2">
+          <ion-icon (click)="showModal(2)" style="zoom: 3;"  name="bookmarks"></ion-icon>
+          <p>pratik 2</p>
+      </ion-label>
 
-        <ion-label class="pMenu3">
-            <ion-icon (click)="showModal()" style="zoom: 3;" name="bookmarks"></ion-icon>
-            <p>pratik 3</p>
-        </ion-label>
-    </ion-item> 
-    <ion-searchbar [(ngModel)]="myInput" light [showCancelButton]="true" (ionInput)="onInput($event)" (ionCancel)="isSearchBarOpened=false">
-    </ion-searchbar>
+      <ion-label class="pMenu3">
+          <ion-icon (click)="showModal(3)" style="zoom: 3;"  name="bookmarks"></ion-icon>
+          <p>pratik 3</p>
+      </ion-label>
+  </ion-item> 
 <!-- 
   <button ion-button (click)="showModal()"> openmodal</button>
   <button ion-button (click)="showModal()"> openmodal</button>

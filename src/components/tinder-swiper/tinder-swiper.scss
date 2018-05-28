@@ -119,21 +119,22 @@ tinder-swiper button.addedNote {
     justify-content: center;
     overflow: hidden;
 }
-$s-min: 20;
-$s-max: 70;
-$l-min: 30;
-$l-max: 90;
-@for $i from 1 through 100 {
-.tinder-swiper .stack li:nth-child(#{$i})  {
+// $s-min: 20;
+// $s-max: 70;
+// $l-min: 30;
+// $l-max: 90;
+// @for $i from 1 through 100 {
+// .tinder-swiper .stack li:nth-child(#{$i})  {
+
+.tinder-swiper .stack li  {
     position: absolute;
     display: flex;
     margin: 0 auto;
     height: 98%;
-    width: 97%;
-    border-radius: 10px;
-    background-color: hsl(random(360), $s-min+random($s-max+-$s-min), $l-min+random($l-max+-$l-min));
+    width: 100%;
+    border: 5px solid #e9e9e9;
+    border-radius: 25px;
     cursor: -webkit-grab;
-}
 }
 
 
@@ -150,6 +151,54 @@ $l-max: 90;
     color: #07d5bd;
  }
 
+[data-parent="1"] {
+    background-image: url("/assets/imgs/Midwife mockup_Svangreomsorg copy.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+[data-parent="2"] {
+    background-image: url("/assets/imgs/Midwife mockup_Svangreomsorg.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+[data-parent="3"] {
+    background-image: url("/assets/imgs/Midwife mockup_Svangreomsorg.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+[data-parent="4"] {
+    background-image: url("/assets/imgs/Midwife mockup_Svangreomsorg.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+[data-parent="5"] {
+    background-image: url("/assets/imgs/Midwife mockup_Fødselshjælp.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+[data-parent="6"] {
+    background-image: url("/assets/imgs/Midwife mockup_Gynækologi copy.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+[data-parent="7"] {
+    background-image: url("/assets/imgs/Midwife mockup_Gynækologi.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+[data-parent="8"] {
+    background-image: url("/assets/imgs/Midwife mockup_Journal.png") !important;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 .tinder-swiper .stack li .erfaring-overskrift {
     display: flex;
@@ -157,14 +206,16 @@ $l-max: 90;
     width: 100%;
     justify-content: center;
     padding: 15px;
-    height: 35%;
-    margin: auto;
+    // height: 35%;
+    // margin: auto;
+    margin: auto auto 0 auto;
 }
 
 .tinder-swiper .stack li .erfaring-overskrift h1,
 .tinder-swiper .stack li .erfaring-overskrift h2 {
     align-self: center;
     margin: auto;
+    text-align: center;
 }
 
 .tinder-controls {
