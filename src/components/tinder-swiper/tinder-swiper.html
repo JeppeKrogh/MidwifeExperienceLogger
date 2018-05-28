@@ -28,10 +28,10 @@
 <ion-row [ngClass]="{controlsEngaged: gotData}" class="tinder-controls">
     <ion-col>
         <div>
-            <button class="swipButton"><ion-icon style="zoom: 4; color: #d37866;" name="close-circle" (click)="swipeLeftClick()" item-center></ion-icon> </button>
+            <ion-icon  class="swipButton1"  name="close-circle" (click)="swipeLeftClick()" item-center></ion-icon> 
             <button class="swipButton"  color="primary" col-xs-3 ion-button small [ngClass]="{addedNote: addedNote}" (click)="presentPrompt()">Tilføje Note</button>
             <button class="swipButton"  color="primary" col-xs-3 ion-button small>Sæt antal</button>
-            <button class="swipButton"><ion-icon style="zoom: 4; color: #07d5bd;" name="checkmark-circle-outline" (click)="swipeRightClick()"  item-center></ion-icon></button>
+            <ion-icon  class="swipButton2" name="checkmark-circle-outline" (click)="swipeRightClick()"  item-center></ion-icon>
         </div>
     </ion-col>
 </ion-row>

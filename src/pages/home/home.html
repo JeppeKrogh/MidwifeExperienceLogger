@@ -6,9 +6,17 @@
     </ion-navbar>
 </ion-header>
 <popovers></popovers>
-<ion-content class="tutorial-page">
 
+<ion-content>
+    <ion-item style="text-align: left; background-color: transparent; margin-bottom: 0;" >
+        <h1 style="text-align: left;">Good morning</h1>
+    </ion-item>
+    <div style="padding: 10px 16px;">
+            <h2>Dagens motivation quote</h2>
+            <p>Every day holds the possiblility of a miracle. Good morning :)</p>
 
+    </div>
+        
    <!-- <button ion-button block color="primary" (click)="addDocument()">
    Add a new record
 </button>
@@ -37,5 +45,82 @@
         </ion-item>
     </ion-list>
     <button ion-button (click)="saveDocument()">hello</button>-->
+    <!--
+    <ion-card>
+        <ion-card-content>
+            <ion-card-title>
+                        Dagens motivation quote            
+            </ion-card-title>    
+            <p>Every day holds the possiblility of a miracle. Good morning :)</p>
+        </ion-card-content>
 
+    </ion-card> -->
+
+   <!-- <ion-card>
+            <ion-item>
+              <p>Dagens motivation quote</p>
+              <p item-end (click)="nextPage();">show more</p> 
+            </ion-item>
+            <ion-card-content>
+                    <p>Every day holds the possiblility of a miracle. Good morning :)</p>
+             </ion-card-content>
+     </ion-card>
+    
+        <ion-card-header>Dagens top 5 registeret</ion-card-header>
+
+    -->
+    <ion-card>
+            <ion-item>
+              <p>Dagens top 5 registeret</p>
+              <!--<p item-end (click)="nextPage();">show more</p> -->
+            </ion-item>
+            <ion-card-content>
+                    <!-- <ion-card-title>
+                             Dagens top 5 registeret
+                     </ion-card-title> -->
+ 
+                 <p>1. måle BT og puls</p>
+                 <p>2. inddrage viden om kvinden/familiens mål og behov i omsorgen</p>
+                 <p>3. hjemmebesøg i graviditeten</p>
+                 <p>4. rundvisning på fødeafdelingen </p>
+                 <p>5. vejlede kvinden/parret ved udskrivelse til hjemmet fra fødeafsnit</p>
+             </ion-card-content>
+     </ion-card>
+
+    <ion-card>
+        
+            <ion-card-content>
+              <ion-card-title>
+                Nine Inch Nails Live
+              </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+              </p>
+              <p>
+                    The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+                  </p>
+            </ion-card-content>
+        
+            <ion-row no-padding>
+              <ion-col>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='star'></ion-icon>
+                  Favorite
+                </button>
+              </ion-col>
+              <ion-col text-center>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='musical-notes'></ion-icon>
+                  Listen
+                </button>
+              </ion-col>
+              <ion-col text-right>
+                <button ion-button clear small color="danger" icon-start>
+                  <ion-icon name='share-alt'></ion-icon>
+                  Share
+                </button>
+              </ion-col>
+            </ion-row>
+        
+          </ion-card>
 </ion-content>

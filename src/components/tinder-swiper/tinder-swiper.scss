@@ -137,9 +137,18 @@ $l-max: 90;
 }
 
 
-.swipButton {
+.swipButton, .swipButton1, .swipButton2 {
     vertical-align: middle;
 }
+
+.swipButton1 {
+    font-size: 50px; 
+    color:rgb(216, 68, 31); }
+
+.swipButton2 {
+    font-size: 50px; 
+    color: #07d5bd;
+ }
 
 
 .tinder-swiper .stack li .erfaring-overskrift {
@@ -190,4 +199,80 @@ $l-max: 90;
 .erfaring-overskrift {
     text-align: center;
     color:black;
+}
+
+
+@media (max-width : 320px) {
+
+    .swipButton1 {
+        font-size: 50px; 
+        color:rgb(216, 68, 31); }
+    
+    .swipButton2 {
+        font-size: 50px; 
+        color: #07d5bd;
+     }
+
+     $s-min: 20;
+     $s-max: 70;
+     $l-min: 30;
+     $l-max: 90;
+     @for $i from 1 through 100 {
+     .tinder-swiper .stack li:nth-child(#{$i})  {
+         position: absolute;
+         display: flex;
+         margin: 0 auto;
+         height: 95%;
+         width: 97%;
+         border-radius: 10px;
+         background-color: hsl(random(360), $s-min+random($s-max+-$s-min), $l-min+random($l-max+-$l-min));
+         cursor: -webkit-grab;
+     }
+     }
+
+     .tinder-controls.controlsEngaged {
+        display: block;
+        bottom: 10px;
+        opacity: 1;
+        -webkit-user-select: auto;
+        -moz-user-select: auto;
+        -ms-user-select: auto;
+        user-select: auto;
+        -webkit-transition: bottom .6, opacity .6s;
+        transition: bottom .6, opacity .6s;
+    }
+
+    .grid {
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 3rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #07d5bd;
+        font-size: 1.3rem;
+        line-height: 3rem;
+        color: #07d5bd;
+        background-color: transparent;
+    }
+ 
+
 }

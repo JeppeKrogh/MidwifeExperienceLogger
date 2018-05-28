@@ -103,6 +103,29 @@ ion-label ion-icon {
 }
 
 
+.ikonForDato {
+    zoom:2.5;
+    color: white;
+}
+
+.ikonForErfaring {
+    zoom:3;
+    color: white;
+}
+
 //.date {color: white;}
+   
 
 
+@media (max-width : 320px) {
+    .ikonForDato {
+        zoom:1.5;
+        color: white;
+    }
+    
+    .ikonForErfaring {
+        zoom:2;
+        color: white;
+    }
+
+    }
