@@ -12,8 +12,8 @@
             </ion-item>
         </ion-col>
         <ion-col>
-            <ion-list style="text-align: center;">
-                <ion-icon name="bookmarks" style="zoom:3.0; color: white;"></ion-icon>
+            <ion-list style="text-align: center; margin: -2px 0 0 0;">
+                <ion-icon name="bookmarks" style="zoom:4.0; color: white;"></ion-icon>
                 
                 <ion-select multiple="true" submitText="ok" cancelText="cancel" [(ngModel)]="category" (ionChange)="options(category)">
                     <ion-option value="{{category.kategoriNummer}}" *ngFor="let category of categories">{{ category.navn }}</ion-option>

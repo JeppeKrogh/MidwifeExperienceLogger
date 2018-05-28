@@ -1,6 +1,6 @@
 page-profile {
 
-}
+
 .accordion-list {
     background-color:rgb(255, 255, 255);
     height: 100%;
@@ -56,9 +56,7 @@ page-profile {
  
 }
 
-.toolbar-background-md {
-    border-color: #ffffff;
-    background-color: #3cc8c8;    }
+
 
 
 .progress-outer {
@@ -83,7 +81,7 @@ page-profile {
 
 .pratikMenuDiv {
     padding: 18px 0px 15px 0px;
-    background-color: #3cc8c8; 
+    background-color: #07d5bd; 
     text-align: center;
     color: white;
 }
@@ -98,7 +96,7 @@ page-profile {
     background: none;
     color: white;
     padding: 0;
-    margin: -14px 0 0 0;
+    margin: -4px 0 -4px 0;
 }
 
 .pratikMenu p {
@@ -106,7 +104,12 @@ page-profile {
 }
 
 .toolbar-background-ios {
-    background: white;
+    background: #ffffff;
+}
+
+.toolbar-background-md {
+    border-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
@@ -146,6 +149,33 @@ ion-img {
 }
 
 .pMenu1, .pMenu2, .pMenu3 { padding: 20px 4px;}
-.pMenu1 {background: red;} 
-.pMenu2 {background: purple;}
-.pMenu3 {background: peru;}
+.pMenu1 {background: #b2ceea;} 
+.pMenu2 {background: #90c2ff;}
+.pMenu3 {background: #7896ff;}
+
+.searchbar-ios {
+    padding: 10px 8px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+    background: #ebebeb;
+    margin: 0 0 4px 0;
+}
+
+.searchbar-ios .searchbar-input {
+    padding: 23px 28px;
+    border-radius: 5px;
+    height: 3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000;
+    background-color: #fff;
+}
+
+.searchbar-ios .searchbar-search-icon {
+    left: 9px;
+    top: 17px;
+
+}
+
+}

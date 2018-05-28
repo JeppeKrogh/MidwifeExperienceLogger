@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 import 'firebase/firestore';
 import { Chart } from 'chart.js';
 
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -19,6 +20,9 @@ import { Chart } from 'chart.js';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+
+  public isSearchBarOpened = false;
+
   @ViewChild('barCanvas') barCanvas;
 
   barChart: any;
