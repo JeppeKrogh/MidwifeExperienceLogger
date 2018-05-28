@@ -26,16 +26,16 @@
   </div>
 
   <ion-card>
-    <ion-card-header>
+    <!-- <ion-card-header>
       Status
-    </ion-card-header>
+    </ion-card-header> -->
     <ion-card-content style="display:none;">
       <canvas #barCanvas> </canvas>
     </ion-card-content>
   </ion-card>
 
 
-  <ion-card-header>kategorier</ion-card-header>
+  <ion-card-header>Kategorier</ion-card-header>
 
   <ion-card  *ngFor="let category of categories; let i = index">
     <ion-item (click)="toggleSection(i)" [ngClass]="{'section-active': category.open, 'section': !category.open}">

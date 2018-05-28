@@ -133,7 +133,10 @@ export class ErfaringsListeComponent {
     });
     alert.present();
   }
-  addItem($event) {
+  addItem(experienceId, experienceName) {
+    console.log(experienceId);
+    console.log(experienceName);
+    var date = new Date();
     this.afAuth.authState.subscribe(res => {
       let path1 = "users/" + res.uid;
       this._DB
@@ -165,10 +168,10 @@ export class ErfaringsListeComponent {
               .collection(path)
               .doc()
               .set({
-                // navn: event.target.attributes['data-name'].value,
+                navn: experienceName,
                 note: this.note,
-                // id: event.target.attributes['data-id'].value,
-                // time: this.date,
+                id: experienceId,
+                time: date,
                 internship: this.test
                 // parent: +event.target.attributes['data-parent'].value,
               });
@@ -177,9 +180,18 @@ export class ErfaringsListeComponent {
         .catch();
 
 
+      
+    });
+    let toast = this.toastCtrl.create({
+      message: 'Erfaring Tilføjet',
+      duration: 1000,
+      position: 'top'
+    });
+    toast.onDidDismiss(() => {
       this.note = "";
       // this.addedNote = false;
     });
+    toast.present();
   }
   //search bar
   onInput(event) {
