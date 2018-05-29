@@ -80,7 +80,7 @@ export class ModalContentPage {
 
                                     kategorier.forEach(data => {
                                         Object.keys(data.child).forEach(d => {
-                                            let currKey = JSON.stringify(data.child[d]);
+                                            let currKey = JSON.stringify(data.child[d].id);
                                             let currValue = map.get(currKey);
                                             if (currValue) {
                                                 currValue.childtest.count += 1;
@@ -102,6 +102,7 @@ export class ModalContentPage {
                                             }
                                         })
                                     });
+                                    
                                     var res = Array.from(map).map(e => e[1]);
                                     i++;
 
@@ -119,12 +120,13 @@ export class ModalContentPage {
                                         }
                                         hash[key].children = hash[key].children.concat(o.childtest);
                                     });
-                                    // this.categories = grouped;
-
                                     this.categories = grouped;
+
+                                    // this.categories = grouped;
                                     // console.log(grouped['childtest']);
-                                    // console.log(hesthest);
+                                    
                                 })
+                                
                         }
                     }
                 })
@@ -189,43 +191,43 @@ export class ModalContentPage {
     }
 
     
-    removeDuplicates(myArr, prop) {
-        return myArr.filter((obj, pos, arr) => {
-            return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
-        });
-    }
-    compressArray(original) {
+    // removeDuplicates(myArr, prop) {
+    //     return myArr.filter((obj, pos, arr) => {
+    //         return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
+    //     });
+    // }
+    // compressArray(original) {
 
-        var compressed = [];
-        // make a copy of the input array
-        var copy = original.slice(0);
+    //     var compressed = [];
+    //     // make a copy of the input array
+    //     var copy = original.slice(0);
 
-        // first loop goes over every element
-        for (var i = 0; i < original.length; i++) {
+    //     // first loop goes over every element
+    //     for (var i = 0; i < original.length; i++) {
 
-            var myCount = 0;
-            // loop over every element in the copy and see if it's the same
-            for (var w = 0; w < copy.length; w++) {
-                if (original[i] == copy[w]) {
-                    // increase amount of times duplicate is found
-                    myCount++;
-                    // sets item to undefined
-                    delete copy[w];
-                }
-            }
+    //         var myCount = 0;
+    //         // loop over every element in the copy and see if it's the same
+    //         for (var w = 0; w < copy.length; w++) {
+    //             if (original[i] == copy[w]) {
+    //                 // increase amount of times duplicate is found
+    //                 myCount++;
+    //                 // sets item to undefined
+    //                 delete copy[w];
+    //             }
+    //         }
 
-            if (myCount > 0) {
-                var a = new Object({
-                    value : original[i],
-                    count : myCount
-                });
+    //         if (myCount > 0) {
+    //             var a = new Object({
+    //                 value : original[i],
+    //                 count : myCount
+    //             });
                 
-                compressed.push(a);
-            }
-        }
+    //             compressed.push(a);
+    //         }
+    //     }
 
-        return compressed;
-    };
+    //     return compressed;
+    // };
 
     showModal(experienceId, experienceName) {
         const modal = this.modalCtrl.create(ExperienceModalPage, { experienceId: experienceId, experienceName: experienceName });

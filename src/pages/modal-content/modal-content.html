@@ -47,15 +47,15 @@
     </ion-item>
 
     <ion-list  *ngIf="category.open">
-      <ion-card (click)="showModal(subCategory.childId, subCategory.childName)" class="child-card" *ngFor="let subCategory of category['children']">
+      <ion-card text-wrap (click)="showModal(subCategory.childId, subCategory.childName)" class="child-card" *ngFor="let subCategory of category['children']">
         <ion-item>
           <p>{{ subCategory.childName }}</p>
         </ion-item>
 
         <div class="progress-outer" style="color: #1d1d1d">
-            
-          <div class="progress-inner" [style.width]="subCategory.count + '%'">
-              Tilføjet {{subCategory.count}} gange
+          
+          <div class="progress-inner" [style.width]="subCategory.count*10 + '%'">
+            x{{subCategory.count}}
           </div>
         </div>
       </ion-card>

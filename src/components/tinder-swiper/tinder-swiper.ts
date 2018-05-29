@@ -51,6 +51,9 @@ export class TinderSwiperComponent {
     private afAuth: AngularFireAuth,
     private toastCtrl: ToastController,
     private alertCtrl: AlertController) {
+
+      
+
     this.subscription = requirementsService.requirementsSent$.subscribe(
 
 
@@ -74,10 +77,11 @@ export class TinderSwiperComponent {
                 else {
                   for (var key in data) {
                     this.cards.push({
-                      name : data[key],
-                      number : entry})
+                      name: data[key],
+                      number: entry
+                    })
                   }
-                  
+
 
                 }
               })
@@ -131,6 +135,7 @@ export class TinderSwiperComponent {
   }
 
   threwOutRight(event: ThrowEvent) {
+    var stack = document.getElementById('stack');
     this.afAuth.authState.subscribe(res => {
 
       let path1 = "users/" + res.uid;
@@ -180,19 +185,26 @@ export class TinderSwiperComponent {
 
     setTimeout(function () {
       event.target.remove();
-      
+ 
     }, 600);
+    console.log(stack.childElementCount);
+    if (stack.childElementCount == 1) {
+      this.switchView();
 
-    
+    } 
+
   }
   threwOutLeft(event: ThrowEvent) {
+    var stack = document.getElementById('stack');
     this.note = "";
-    setTimeout(function () {
-      event.target.remove();
-    }, 600);
+    event.target.remove();
+    console.log(stack.childElementCount);
+    if (stack.childElementCount == 0) {
+      this.switchView();
 
+    }
   }
-  
+
   presentPrompt() {
     let alert = this.alertCtrl.create({
       title: 'Tilknyt Note',
@@ -227,42 +239,34 @@ export class TinderSwiperComponent {
     alert.present();
   }
 
-  public switchView() {
+  switchView() {
     this.gotData = !this.gotData;
   }
+
   public swipeLeftClick() {
 
-    var hest = document.getElementById('stack');
-    var vest = hest.lastElementChild;
-    vest.classList.add('rolloutLeft');
+    var stack = document.getElementById('stack');
+    var stackLastChild = stack.lastElementChild;
+    stackLastChild.classList.add('rolloutLeft');
     setTimeout(function () {
-      vest.remove();
-      if (hest.childElementCount == 0) {
-        this.gotData = false;
-      }
+      stackLastChild.remove();
     }, 600);
 
+    
+    if (stack.childElementCount == 1) {
+      this.switchView();
+
+    }
 
   }
   public swipeRightClick() {
     this.swingCards.last.getCard().throwOut(800, 0);
-    var hest = document.getElementById('stack');
-    var vest = hest.lastElementChild;
-    vest.classList.add('rolloutRight');
+    var stack = document.getElementById('stack');
+    var stackLastChild = stack.lastElementChild;
+    stackLastChild.classList.add('rolloutRight');
 
     setTimeout(function () {
-      vest.remove();
-      if (hest.childElementCount == 0) {
-        let toast = this.toastCtrl.create({
-          message: 'Færdig med alle erfaringer',
-          duration: 4000,
-          position: 'top'
-        });
-        toast.onDidDismiss(() => {
-          console.log("dismissed. Hvad nu?")
-        });
-        toast.present();
-      }
+      stackLastChild.remove();
     }, 600);
   }
 

@@ -25,6 +25,7 @@ export class ErfaringsKategorierComponent {
   category: any[];
   date: any;
   requirementsarray = [];
+  categoryLength: number = 0;
 
 
   constructor(private _DB: DatabaseProvider, private requirementsService: TinderRequirementsProvider) {
@@ -35,7 +36,6 @@ export class ErfaringsKategorierComponent {
           console.log("nope");
         }
         else {
-          // this.information = data;
           var kategorier = new Array();
           for (var key in data) {
             kategorier.push(data[key])
@@ -64,10 +64,16 @@ export class ErfaringsKategorierComponent {
   public options() {
     this.date = this.initDate;
     this.requirementsarray = [];
-    this.category = this.category;
-    this.requirementsarray.push(this.category, this.date);
-    this.requirementsService.announceRequirements(this.requirementsarray);
+    if (this.category.length > 0) {
+      this.categoryLength = this.category.length;
+      this.requirementsarray.push(this.category, this.date);
+      this.requirementsService.announceRequirements(this.requirementsarray);
+      
+    }  
+    this.category = [];
   }
+
+ 
   
 }
 
