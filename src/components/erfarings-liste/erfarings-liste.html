@@ -9,8 +9,8 @@
                 <ion-list-header *ngFor="let category of categories; let i = index" no-lines no-padding >
                     <button ion-item (click)="toggleSection(i)" [ngClass]="{'section-active': category.open, 'section': !category.open}">
 
-                        <ion-icon item-left name="arrow-forward" *ngIf="!category.open"></ion-icon>
-                        <ion-icon item-left name="arrow-down" *ngIf="category.open"></ion-icon>
+                        <ion-icon item-left name="add" *ngIf="!category.open"></ion-icon>
+                        <ion-icon item-left name="remove" *ngIf="category.open"></ion-icon>
                         {{ category.parent }}
 
                     </button>
@@ -36,6 +36,8 @@
                                     <ion-item class="subKategorier" detail-none  text-wrap>
                                             <h4>{{ subCategory.navn }}</h4>
                                             <button ion-button outline item-end (click)="addItem(subCategory.id, subCategory.navn)">Tilføj</button>
+                                            <ion-icon item-end name="swap"></ion-icon>
+
         
                                         </ion-item>                                
 
