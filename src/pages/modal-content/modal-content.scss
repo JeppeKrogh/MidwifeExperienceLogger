@@ -50,7 +50,12 @@ page-modal-content {
     .child-card .progress-outer {
         margin: 15px 2%;
     }
-
-
+    ion-spinner {
+        display: block;
+        margin: auto;
+    }
+    .contentLoaded {
+        display: none;
+    }
 
 }

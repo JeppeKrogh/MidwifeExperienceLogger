@@ -9,17 +9,18 @@
 
 <ion-content class="bg">
   <ion-item start class="homeFirstSection">
-      <p style="color:#f6f6f6;">ONSDAG, 29 MAJ </p>
-      <h1>God morgen</h1>
+      
+      <h1>Godmorgen</h1>
+      <p style="color:#f6f6f6; font-size: 1.05em">d. {{todaysDate}}</p>
   </ion-item>
   <div class="homeSecondSection">
           <h2>Notifikation</h2>
           <!-- <p> Der er gået 4 dage siden du har været ind og registere</p> -->
           <ion-item class="callToAction" no-padding  text-wrap>
-                  <h4 style="color:red;"> Der er gået 4 dage siden du har været ind og registere</h4>
+                  <h4 style="color:red;"> Der er gået 4 dage siden du sidst har registreret en erfaring</h4>
                   <ion-icon style="color: red;" item-end name="close"></ion-icon>
+                  
               </ion-item>
-
   </div>
       
  <!-- <button ion-button block color="primary" (click)="addDocument()">
@@ -100,7 +101,7 @@
 
           <ion-card-content>
                   <ion-card-title>
-                           Dagens top 5 registeret  <hr>
+                           Top 5 registerede erfaringer  <hr>
                    </ion-card-title> 
 
               <ion-item no-padding  text-wrap>
@@ -134,21 +135,21 @@
                           Praktikoversigt<hr>
                   </ion-card-title> 
                   <ion-item class="pratikMenu">
-                          <ion-label class="pMenu1">
-                              <ion-icon style="zoom: 3;" name="bookmarks"></ion-icon>
-                              <p>pratik 1</p>
-                          </ion-label>
-                    
-                          <ion-label class="pMenu2">
-                              <ion-icon style="zoom: 3;"  name="bookmarks"></ion-icon>
-                              <p>pratik 2</p>
-                          </ion-label>
-                    
-                          <ion-label class="pMenu3">
-                              <ion-icon style="zoom: 3;"  name="bookmarks"></ion-icon>
-                              <p>pratik 3</p>
-                          </ion-label>
-                  </ion-item>
+                    <ion-label class="pMenu1">
+                        <ion-icon (click)="showModal(1)" style="zoom: 3;" name="bookmarks"></ion-icon>
+                        <p>pratik 1</p>
+                    </ion-label>
+              
+                    <ion-label class="pMenu2">
+                        <ion-icon (click)="showModal(2)" style="zoom: 3;"  name="bookmarks"></ion-icon>
+                        <p>pratik 2</p>
+                    </ion-label>
+              
+                    <ion-label class="pMenu3">
+                        <ion-icon (click)="showModal(3)" style="zoom: 3;"  name="bookmarks"></ion-icon>
+                        <p>pratik 3</p>
+                    </ion-label>
+                </ion-item> 
           </ion-card-content>
       </ion-card> 
 

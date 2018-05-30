@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http'; 
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';  
+import { CommonModule, DatePipe } from '@angular/common';  
 import { FormsModule } from '@angular/forms';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -32,6 +32,7 @@ import {EfaringsdetailjerPage} from '../pages/efaringsdetailjer/efaringsdetailje
 import {HttpModule} from '@angular/http';
 import { ErfaringsListeComponent } from '../components/erfarings-liste/erfarings-liste';
 import { ExperienceModalPage } from "../pages/experience-modal/experience-modal";
+import { GoogleAdditionalInformationPage } from "../pages/google-additional-information/google-additional-information";
 
 const firebaseConfig = {
     apiKey: "AIzaSyA6wpZg5s78EF76yDT4k5-FUBFcBdSYx1M",
@@ -61,6 +62,7 @@ const firebaseConfig = {
     ErfaringsListeComponent,
     ProfilePage,
     ExperienceModalPage,
+    GoogleAdditionalInformationPage,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ const firebaseConfig = {
     AngularFireAuthModule,
     RegisterPageModule,
     ChartsModule,
-    SwingModule
+    SwingModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -93,7 +96,8 @@ const firebaseConfig = {
     IntroslidesPage,
     ErfaringsListeComponent,
     ProfilePage,
-    ExperienceModalPage
+    ExperienceModalPage,
+    GoogleAdditionalInformationPage
   ],
   providers: [
     GooglePlus,
@@ -102,7 +106,8 @@ const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DatabaseProvider,
     TinderRequirementsProvider,
-    ErfaringsKategorierComponent
+    ErfaringsKategorierComponent,
+    DatePipe
   ]
 })
 export class AppModule {

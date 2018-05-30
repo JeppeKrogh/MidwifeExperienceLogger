@@ -36,6 +36,7 @@
 
 
   <ion-card-header>Kategorier</ion-card-header>
+  <ion-spinner [ngClass]="{contentLoaded: contentLoaded}"></ion-spinner>
 
   <ion-card  *ngFor="let category of categories; let i = index">
     <ion-item (click)="toggleSection(i)" [ngClass]="{'section-active': category.open, 'section': !category.open}">
@@ -54,8 +55,8 @@
 
         <div class="progress-outer" style="color: #1d1d1d">
           
-          <div class="progress-inner" [style.width]="subCategory.count*10 + '%'">
-            x{{subCategory.count}}
+          <div class="progress-inner" [style.width]="100 + '%'">
+            Tilføjet {{subCategory.count}} gange
           </div>
         </div>
       </ion-card>

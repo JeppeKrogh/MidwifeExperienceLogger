@@ -49,8 +49,6 @@ export class GoogleLoginComponent {
       return await this.afAuth.auth.signInWithCredential(
         firebase.auth.GoogleAuthProvider.credential(gplusUser.idToken)
       )
-
-
     } catch(err) {
       console.log(err);
     }

@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
-import { ItemSliding } from 'ionic-angular';
-
+import { ItemSliding, ModalController } from 'ionic-angular';
+import { DatePipe } from '@angular/common';
 import { DatabaseProvider } from '../../providers/database/database';
 import {
   NavController,
@@ -15,7 +15,7 @@ import { PopoversComponent } from "../../components/popovers/popovers";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase";
 import "firebase/firestore";
-
+import { GoogleAdditionalInformationPage } from "../google-additional-information/google-additional-information";
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
@@ -26,15 +26,22 @@ import "firebase/firestore";
 
 
 export class HomePage {
+
+  todaysDate: any;
   
   constructor(
     public navCtrl: NavController,
     private afAuth: AngularFireAuth,
     private toast: ToastController,
-    public popoverCtrl: PopoverController
+    public popoverCtrl: PopoverController,
+    private datePipe: DatePipe,
+    private modalCtrl: ModalController
 
+  ) {
+    this.todaysDate = this.datePipe.transform(new Date(), 'dd-MM-yyyy'); //whatever format you need. 
+    console.log(this.todaysDate);
 
-  ) {}
+  }
 
   share(slidingItem: ItemSliding) {
     slidingItem.close();
@@ -48,15 +55,19 @@ export class HomePage {
         var docRef = db.collection("users").doc(data.uid);
         docRef
           .get()
-          .then(function (doc) {
+          .then((doc) =>{
             if (doc.exists) {
             } else if (data.displayName) {
-              db.collection('users').doc(data.uid).set({
-                user_email: data.email,
-                user_name: data.displayName
-              })
+              console.log("google?");
+              this.navCtrl.setRoot(GoogleAdditionalInformationPage);
+              // db.collection('users').doc(data.uid).set({
+              //   user_email: data.email,
+              //   user_name: data.displayName
+              // })
+              
             } else if (data.email) {
             } else {
+              console.log("??");
             }
           })
           .catch(function (error) {
@@ -85,5 +96,11 @@ export class HomePage {
 //     console.log('Adding document failed', error.message);
 //   });
 // }
+showModal(value) {
+  console.log(value);
+  const modal = this.modalCtrl.create('ModalContentPage', { value: value });
+  // let modal = this.modalCtrl.create('ModalContentPage');
+  modal.present();
 
+}
   }
