@@ -25,10 +25,13 @@ export class ProfilePage {
   public isSearchBarOpened = false;
 
   @ViewChild('barCanvas') barCanvas;
+  @ViewChild('doughnutCanvas') doughnutCanvas;
+
 
   barChart: any;
   doughnutChart: any;
   lineChart: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, public modalCtrl: ModalController) {
 
     var date = new Date();
@@ -74,12 +77,12 @@ export class ProfilePage {
 
       type: 'bar',
       data: {
-        labels: ["1", "2", "3", "4", "5", "6"],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        labels: ["Dag 1", "Dag 2", "Dag 3", "Dag 4", "Dag 5", "Dag 6"],
         datasets: [{
-          label: '# of days',
-          data: [12, 19, 3, 5, 2, 3, 4, 7, 4, 2],
+          backgroundColor: 'rgba(7, 213, 189, 1)',
+          borderColor: 'rgba(255, 99, 132, 0.2)',
+          label: 'Erfaringer',
+          data: [32, 49, 23, 17, 22, 13, 24, 47, 14, 22],
           borderWidth: 1
         }]
       },
@@ -99,6 +102,35 @@ export class ProfilePage {
       }
 
     });
+    this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+ 
+      type: 'doughnut',
+      data: {
+          labels: ["Svangreomsorg (gen)", "Anden svangreomsorg", "Barselsomsorg (gen)", "Anden barselsomsorg", "Fødselshjælp", "Gynækologi", "Gynækologi (diaN)", "Dokumentation og rapportering" ],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3, 3, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(35, 169, 24, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              hoverBackgroundColor: [
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56",
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56"
+              ]
+          }]
+      }
+
+  });
   }
   showModal(value) {
     console.log(value);
