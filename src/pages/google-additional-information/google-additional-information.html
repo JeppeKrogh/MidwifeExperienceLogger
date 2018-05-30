@@ -13,16 +13,28 @@
 </ion-header>
 
 
-<ion-content padding>
-<h3 style="text-align: center;">Du er næsten klar, vi mangler bare lige lidt grundlæggende information om dig :)</h3>
+<ion-content class="bg">
 
-<ion-item>
-  <ion-label floating>Student Number</ion-label>
-  <ion-input required type="text" [(ngModel)]="user.student_id"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label floating>Uddannelsens start</ion-label>
-  <ion-input required  type="date" [(ngModel)]="user.student_date"></ion-input>
-</ion-item>
-<button ion-button (click)="register(user)">Register</button>
+  <div class="firstSection">
+      <p >Du er næsten klar <br> Vi mangler bare lige lidt grundlæggende information om dig</p>
+
+  </div>
+
+  <div class="secondSection" >
+      <ion-item>
+          <ion-label style="text-align: left" floating>Student Number</ion-label>
+          <ion-input required type="text" [(ngModel)]="user.student_id"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label style="text-align: left" >Uddannelsens start</ion-label>
+          <ion-input required  type="date" [(ngModel)]="user.student_date"></ion-input>
+        </ion-item>
+      
+        <ion-item start>
+            <button ion-button (click)="register(user)">Register</button>
+        </ion-item>
+  </div>
+
+
 </ion-content>
