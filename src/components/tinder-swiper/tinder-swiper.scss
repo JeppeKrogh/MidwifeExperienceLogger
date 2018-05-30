@@ -222,6 +222,11 @@ tinder-swiper button.addedNote {
     text-align: center;
 }
 
+.tinder-swiper .stack li .erfaring-overskrift h1 {
+    font-size: 2rem;
+}
+
+
 .tinder-controls {
     position: absolute;
     bottom: -60px;
@@ -235,7 +240,7 @@ tinder-swiper button.addedNote {
 
 .tinder-controls.controlsEngaged {
     display: block;
-    bottom: 30px;
+    bottom: 20px;
     opacity: 1;
     user-select: auto;
     transition: bottom .6, opacity .6s;

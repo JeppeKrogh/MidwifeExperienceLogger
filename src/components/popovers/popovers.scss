@@ -1,13 +1,23 @@
-popovers {}
+popovers {
 
 .popover-content {
     max-height: 400px !important;
-    top: 56px !important;
+    top: 86px !important;
     right: 0 !important;
     left: auto !important;
     width: 150px !important;
     animation: popover-anim .6s;
     overflow: hidden;
+}
+
+.menuPop .button-ios {
+    border-radius: 4px;
+    height: 2em;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #07d5bd;
+    margin: 2.4rem 0.2rem;
+    padding: 0 1em;
 }
 
 @keyframes popover-anim {
@@ -17,4 +27,6 @@ popovers {}
     to {
         max-height: 400px !important;
     }
+}
+
 }

@@ -101,6 +101,13 @@ page-profile {
     color: white;
 }
 
+.toolbar-title-ios, .toolbar-title-md {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #07d5bd;
+    pointer-events: auto;
+}
+
 .toolbar-background-ios {
     background: #ffffff;
 }

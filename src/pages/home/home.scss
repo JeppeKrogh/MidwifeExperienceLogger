@@ -1,5 +1,23 @@
 page-home {
 
+    .toolbar-background-md {
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
+    .toolbar-title-ios,  .toolbar-title-md {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #07d5bd;
+        pointer-events: auto;
+    }
+
+    .toolbar-background-ios {
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+
     
 .progress-outer {
     width: 96%;
@@ -21,17 +39,17 @@ page-home {
     background-color: blue;
 }
 
+.card-title-md, .card-title-ios {
+    display: block;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color:#07d5bd;
+    margin: 2px 0;
+    padding: 8px 0;
+}
 
-.item {
-    padding-left: 16px;
-    padding-left: 16px;
-    border-radius: 0;
-    position: relative;
-    font-size: 1.7rem;
-    color: #000;
-    background-color: #90eece;
-    -webkit-transition: background-color 200ms linear;
-    transition: background-color 200ms linear;
+ion-item h4 {
+    text-align: left;
 }
 
 .card {
@@ -54,5 +72,64 @@ page-home {
     color: #666;
 }
 
+.homeFirstSection {
+    background-color: #07d5bd; 
+    margin-bottom: 0;
+    color: white;
+    padding-left: auto;
+    padding-right: auto;
+    padding-top: 14px;
+    padding-bottom: 5px;
+}
+
+.homeFirstSection p, .homeFirstSection h1 {
+    text-align: left; 
+
+}
+
+.homeFirstSection h1 {
+    font-size: 30px;
+
+}
+
+.homeSecondSection {
+    padding: 10px 16px;
+    background: #ffff;
+
+
+}
+
+.callToAction {
+        padding: 0px 0px 0px 9px;
+        border: 1px solid red;
+        border-radius: 4px;
+    }
+
+
+.pMenu1, .pMenu2, .pMenu3 { padding: 20px 4px; text-align: center;}
+.pMenu1 {background: #b2ceea;} 
+.pMenu2 {background: #90c2ff;}
+.pMenu3 {background: #7896ff;}
+
+.pratikMenu {
+    background: none;
+    color: white;
+    padding: 0;
+    margin: -4px 0 -4px 0;
+}
+
+.pratikMenu p {
+    color: white;
+    text-align: center;
+}
+
+.item-md.item-block .item-inner, .item-ios.item-block .item-inner {
+    padding-right: 1px;
+    border-bottom: 0px solid #dedede;
+}
+
+.bg {
+    background: #fafafa;
+}
 
 }

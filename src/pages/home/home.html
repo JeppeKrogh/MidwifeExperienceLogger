@@ -1,126 +1,155 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>
-            Home
-        </ion-title>
-    </ion-navbar>
+  <ion-navbar>
+      <ion-title>
+          Hjem
+      </ion-title>
+  </ion-navbar>
 </ion-header>
 <popovers></popovers>
 
-<ion-content>
-    <ion-item style="text-align: left; background-color: transparent; margin-bottom: 0;" >
-        <h1 style="text-align: left;">Good morning</h1>
-    </ion-item>
-    <div style="padding: 10px 16px;">
-            <h2>Dagens motivation quote</h2>
-            <p>Every day holds the possiblility of a miracle. Good morning :)</p>
+<ion-content class="bg">
+  <ion-item start class="homeFirstSection">
+      <p style="color:#f6f6f6;">ONSDAG, 29 MAJ </p>
+      <h1>God morgen</h1>
+  </ion-item>
+  <div class="homeSecondSection">
+          <h2>Notifikation</h2>
+          <!-- <p> Der er gået 4 dage siden du har været ind og registere</p> -->
+          <ion-item class="callToAction" no-padding  text-wrap>
+                  <h4 style="color:red;"> Der er gået 4 dage siden du har været ind og registere</h4>
+                  <ion-icon style="color: red;" item-end name="close"></ion-icon>
+              </ion-item>
 
-    </div>
-        
-   <!-- <button ion-button block color="primary" (click)="addDocument()">
-   Add a new record
+  </div>
+      
+ <!-- <button ion-button block color="primary" (click)="addDocument()">
+ Add a new record
 </button>
 
 
-    <ion-list>
-        <ion-item *ngFor="let location of locations">
-            <h2>{{ location.city }}</h2>
-            <p>
-                Population: {{ location.population }}<br> Established: {{ location.established }}
-            </p>
+  <ion-list>
+      <ion-item *ngFor="let location of locations">
+          <h2>{{ location.city }}</h2>
+          <p>
+              Population: {{ location.population }}<br> Established: {{ location.established }}
+          </p>
 
 
-            <button ion-button color="secondary" (click)="updateDocument(location)">
-         Update this record
-     </button>
+          <button ion-button color="secondary" (click)="updateDocument(location)">
+       Update this record
+   </button>
 
 
-            <button ion-button color="danger" (click)="deleteDocument(location)">
-         Delete this record
-     </button>
+          <button ion-button color="danger" (click)="deleteDocument(location)">
+       Delete this record
+   </button>
 
 
 
 
-        </ion-item>
-    </ion-list>
-    <button ion-button (click)="saveDocument()">hello</button>-->
-    <!--
-    <ion-card>
-        <ion-card-content>
-            <ion-card-title>
-                        Dagens motivation quote            
-            </ion-card-title>    
-            <p>Every day holds the possiblility of a miracle. Good morning :)</p>
-        </ion-card-content>
+      </ion-item>
+  </ion-list>
+  <button ion-button (click)="saveDocument()">hello</button>-->
+  <!--
+  <ion-card>
+      <ion-card-content>
+          <ion-card-title>
+                      Dagens motivation quote            
+          </ion-card-title>    
+          <p>Every day holds the possiblility of a miracle. Good morning :)</p>
+      </ion-card-content>
 
-    </ion-card> -->
+  </ion-card> -->
 
-   <!-- <ion-card>
-            <ion-item>
-              <p>Dagens motivation quote</p>
-              <p item-end (click)="nextPage();">show more</p> 
-            </ion-item>
-            <ion-card-content>
-                    <p>Every day holds the possiblility of a miracle. Good morning :)</p>
-             </ion-card-content>
-     </ion-card>
-    
-        <ion-card-header>Dagens top 5 registeret</ion-card-header>
+ <!-- <ion-card>
+          <ion-item>
+            <p>Dagens motivation quote</p>
+            <p item-end (click)="nextPage();">show more</p> 
+          </ion-item>
+          <ion-card-content>
+                  <p>Every day holds the possiblility of a miracle. Good morning :)</p>
+           </ion-card-content>
+   </ion-card>
+  
+      <ion-card-header>Dagens top 5 registeret</ion-card-header>
 
-    -->
-    <ion-card>
-            <ion-item>
-              <p>Dagens top 5 registeret</p>
-              <!--<p item-end (click)="nextPage();">show more</p> -->
-            </ion-item>
-            <ion-card-content>
-                    <!-- <ion-card-title>
-                             Dagens top 5 registeret
-                     </ion-card-title> -->
- 
-                 <p>1. måle BT og puls</p>
-                 <p>2. inddrage viden om kvinden/familiens mål og behov i omsorgen</p>
-                 <p>3. hjemmebesøg i graviditeten</p>
-                 <p>4. rundvisning på fødeafdelingen </p>
-                 <p>5. vejlede kvinden/parret ved udskrivelse til hjemmet fra fødeafsnit</p>
-             </ion-card-content>
-     </ion-card>
+  -->
 
-    <!-- <ion-card>
-        
-            <ion-card-content>
-              <ion-card-title>
-                Nine Inch Nails Live
-              </ion-card-title>
-              <p>
-                The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-              </p>
-              <p>
-                    The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-                  </p>
-            </ion-card-content>
-        
-            <ion-row no-padding>
-              <ion-col>
-                <button ion-button clear small color="danger" icon-start>
-                  <ion-icon name='star'></ion-icon>
-                  Favorite
-                </button>
-              </ion-col>
-              <ion-col text-center>
-                <button ion-button clear small color="danger" icon-start>
-                  <ion-icon name='musical-notes'></ion-icon>
-                  Listen
-                </button>
-              </ion-col>
-              <ion-col text-right>
-                <button ion-button clear small color="danger" icon-start>
-                  <ion-icon name='share-alt'></ion-icon>
-                  Share
-                </button>
-              </ion-col>
-            </ion-row>
-        
-          </ion-card> -->
+
+
+<!--  <ion-card>
+          <ion-item>
+            <p>Dagens top 5 registeret</p>
+            <p item-end (click)="nextPage();">show more</p> 
+          </ion-item>
+          <ion-card-content>
+                  <ion-card-title>
+                           Dagens top 5 registeret
+                   </ion-card-title> 
+
+               <p>1. måle BT og puls</p>
+               <p>2. inddrage viden om kvinden/familiens mål og behov i omsorgen</p>
+               <p>3. hjemmebesøg i graviditeten</p>
+               <p>4. rundvisning på fødeafdelingen </p>
+               <p>5. vejlede kvinden/parret ved udskrivelse til hjemmet fra fødeafsnit</p>
+           </ion-card-content>
+   </ion-card>-->
+
+
+   <ion-card>
+
+          <ion-card-content>
+                  <ion-card-title>
+                           Dagens top 5 registeret  <hr>
+                   </ion-card-title> 
+
+              <ion-item no-padding  text-wrap>
+                  <h4>1. vejlede kvinden/parret ved udskrivelse til hjemmet fra fødeafsnit</h4>
+                  <button ion-button outline item-end>X 28</button>
+              </ion-item>      
+              <ion-item no-padding  text-wrap>
+                      <h4>2. måle BT og puls</h4>
+                  <button ion-button outline item-end>X 22</button>
+              </ion-item>
+              <ion-item no-padding  text-wrap>
+                      <h4>3. hjemmebesøg i graviditeten</h4>
+                  <button ion-button outline item-end>X 14</button>
+              </ion-item>     
+              <ion-item no-padding  text-wrap>
+                      <h4>4.  hjemmebesøg i graviditeten</h4>
+                   <button ion-button outline item-end>X 10</button>
+              </ion-item>        
+              <ion-item no-padding  text-wrap>
+                      <h4>5. rundvisning på fødeafdelingen</h4>
+                    <button ion-button outline item-end>X 04</button>
+              </ion-item>                
+
+           </ion-card-content>
+   </ion-card>
+
+   <ion-card>
+      
+          <ion-card-content>
+                  <ion-card-title>
+                          Praktikoversigt<hr>
+                  </ion-card-title> 
+                  <ion-item class="pratikMenu">
+                          <ion-label class="pMenu1">
+                              <ion-icon style="zoom: 3;" name="bookmarks"></ion-icon>
+                              <p>pratik 1</p>
+                          </ion-label>
+                    
+                          <ion-label class="pMenu2">
+                              <ion-icon style="zoom: 3;"  name="bookmarks"></ion-icon>
+                              <p>pratik 2</p>
+                          </ion-label>
+                    
+                          <ion-label class="pMenu3">
+                              <ion-icon style="zoom: 3;"  name="bookmarks"></ion-icon>
+                              <p>pratik 3</p>
+                          </ion-label>
+                  </ion-item>
+          </ion-card-content>
+      </ion-card> 
+
 </ion-content>

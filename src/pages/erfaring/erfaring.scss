@@ -3,6 +3,13 @@ page-erfaring {
     .toolbar-background-ios {
         background: #ffffff;
     }
+
+    .toolbar-title-ios, .toolbar-title-md {
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #07d5bd;
+        pointer-events: auto;
+    }
     
     .toolbar-background-md {
         border-color: #ffffff;
@@ -123,6 +130,10 @@ page-erfaring {
     .list-md .item[no-lines] .item-inner {
         border-width: 0;
         text-align: left;
+    }
+
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
     }
 
     .item-ios ion-icon[item-left], .item-ios ion-icon[item-right], .item-ios ion-icon[item-start], .item-ios ion-icon[item-end] {
