@@ -16,14 +16,14 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="bg">
 
-  <div style="text-align: center; margin: 20px 0;">
+  <div class="pratikMenuDiv">
     <h3 name="internshipCount">Praktikforløb {{internshipCount}}</h3>
+    <ion-icon style="zoom: 4; margin: -2px 0px 2px 0px;" name="book"></ion-icon>
+
   </div>
-  <div style="text-align:center; margin: 20px 0;">
-    <ion-icon style="zoom: 4; margin: 0 7px;" name="book"></ion-icon>
-  </div>
+
 
   <ion-card>
     <!-- <ion-card-header>
@@ -36,29 +36,29 @@
 
 
   <ion-card-header>Kategorier</ion-card-header>
-  <ion-spinner [ngClass]="{contentLoaded: contentLoaded}"></ion-spinner>
+  <ion-spinner style="text-align: left;" [ngClass]="{contentLoaded: contentLoaded}"></ion-spinner>
 
   <ion-card  *ngFor="let category of categories; let i = index">
     <ion-item (click)="toggleSection(i)" [ngClass]="{'section-active': category.open, 'section': !category.open}">
-      <ion-icon item-left name="arrow-forward" *ngIf="!category.open"></ion-icon>
-      <ion-icon item-left name="arrow-down" *ngIf="category.open"></ion-icon>
+      <ion-icon item-left name="add" *ngIf="!category.open"></ion-icon>
+      <ion-icon item-left name="remove" *ngIf="category.open"></ion-icon>
       <h2>
         <b>{{ category.parent }}</b>
       </h2>
     </ion-item>
 
     <ion-list  *ngIf="category.open">
-      <ion-card text-wrap (click)="showModal(subCategory.childId, subCategory.childName)" class="child-card" *ngFor="let subCategory of category['children']">
+      <ion-card style="width: 100%; margin: 0;" (click)="showModal(subCategory.childId, subCategory.childName)" class="child-card" *ngFor="let subCategory of category['children']">
         <ion-item>
           <p>{{ subCategory.childName }}</p>
+
+          <div class="progress-inner" [style.width]="100 + '%'">
+              Tilføjet {{subCategory.count}} gange
+            </div>
         </ion-item>
 
-        <div class="progress-outer" style="color: #1d1d1d">
           
-          <div class="progress-inner" [style.width]="100 + '%'">
-            Tilføjet {{subCategory.count}} gange
-          </div>
-        </div>
+ 
       </ion-card>
     </ion-list>
   </ion-card>
