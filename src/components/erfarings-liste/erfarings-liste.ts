@@ -1,11 +1,8 @@
 import { Component } from "@angular/core";
 import {
-  ModalController,
   AlertController,
-  Alert,
   ToastController
 } from "ionic-angular";
-import { Http } from "@angular/http";
 import { DatabaseProvider } from "../../providers/database/database";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from "firebase";
@@ -31,43 +28,33 @@ export class ErfaringsListeComponent {
   subCategory: any;
   subCategories: any[];
   note: string;
-  testarray = [];
   nyErfaringsArray = [];
   newKey: number = 0;
   test: any;
 
   constructor(
-    private http: Http,
-    private model: ModalController,
     private _DB: DatabaseProvider,
     private alertCtrl: AlertController,
     private afAuth: AngularFireAuth,
     private toastCtrl: ToastController
   ) {
     this.note = "";
-    //dummy json data. her skal man connect med rigtig database til den endelige version
-    // let localDate = this.http.get('assets/information.json').map(res => res.json().items);
-    // localDate.subscribe(data => {
-    //   this.information = data;
-    // });
 
     this.afAuth.authState.subscribe(res => {
-      let db = firebase.firestore();
       this._DB.getDocuments("erf").then(data => {
         if (data.length === 0) {
           console.log("nope");
         } else {
           // this.information = data;
           var kategorier = new Array();
-          var testArray = new Array();
 
           var i = 0;
           for (var key in data) {
             i++;
 
-            let db2 = firebase.firestore();
+            let db = firebase.firestore();
             let path = "erf/kat" + i + "/kat" + i;
-            db2
+            db
               .collection(path)
               .get()
               .then(querySnapshot => {
@@ -83,7 +70,10 @@ export class ErfaringsListeComponent {
                   });
                 }
                 kategorier.push({
-                  parent: data[this.newKey].navn,
+                  parent: {
+                    name : data[this.newKey].navn,
+                    number: this.newKey+1,
+                  },
                   child: this.nyErfaringsArray
                 });
                 this.newKey++;
@@ -133,12 +123,11 @@ export class ErfaringsListeComponent {
     });
     alert.present();
   }
-  addItem(experienceId, experienceName) {
+  addItem(experienceId, experienceName, parentNumber) {
     console.log(experienceId);
     console.log(experienceName);
     var date = new Date();
     this.afAuth.authState.subscribe(res => {
-      let path1 = "users/" + res.uid;
       this._DB
         .getDocument("users", res.uid)
         .then(data => {
@@ -172,8 +161,8 @@ export class ErfaringsListeComponent {
                 note: this.note,
                 id: experienceId,
                 time: date,
-                internship: this.test
-                // parent: +event.target.attributes['data-parent'].value,
+                internship: this.test,
+                parent: +parentNumber,
               });
           }
         })

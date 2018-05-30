@@ -1,4 +1,11 @@
 page-erfaring {
+    .toolbar-title-ios,  .toolbar-title-md {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #07d5bd;
+        pointer-events: auto;
+    }
 
     .toolbar-background-ios {
         background: #ffffff;
@@ -64,7 +71,6 @@ page-erfaring {
         -webkit-transition: background-color 200ms linear;
         transition: background-color 200ms linear;
     }
-
     .swipListSegment {
         padding: 4px 0;
     }

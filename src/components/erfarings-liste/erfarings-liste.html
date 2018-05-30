@@ -11,7 +11,7 @@
 
                         <ion-icon item-left name="add" *ngIf="!category.open"></ion-icon>
                         <ion-icon item-left name="remove" *ngIf="category.open"></ion-icon>
-                        {{ category.parent }}
+                        {{ category.parent.name }}
 
                     </button>
 
@@ -35,7 +35,7 @@
                                 <ion-item-sliding>
                                     <ion-item class="subKategorier" detail-none  text-wrap>
                                             <h4>{{ subCategory.navn }}</h4>
-                                            <button ion-button outline item-end (click)="addItem(subCategory.id, subCategory.navn)">Tilføj</button>
+                                            <button ion-button outline item-end (click)="addItem(subCategory.id, subCategory.navn, category.parent.number)">Tilføj</button>
                                             <ion-icon item-end name="swap"></ion-icon>
 
         

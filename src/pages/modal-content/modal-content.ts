@@ -36,6 +36,7 @@ export class ModalContentPage {
     finalArray = [];
     hest = [];
     categoryName: any;
+    contentLoaded = false;
 
     constructor(private navParams: NavParams, private view: ViewController, public navCtrl: NavController, private afAuth: AngularFireAuth, private _DB: DatabaseProvider, private modalCtrl: ModalController) {
         console.log(navParams.get('value'));
@@ -121,10 +122,7 @@ export class ModalContentPage {
                                         hash[key].children = hash[key].children.concat(o.childtest);
                                     });
                                     this.categories = grouped;
-
-                                    // this.categories = grouped;
-                                    // console.log(grouped['childtest']);
-                                    
+                                    this.contentLoaded = true;                                    
                                 })
                                 
                         }

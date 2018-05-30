@@ -33,12 +33,14 @@ export class ErfaringPage {
               private http:Http, 
               private model:ModalController, 
               private comp: ErfaringsKategorierComponent) {
+                
     
 
 
         this.erfaringsVisning = "tinder";
         console.log("erfaringsvisning valgt");
   }
+ 
   
   segmentShownFunc(){
     this.segmentShown = !this.segmentShown;

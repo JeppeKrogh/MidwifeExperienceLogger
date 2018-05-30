@@ -1,6 +1,12 @@
 page-profile {
 
-
+    .toolbar-title-ios,  .toolbar-title-md {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #07d5bd;
+        pointer-events: auto;
+    }
     .bg {
         background: #fafafa;
     }
