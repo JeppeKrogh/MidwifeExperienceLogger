@@ -9,15 +9,13 @@ import {IntroslidesPage} from "../pages/introslides/introslides";
 import { environment } from '../environments/environment';
 import { GoogleLoginComponent } from "../components/google-login/google-login";
 import firebase from 'firebase';
-import { GoogleAdditionalInformationPage } from '../pages/google-additional-information/google-additional-information';
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = GoogleAdditionalInformationPage; 
-  //rootPage:any = LoginPage; 
+  rootPage:any = LoginPage; 
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public popoverCtrl: PopoverController) {
